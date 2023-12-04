@@ -1,0 +1,23 @@
+{
+  "test": {
+    "text": "Schema组件",
+    "children": [
+      {
+        "link": "/schema-form",
+        "text": "Schema Form"
+      },
+      {
+        "link": "/search-form",
+        "text": "Search Form"
+      },
+      {
+        "link": "/schema-table",
+        "text": "Schema Table"
+      },
+      {
+        "link": "/schema-table-edit",
+        "text": "Schema Table For Edit"
+      }
+    ]
+  }
+}
