@@ -27,7 +27,7 @@ pnpm docs:dev
 
 ## 本地开发
 
-查看 [本地开发指南](https://github.com/setaria-components/setaria-components/blob/dev/CONTRIBUTING.md)
+查看 [本地开发指南](https://github.com/setaria-business-framework/setaria-business-framework/blob/dev/CONTRIBUTING.md)
 
 1. 使用命令
 
@@ -47,8 +47,8 @@ pnpm dev
 </template>
 
 <script setup lang="ts">
-// 要保证当前组件已注册到 @setaria-components/components
-import { ComponentYouAreDeveloping } from '@setaria-components/components'
+// 要保证当前组件已注册到 @setaria-business-framework/components
+import { ComponentYouAreDeveloping } from '@setaria-business-framework/components'
 </script>
 ```
 

@@ -21,7 +21,7 @@
 import { reactive, ref } from 'vue'
 import { ElRate } from 'element-plus'
 import type { FormInstance } from 'element-plus'
-import type { SchemaProps } from 'setaria-components'
+import type { SchemaProps } from 'setaria-business-framework'
 
 const formRef = ref<FormInstance>()
 const formValue = reactive({

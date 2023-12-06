@@ -1,5 +1,5 @@
 import 'normalize.css'
-// import 'setaria-components/dist/index.css'
+// import 'setaria-business-framework/dist/index.css'
 
 // for dev
 // reset

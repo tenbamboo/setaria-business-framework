@@ -1,5 +1,5 @@
 import { computed, getCurrentInstance, inject, ref, unref } from 'vue'
-import { isNumber } from '@setaria-components/utils'
+import { isNumber } from '@setaria-business-framework/utils'
 
 import type { InjectionKey, Ref } from 'vue'
 

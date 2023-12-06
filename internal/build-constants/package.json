@@ -1,9 +1,9 @@
 {
-  "name": "@setaria-components/build-constants",
+  "name": "@setaria-business-framework/build-constants",
   "version": "0.0.1",
   "description": "Build constants for Element Plus",
   "keywords": [
-    "setaria-components"
+    "setaria-business-framework"
   ],
   "license": "MIT",
   "main": "./dist/index.cjs",

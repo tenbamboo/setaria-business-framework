@@ -5,8 +5,8 @@ import {
   definePropType,
   isBoolean,
   isClient,
-} from '@setaria-components/utils'
-import type { ExtractPropType } from '@setaria-components/utils'
+} from '@setaria-business-framework/utils'
+import type { ExtractPropType } from '@setaria-business-framework/utils'
 import type { RouteLocationNormalizedLoaded } from 'vue-router'
 
 import type { ComponentPublicInstance, ExtractPropTypes, Ref } from 'vue'

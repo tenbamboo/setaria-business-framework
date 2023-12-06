@@ -71,10 +71,7 @@
 // export * from './virtual-list'
 // export * from './watermark'
 // export * from './hello-would'
-export * from './schema-form'
-export * from './search-form'
-export * from './schema-table'
-export * from './common-schema'
+export * from './hello-would'
 
 // plugins
 // export * from './infinite-scroll'

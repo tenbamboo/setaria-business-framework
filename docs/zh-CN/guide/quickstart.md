@@ -18,11 +18,11 @@ lang: zh-CN
 import { createApp } from 'vue'
 import ElementPlus from 'element-plus'
 import VXETable from 'vxe-table'
-import SetariaComponents from 'setaria-components'
+import SetariaComponents from 'setaria-business-framework'
 
 import 'vxe-table/lib/style.css'
 import 'element-plus/dist/index.css'
-import 'setaria-components/dist/index.css'
+import 'setaria-business-framework/dist/index.css'
 import App from './App.vue'
 
 const app = createApp(App)
@@ -40,7 +40,7 @@ app.mount('#app')
 {
   "compilerOptions": {
     // ...
-    "types": ["setaria-components/global"]
+    "types": ["setaria-business-framework/global"]
   }
 }
 ```

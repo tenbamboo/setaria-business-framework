@@ -1,5 +1,5 @@
 import { unref, watch } from 'vue'
-import { debugWarn } from '@setaria-components/utils'
+import { debugWarn } from '@setaria-business-framework/utils'
 
 import type { MaybeRef } from '@vueuse/core'
 

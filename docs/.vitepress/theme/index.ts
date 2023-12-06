@@ -1,6 +1,6 @@
-import SetariaComponents from 'setaria-components'
-import ElementPlus from 'element-plus'
-import VXETable from 'vxe-table'
+import { Framework } from 'setaria-business-framework'
+// import ElementPlus from 'element-plus'
+// import VXETable from 'vxe-table'
 import 'vxe-table/lib/style.css'
 
 import VPApp, { NotFound, globals } from '../vitepress'
@@ -13,9 +13,15 @@ export default define<Theme>({
   NotFound,
   Layout: VPApp,
   enhanceApp: ({ app }) => {
-    app.use(ElementPlus)
-    app.use(SetariaComponents)
-    app.use(VXETable)
+    // app.use(ElementPlus)
+    // app.use(SetariaComponents, {
+    //   framework: {
+    //     config: {},
+    //   },
+    // })
+    // app.use(VXETable)
+
+    new Framework({}, {}, app)
 
     globals.forEach(([name, Comp]) => {
       app.component(name, Comp)

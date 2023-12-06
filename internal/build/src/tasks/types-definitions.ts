@@ -12,7 +12,7 @@ import {
   excludeFiles,
   pkgRoot,
   projRoot,
-} from '@setaria-components/build-utils'
+} from '@setaria-business-framework/build-utils'
 import { pathRewriter } from '../utils'
 import type { CompilerOptions, SourceFile } from 'ts-morph'
 
@@ -91,7 +91,7 @@ async function addSourceFiles(project: Project) {
 
   const globSourceFile = '**/*.{js?(x),ts?(x),vue}'
   const filePaths = excludeFiles(
-    await glob([globSourceFile, '!setaria-components/**/*'], {
+    await glob([globSourceFile, '!setaria-business-framework/**/*'], {
       cwd: pkgRoot,
       absolute: true,
       onlyFiles: true,

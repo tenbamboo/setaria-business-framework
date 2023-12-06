@@ -40,7 +40,7 @@ export const isEpProp = (val: unknown): val is EpProp<any, any, any> =>
     values: ['small', 'large'],
     validator: (val: unknown): val is number => typeof val === 'number',
   } as const)
-  @link see more: https://github.com/setaria-components/setaria-components/pull/3341
+  @link see more: https://github.com/setaria-business-framework/setaria-business-framework/pull/3341
  */
 export const buildProp = <
   Type = never,

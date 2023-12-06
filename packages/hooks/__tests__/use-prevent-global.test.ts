@@ -1,6 +1,6 @@
 import { ref } from 'vue'
 import { afterAll, beforeAll, describe, expect, it, vi } from 'vitest'
-import triggerEvent from '@setaria-components/test-utils/trigger-event'
+import triggerEvent from '@setaria-business-framework/test-utils/trigger-event'
 import { usePreventGlobal } from '../use-prevent-global'
 
 describe('usePreventGlobal', () => {

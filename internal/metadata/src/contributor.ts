@@ -10,12 +10,12 @@ import {
   errorAndExit,
   projRoot,
   writeJson,
-} from '@setaria-components/build-utils'
+} from '@setaria-business-framework/build-utils'
 import {
   REPO_BRANCH,
   REPO_NAME,
   REPO_OWNER,
-} from '@setaria-components/build-constants'
+} from '@setaria-business-framework/build-constants'
 
 interface FetchOption {
   key: string

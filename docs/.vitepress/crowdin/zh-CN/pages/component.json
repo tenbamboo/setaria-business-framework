@@ -3,6 +3,10 @@
     "text": "Schema组件",
     "children": [
       {
+        "link": "/hello-would",
+        "text": "hello would"
+      },
+      {
         "link": "/schema-form",
         "text": "Schema Form"
       },

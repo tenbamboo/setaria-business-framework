@@ -1,5 +1,5 @@
 export const defaultLang = 'zh-CN'
-export const BASE_URL = '/setaria-components'
+export const BASE_URL = '/setaria-business-framework'
 
 export const PREFERRED_LANG_KEY = 'preferred_lang'
 

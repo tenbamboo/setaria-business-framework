@@ -1,6 +1,6 @@
 import fs from 'fs'
 import path from 'path'
-import { vpRoot } from '@setaria-components/build-utils'
+import { vpRoot } from '@setaria-business-framework/build-utils'
 import { languages } from '../utils/lang'
 
 import type { HeadConfig } from 'vitepress'
@@ -10,7 +10,7 @@ export const head: HeadConfig[] = [
     'link',
     {
       rel: 'icon',
-      href: '/images/setaria-components-logo-small.svg',
+      href: '/images/setaria-business-framework-logo-small.svg',
       type: 'image/svg+xm',
     },
   ],

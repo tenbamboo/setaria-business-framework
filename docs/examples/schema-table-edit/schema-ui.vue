@@ -48,7 +48,7 @@ import type {
   //   SchemaProperties,
   SchemaProps,
   SchemaUiPropsByTable,
-} from 'setaria-components'
+} from 'setaria-business-framework'
 const formRules = {
   testString: [
     {

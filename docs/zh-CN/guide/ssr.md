@@ -9,7 +9,7 @@ lang: en-US
 
 :::tip
 
-对于Nuxt 用户，我们提供的 [Nuxt 模块](https://github.com/setaria-components/setaria-components-nuxt) 已经包含了对这些问题的处理方案。 您只需要安装它就可以了。
+对于Nuxt 用户，我们提供的 [Nuxt 模块](https://github.com/setaria-business-framework/setaria-business-framework-nuxt) 已经包含了对这些问题的处理方案。 您只需要安装它就可以了。
 
 :::
 
@@ -20,7 +20,7 @@ lang: en-US
 ```ts
 // src/main.js (irrelevant code omitted)
 import { createApp } from 'vue'
-import { ID_INJECTION_KEY } from 'setaria-components'
+import { ID_INJECTION_KEY } from 'setaria-business-framework'
 import App from './App.vue'
 
 const app = createApp(App)

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
-// import { ElMessageBox } from 'setaria-components'
+// import { ElMessageBox } from 'setaria-business-framework'
 import nprogress from 'nprogress'
 // import dayjs from 'dayjs'
 import { isClient, useEventListener, useToggle } from '@vueuse/core'
@@ -21,7 +21,7 @@ const [isSidebarOpen, toggleSidebar] = useToggle(false)
 const { hasSidebar } = useSidebar()
 // const lang = useLang()
 
-// const mirrorUrl = 'setaria-components.gitee.io'
+// const mirrorUrl = 'setaria-business-framework.gitee.io'
 // const isMirrorUrl = () => {
 //   if (!isClient) return
 //   return window.location.hostname === mirrorUrl
@@ -98,7 +98,7 @@ onMounted(async () => {
   //       }
   //     )
   //     const toLang = '/zh-CN/'
-  //     location.href = `https://setaria-components.gitee.io${toLang}${location.pathname.slice(
+  //     location.href = `https://setaria-business-framework.gitee.io${toLang}${location.pathname.slice(
   //       toLang.length
   //     )}`
   //   } catch {

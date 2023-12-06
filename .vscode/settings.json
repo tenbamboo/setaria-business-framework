@@ -1,5 +1,5 @@
 {
-  "cSpell.words": ["Element Plus", "setaria-components"],
+  "cSpell.words": ["setaria-business-framework"],
   "typescript.tsdk": "node_modules/typescript/lib",
   "editor.formatOnSave": true,
   "npm.packageManager": "pnpm",

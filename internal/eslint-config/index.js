@@ -250,7 +250,7 @@ module.exports = defineConfig({
             position: 'before',
           },
           {
-            pattern: '@setaria-components/**',
+            pattern: '@setaria-business-framework/**',
             group: 'internal',
           },
         ],

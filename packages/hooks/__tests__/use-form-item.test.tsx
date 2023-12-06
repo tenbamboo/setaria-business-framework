@@ -2,16 +2,19 @@ import { defineComponent, provide } from 'vue'
 import { NOOP } from '@vue/shared'
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
-import { ElButton, buttonGroupContextKey } from '@setaria-components/components'
+import {
+  ElButton,
+  buttonGroupContextKey,
+} from '@setaria-business-framework/components'
 import {
   formContextKey,
   formItemContextKey,
-} from '@setaria-components/components/form'
+} from '@setaria-business-framework/components/form'
 
 import type {
   FormContext,
   FormItemContext,
-} from '@setaria-components/components/form'
+} from '@setaria-business-framework/components/form'
 
 const AXIOM = 'Rem is the best girl'
 

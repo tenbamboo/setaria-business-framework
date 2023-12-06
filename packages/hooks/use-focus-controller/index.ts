@@ -1,6 +1,6 @@
 import { getCurrentInstance, ref, shallowRef, watch } from 'vue'
 import { useEventListener } from '@vueuse/core'
-import { isFunction } from '@setaria-components/utils'
+import { isFunction } from '@setaria-business-framework/utils'
 import type { ShallowRef } from 'vue'
 
 interface UseFocusControllerOptions {

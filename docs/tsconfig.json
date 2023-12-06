@@ -12,7 +12,7 @@
     "skipLibCheck": true,
     "lib": ["WebWorker"],
     "paths": {
-      "setaria-components": ["../packages/setaria-components"],
+      "setaria-business-framework": ["../packages/setaria-business-framework"],
       "~/*": ["./.vitepress/vitepress/*"]
     },
     "types": ["../typings/components"],

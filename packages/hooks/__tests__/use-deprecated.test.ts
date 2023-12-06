@@ -1,14 +1,14 @@
 import { computed, defineComponent, nextTick } from 'vue'
 import { mount } from '@vue/test-utils'
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import { debugWarn } from '@setaria-components/utils'
+import { debugWarn } from '@setaria-business-framework/utils'
 import { useDeprecated } from '../use-deprecated'
 
 const AXIOM = 'Rem is the best girl'
 
-vi.mock('@setaria-components/utils/error', async () => {
+vi.mock('@setaria-business-framework/utils/error', async () => {
   return {
-    ...(await vi.importActual<any>('@setaria-components/utils/error')),
+    ...(await vi.importActual<any>('@setaria-business-framework/utils/error')),
     debugWarn: vi.fn(),
   }
 })

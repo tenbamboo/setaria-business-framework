@@ -1,4 +1,4 @@
-import { isFunction } from '@setaria-components/utils'
+import { isFunction } from '@setaria-business-framework/utils'
 
 import type { ObjectDirective } from 'vue'
 

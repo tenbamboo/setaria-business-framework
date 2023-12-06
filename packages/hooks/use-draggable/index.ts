@@ -1,5 +1,5 @@
 import { onBeforeUnmount, onMounted, watchEffect } from 'vue'
-import { addUnit } from '@setaria-components/utils'
+import { addUnit } from '@setaria-business-framework/utils'
 import type { ComputedRef, Ref } from 'vue'
 
 export const useDraggable = (

@@ -4,7 +4,7 @@ import {
   createGlobalNode,
   isClient,
   removeGlobalNode,
-} from '@setaria-components/utils'
+} from '@setaria-business-framework/utils'
 
 import type { Ref, VNode } from 'vue'
 

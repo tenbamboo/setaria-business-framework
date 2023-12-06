@@ -1,5 +1,5 @@
 {
-  "name": "@setaria-components/constants",
+  "name": "@setaria-business-framework/constants",
   "private": true,
   "license": "MIT",
   "main": "index.ts"

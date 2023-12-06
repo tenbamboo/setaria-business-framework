@@ -10,10 +10,10 @@ export const usePlayground = (source: string) => {
 
   const encoded = utoa(JSON.stringify(originCode))
   const isPreview = location.host.startsWith('preview')
-  let link = `https://setaria-components.run/#${encoded}`
+  let link = `https://setaria-business-framework.run/#${encoded}`
   if (isPreview) {
     const pr = location.host.split('-', 2)[1]
-    link = `https://setaria-components.run/?pr=${pr}#${encoded}`
+    link = `https://setaria-business-framework.run/?pr=${pr}#${encoded}`
   }
   return {
     encoded,

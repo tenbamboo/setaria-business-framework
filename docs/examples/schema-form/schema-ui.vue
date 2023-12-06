@@ -33,7 +33,7 @@ import type {
   //   SchemaProperties,
   SchemaProps,
   SchemaUiProps,
-} from 'setaria-components'
+} from 'setaria-business-framework'
 const formValue = reactive({
   testCustomSlot: 3,
 })

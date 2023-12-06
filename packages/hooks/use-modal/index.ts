@@ -1,6 +1,6 @@
 import { watch } from 'vue'
 import { isClient, useEventListener } from '@vueuse/core'
-import { EVENT_CODE } from '@setaria-components/constants'
+import { EVENT_CODE } from '@setaria-business-framework/constants'
 
 import type { Ref } from 'vue'
 

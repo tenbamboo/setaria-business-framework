@@ -1,6 +1,6 @@
 import { onBeforeUnmount, onMounted } from 'vue'
-import { isClient } from '@setaria-components/utils'
-import { EVENT_CODE } from '@setaria-components/constants'
+import { isClient } from '@setaria-business-framework/utils'
+import { EVENT_CODE } from '@setaria-business-framework/constants'
 
 let registeredEscapeHandlers: ((e: KeyboardEvent) => void)[] = []
 

@@ -11,13 +11,13 @@ lang: zh-CN
 # 选择一个你喜欢的包管理器
 
 # NPM
-$ npm install setaria-components --save
+$ npm install setaria-business-framework --save
 
 # Yarn
-$ yarn add setaria-components
+$ yarn add setaria-business-framework
 
 # pnpm
-$ pnpm install setaria-components
+$ pnpm install setaria-business-framework
 ```
 
 ## 安装依赖项

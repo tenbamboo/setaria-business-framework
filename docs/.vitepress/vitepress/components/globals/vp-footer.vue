@@ -16,21 +16,21 @@ const homeLang = computed(() => homeLocale[lang.value])
     <div class="footer-main">
       <h4>{{ homeLang['10'] }}</h4>
       <a
-        href="https://github.com/setaria-components/setaria-components"
+        href="https://github.com/setaria-business-framework/setaria-business-framework"
         class="footer-main-link"
         target="_blank"
       >
         {{ homeLang['11'] }}
       </a>
       <a
-        href="https://setaria-components.gitee.io/zh-CN/"
+        href="https://setaria-business-framework.gitee.io/zh-CN/"
         class="footer-main-link"
         target="_blank"
       >
         {{ homeLang['china_mirror'] }}
       </a>
       <a
-        href="https://github.com/setaria-components/setaria-components/releases"
+        href="https://github.com/setaria-business-framework/setaria-business-framework/releases"
         class="footer-main-link"
         target="_blank"
       >
@@ -55,21 +55,21 @@ const homeLang = computed(() => homeLocale[lang.value])
         {{ homeLang['discord'] }}
       </a>
       <a
-        href="https://github.com/setaria-components/setaria-components/issues"
+        href="https://github.com/setaria-business-framework/setaria-business-framework/issues"
         class="footer-main-link"
         target="_blank"
       >
         {{ homeLang['16'] }}
       </a>
       <a
-        href="https://github.com/setaria-components/setaria-components/blob/dev/.github/CONTRIBUTING.en-US.md"
+        href="https://github.com/setaria-business-framework/setaria-business-framework/blob/dev/.github/CONTRIBUTING.en-US.md"
         class="footer-main-link"
         target="_blank"
       >
         {{ homeLang['17'] }}
       </a>
       <a
-        href="https://segmentfault.com/t/setaria-components"
+        href="https://segmentfault.com/t/setaria-business-framework"
         class="footer-main-link"
         target="_blank"
       >

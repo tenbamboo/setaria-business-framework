@@ -19,15 +19,15 @@ pnpm i
 ```shell
 # 获取构建结果
 pnpm build
-cd dist/setaria-components
-# set cur setaria-components to global `node_modules`
+cd dist/setaria-business-framework
+# set cur setaria-business-framework to global `node_modules`
 pnpm link --global
-# for esm we also need link setaria-components for dist
-pnpm link --global setaria-components
+# for esm we also need link setaria-business-framework for dist
+pnpm link --global setaria-business-framework
 
-# 进入你的项目, 链接到 `setaria-components`
+# 进入你的项目, 链接到 `setaria-business-framework`
 cd your-project
-pnpm link --global setaria-components
+pnpm link --global setaria-business-framework
 ```
 
 > 更多信息查看 [pnpm link](https://pnpm.io/cli/link)
@@ -38,4 +38,4 @@ pnpm link --global setaria-components
 
 那将会在 vite 构建下的 css 文件开头生成警告信息 `@charset "UTF-8";`
 
-> 更多信息见 [#3219](https://github.com/setaria-components/setaria-components/issues/3219)
+> 更多信息见 [#3219](https://github.com/setaria-business-framework/setaria-business-framework/issues/3219)

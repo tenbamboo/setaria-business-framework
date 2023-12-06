@@ -1,7 +1,7 @@
 import { computed, defineComponent, nextTick } from 'vue'
 import { mount } from '@vue/test-utils'
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
-import { provideGlobalConfig } from '@setaria-components/components/config-provider'
+import { provideGlobalConfig } from '@setaria-business-framework/components/config-provider'
 import { useNamespace } from '..'
 import type { VueWrapper } from '@vue/test-utils'
 

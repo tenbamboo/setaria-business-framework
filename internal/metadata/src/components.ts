@@ -2,7 +2,11 @@ import path from 'path'
 import glob from 'fast-glob'
 import chalk from 'chalk'
 import consola from 'consola'
-import { ensureDir, projRoot, writeJson } from '@setaria-components/build-utils'
+import {
+  ensureDir,
+  projRoot,
+  writeJson,
+} from '@setaria-business-framework/build-utils'
 
 const pathOutput = path.resolve(__dirname, '..', 'dist')
 

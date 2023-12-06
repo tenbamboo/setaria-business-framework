@@ -18,7 +18,7 @@ import type {
   SchemaProps,
   SchemaTableInstance,
   SchemaUiPropsByTable,
-} from 'setaria-components'
+} from 'setaria-business-framework'
 const schemaTableRef = ref<SchemaTableInstance>()
 
 interface RowVO {

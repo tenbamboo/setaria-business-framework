@@ -5,7 +5,7 @@
 
 <script lang="ts" setup>
 import { reactive } from 'vue'
-import type { SchemaProps } from 'setaria-components'
+import type { SchemaProps } from 'setaria-business-framework'
 const schema = reactive<SchemaProps>({
   required: [],
   properties: {

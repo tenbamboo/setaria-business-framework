@@ -1,5 +1,5 @@
 import { shallowRef } from 'vue'
-import { flattedChildren, isVNode } from '@setaria-components/utils'
+import { flattedChildren, isVNode } from '@setaria-business-framework/utils'
 
 import type { ComponentInternalInstance, VNode } from 'vue'
 

@@ -85,5 +85,5 @@ export function createCrowdinUrl(targetLang: string) {
   } else {
     translateLang = targetLang.split('-').shift()!.toLocaleLowerCase()
   }
-  return `https://crowdin.com/translate/setaria-components/all/en-${translateLang}`
+  return `https://crowdin.com/translate/setaria-business-framework/all/en-${translateLang}`
 }

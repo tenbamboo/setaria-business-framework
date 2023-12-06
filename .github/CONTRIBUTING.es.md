@@ -12,7 +12,7 @@ Estamos orgullosos de que usted esta interesado en contribuir al proyecto `Eleme
 
 - Antes de someter un informe sobre algún problema, sírvase de revisar sí ya hubo un informe.
 
-- Por favor especifique que versión de `Element Plus` y `Vue` que esta utilizando, y que versión de sistema operativo y que versión de navegador web que está utilizando. [Playground](https://setaria-components.run/) esta recomendado para crear un entorno para reproducir el problema claramente.
+- Por favor especifique que versión de `Element Plus` y `Vue` que esta utilizando, y que versión de sistema operativo y que versión de navegador web que está utilizando. [Playground](https://setaria-business-framework.run/) esta recomendado para crear un entorno para reproducir el problema claramente.
 
 ## Guías para un “Pull Request (PR)”
 
@@ -22,7 +22,7 @@ Estamos orgullosos de que usted esta interesado en contribuir al proyecto `Eleme
 
   1. Tipo: el tipo debe ser uno de [build, chore, ci, docs, feat, fix, perf, refactor, revert, release, style, test, improvement].
 
-  2. Ámbito de aplicación: el ámbito de aplicación debe ser uno de [components, directives, setaria-components, hooks, locale, test-utils, theme-chalk, tokens, utils, project, core, style, docs, ci, dev, build, deploy, other, typography, color, border, var].
+  2. Ámbito de aplicación: el ámbito de aplicación debe ser uno de [components, directives, setaria-business-framework, hooks, locale, test-utils, theme-chalk, tokens, utils, project, core, style, docs, ci, dev, build, deploy, other, typography, color, border, var].
 
   3. Título: el título no debe exceder de 72 caracteres.
 

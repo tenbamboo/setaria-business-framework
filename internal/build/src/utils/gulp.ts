@@ -1,4 +1,4 @@
-import { buildRoot } from '@setaria-components/build-utils'
+import { buildRoot } from '@setaria-business-framework/build-utils'
 import { run } from './process'
 
 import type { TaskFunction } from 'gulp'

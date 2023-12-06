@@ -1,5 +1,5 @@
 {
-  "name": "@setaria-components/play",
+  "name": "@setaria-business-framework/play",
   "private": true,
   "scripts": {
     "dev": "vite",

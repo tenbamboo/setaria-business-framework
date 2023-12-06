@@ -23,7 +23,7 @@ lang: zh-CN
 ### 我怎么才能帮忙贡献翻译的内容？
 
 1. 在 [Crowdin](https://crowdin.com) 上创建一个账号，推荐使用你的 GitHub 账号第三方登录。
-2. 进入 [Element Plus](https://crowdin.com/project/setaria-components) 项目
+2. 进入 [Element Plus](https://crowdin.com/project/setaria-business-framework) 项目
 3. 选择你想要贡献翻译的语言；
 4. 选择你想要贡献翻译的具体文件；
 5. 开始翻译。
@@ -32,4 +32,4 @@ lang: zh-CN
 
 ### 我怎么样能帮助翻译审核？
 
-你可以通过在 Crowdin [发起 issue](https://crowdin.com/project/setaria-components/discussions) 的方式通知我们，issue 内请告知你希望成为哪个语言的校对官。
+你可以通过在 Crowdin [发起 issue](https://crowdin.com/project/setaria-business-framework/discussions) 的方式通知我们，issue 内请告知你希望成为哪个语言的校对官。

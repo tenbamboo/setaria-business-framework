@@ -2,6 +2,7 @@ import path from 'path'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
 import { rollup } from 'rollup'
 import commonjs from '@rollup/plugin-commonjs'
+import json from '@rollup/plugin-json'
 import vue from '@vitejs/plugin-vue'
 import VueMacros from 'unplugin-vue-macros/rollup'
 import vueJsx from '@vitejs/plugin-vue-jsx'
@@ -13,10 +14,14 @@ import {
   PKG_BRAND_NAME,
   PKG_CAMELCASE_LOCAL_NAME,
   PKG_CAMELCASE_NAME,
-} from '@setaria-components/build-constants'
-import { epOutput, epRoot, localeRoot } from '@setaria-components/build-utils'
-import { version } from '../../../../packages/setaria-components/version'
-import { ElementPlusAlias } from '../plugins/setaria-components-alias'
+} from '@setaria-business-framework/build-constants'
+import {
+  epOutput,
+  epRoot,
+  localeRoot,
+} from '@setaria-business-framework/build-utils'
+import { version } from '../../../../packages/setaria-business-framework/version'
+import { ElementPlusAlias } from '../plugins/setaria-business-framework-alias'
 import {
   formatBundleFilename,
   generateExternal,
@@ -45,6 +50,7 @@ async function buildFullEntry(minify: boolean) {
       extensions: ['.mjs', '.js', '.json', '.ts'],
     }),
     commonjs(),
+    json(),
     esbuild({
       exclude: [],
       sourceMap: minify,

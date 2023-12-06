@@ -1,5 +1,5 @@
 import { unref } from 'vue'
-import { buildProps, isNumber } from '@setaria-components/utils'
+import { buildProps, isNumber } from '@setaria-business-framework/utils'
 import { useTimeout } from '../use-timeout'
 
 import type { ExtractPropTypes, ToRefs } from 'vue'

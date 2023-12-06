@@ -1,6 +1,6 @@
 import { computed, getCurrentInstance } from 'vue'
 import { fromPairs } from 'lodash-unified'
-import { debugWarn } from '@setaria-components/utils'
+import { debugWarn } from '@setaria-business-framework/utils'
 
 import type { ComputedRef } from 'vue'
 

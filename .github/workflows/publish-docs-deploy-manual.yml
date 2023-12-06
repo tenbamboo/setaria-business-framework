@@ -46,7 +46,7 @@ jobs:
         run: pnpm docs:gen-locale
 
       - name: Install latest Element Plus
-        run: cd docs && pnpm i setaria-components@latest
+        run: cd docs && pnpm i setaria-business-framework@latest
 
       - name: Build Metadata
         run: cd internal/metadata && pnpm build
@@ -66,7 +66,7 @@ jobs:
           branch: gh-pages
           folder: docs/.vitepress/dist
           git-config-name: ElementPlusBot
-          git-config-email: hello@setaria-components.org
+          git-config-email: hello@setaria-business-framework.org
           commit-message: website deploy
 
       - name: Deploy to vercel
@@ -75,9 +75,9 @@ jobs:
           token: ${{ secrets.EP_BOT_TOKEN }}
           branch: main
           folder: docs/.vitepress/dist
-          repository-name: setaria-components/vercel-publish
+          repository-name: setaria-business-framework/vercel-publish
           git-config-name: ElementPlusBot
-          git-config-email: hello@setaria-components.org
+          git-config-email: hello@setaria-business-framework.org
 
       - name: Sync
         env:

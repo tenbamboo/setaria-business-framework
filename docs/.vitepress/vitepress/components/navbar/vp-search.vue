@@ -62,7 +62,7 @@ function initialize(userOptions: any) {
   docsearch(
     Object.assign({}, userOptions, {
       container: '#docsearch',
-      indexName: 'setaria-components',
+      indexName: 'setaria-business-framework',
       // searchParameters: Object.assign({}, userOptions.searchParameters, {
       //   // pass a custom lang facetFilter to allow multiple language search
       //   // https://github.com/algolia/docsearch-configs/pull/3942

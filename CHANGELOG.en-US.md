@@ -40,7 +40,7 @@ _2023-10-13_
 - Docs [form] `label-position` type error (#14312 by @btea)
 - Components row-class-name bgColor can not cover fixed column (#14225 by @StephenKe)
 - Components [tabs] Fix some events accidentally firing (#14224 by @Mario34)
-- Cannot find type definition file for `setaria-components/global` (#13698 by @mioxs)
+- Cannot find type definition file for `setaria-business-framework/global` (#13698 by @mioxs)
 - Components [description] use `withDirectives` add custom directive (#14299 by @btea)
 - Components fix: update timepicker options when changing locale (#14287 by @cuongle-hdwebsoft)
 - Components [popper] invalid when props z-index is zero (#14375 by @betavs)
@@ -581,7 +581,7 @@ _2022-12-30_
 - Components [input-number] fix args order (#11020 by @sleepyShen1989)
 - Components [cascader] placeholder is not displayed correctly (#11031 by @btea)
 - Docs some wrong examples in the document (#11072 by @asdjgfr)
-- setaria-components exposing ElSubMenu component (#11100 by @tolking)
+- setaria-business-framework exposing ElSubMenu component (#11100 by @tolking)
 
 #### Refactors
 
@@ -1062,7 +1062,7 @@ _2022-08-12_
 - Components [color-picker] injected form context may be undefined (#8862 by @holazz)
 - Components [time-picker] injected form context may be undefined (#8866 by @holazz)
 - Components [checkbox] injected form context may be undefined (#8865 by @holazz)
-- setaria-components dts entry (#8842 by @holazz)
+- setaria-business-framework dts entry (#8842 by @holazz)
 - Timer-pick automatically skip disabled items (#8850 by @baiwusanyu-c)
 - Components [table] the empty slot height error (#9226 by @tolking)
 - Style(theme-chalk): fix message (#9143 by @kooriookami)
@@ -1119,7 +1119,7 @@ _2022-07-27_
 - Theme-chalk [picker] adjust range picker input height (#8879 by @holazz)
 - Components [dropdown] fix style (#9034 by @holazz)
 - Components [table] fix maxHeight doesn't consider footer height (#9011 by @plainheart)
-- setaria-components fix type error (#8982 by @holazz)
+- setaria-business-framework fix type error (#8982 by @holazz)
 - Directives [mousewheel] fix type error (#8880 by @holazz)
 - Theme-chalk [rate] fix vertical offset (#8959 by @Tsong-LC)
 - Time-picker clicking on prefix does not open the panel (#9044 by @xiaoxian521)
@@ -1587,13 +1587,13 @@ _2022-05-20_
 
 _2022-05-09_
 
-[v2.2.0 release note](https://github.com/setaria-components/setaria-components/discussions/7578)
+[v2.2.0 release note](https://github.com/setaria-business-framework/setaria-business-framework/discussions/7578)
 
 #### Breaking changes
 
 ##### Button
 
-- `type="text"` has been removed from `button`, now you can do this, for more detail see [Documentation](https://setaria-components.org/en-US/component/button.html#text-button)
+- `type="text"` has been removed from `button`, now you can do this, for more detail see [Documentation](https://setaria-business-framework.org/en-US/component/button.html#text-button)
 
 ```diff
 --- <el-button type="text"/>
@@ -2563,7 +2563,7 @@ _2021-12-31_
 
 #### Breaking changes:
 
-- Please refer to: [1.3.0-beta.1 Breaking change](https://github.com/setaria-components/setaria-components/discussions/5037)
+- Please refer to: [1.3.0-beta.1 Breaking change](https://github.com/setaria-business-framework/setaria-business-framework/discussions/5037)
 
 #### Features
 
@@ -2651,7 +2651,7 @@ _2021-12-10_
 - Hooks [lockscreen] body lock remove unexpected (#4693 by @KawaiiZapic) (#4694)
 - Docs fix code not working in Codepen (#4678 by @imguolao) (#4679)
 - Components [el-input-number]set value equal to min will update (#4650 by @Alanscut)
-- Docs replace @setaria-components/icons with @element-plus/icons-vue (#4704 by @pdsuwwz)
+- Docs replace @setaria-business-framework/icons with @element-plus/icons-vue (#4704 by @pdsuwwz)
 - Docs fix webpack config import syntax (#4718 by @owenvip)
 - Style override el-icon display in el-input__icon (#4684 by @YunYouJun)
 - Components [el-menu] third-party icons are hidden (#4754 by @Alanscut)
@@ -2821,7 +2821,7 @@ _2021-10-30_
 
 #### Breaking changes:
 
-- Please refer to: [1.2.0-beta.1 Breaking change](https://github.com/setaria-components/setaria-components/discussions/4060)
+- Please refer to: [1.2.0-beta.1 Breaking change](https://github.com/setaria-business-framework/setaria-business-framework/discussions/4060)
 
 #### Features
 
@@ -2836,7 +2836,7 @@ _2021-10-30_
 - Components [el-message] & [el-notification] appendTo option added (#4012 by @codespikex)
 - Add translation for Bengali language (#3972 by @IbrahimAlKhalil)
 - Dev play add unplugin-vue-components (#3931 by @sxzz)
-- Dev play add @setaria-components/icons (#4034 by @xiaoxian521)
+- Dev play add @setaria-business-framework/icons (#4034 by @xiaoxian521)
 
 #### Bug fixes
 
@@ -3376,7 +3376,7 @@ _2021-08-24_
 
 #### Breaking changes:
 
-- Please refer to: [Breaking changes made in 1.1.0-beta.1](https://github.com/setaria-components/setaria-components/discussions/3020)
+- Please refer to: [Breaking changes made in 1.1.0-beta.1](https://github.com/setaria-business-framework/setaria-business-framework/discussions/3020)
 
 #### Features
 

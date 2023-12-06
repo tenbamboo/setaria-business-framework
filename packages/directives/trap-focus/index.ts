@@ -1,6 +1,6 @@
 import { nextTick } from 'vue'
-import { obtainAllFocusableElements } from '@setaria-components/utils'
-import { EVENT_CODE } from '@setaria-components/constants'
+import { obtainAllFocusableElements } from '@setaria-business-framework/utils'
+import { EVENT_CODE } from '@setaria-business-framework/constants'
 import type { ObjectDirective } from 'vue'
 
 export const FOCUSABLE_CHILDREN = '_trap-focus-children'

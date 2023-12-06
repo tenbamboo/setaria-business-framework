@@ -1,5 +1,11 @@
-import { componentSizes, datePickTypes } from '@setaria-components/constants'
-import type { ComponentSize, DatePickType } from '@setaria-components/constants'
+import {
+  componentSizes,
+  datePickTypes,
+} from '@setaria-business-framework/constants'
+import type {
+  ComponentSize,
+  DatePickType,
+} from '@setaria-business-framework/constants'
 
 export const isValidComponentSize = (val: string): val is ComponentSize | '' =>
   ['', ...componentSizes].includes(val)

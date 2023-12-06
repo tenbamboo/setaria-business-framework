@@ -12,7 +12,7 @@ import {
   epPackage,
   getPackageManifest,
   projRoot,
-} from '@setaria-components/build-utils'
+} from '@setaria-business-framework/build-utils'
 
 import type { TaskFunction } from 'gulp'
 import type {
@@ -36,7 +36,7 @@ const reComponentName: ReComponentName = (title) => {
 }
 
 const reDocUrl: ReDocUrl = (fileName, header) => {
-  const docs = 'https://setaria-components.org/en-US/component/'
+  const docs = 'https://setaria-business-framework.org/en-US/component/'
   const _header = header
     ? removeTag(header).replaceAll(/\s+/g, '-').toLowerCase()
     : ''

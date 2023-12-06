@@ -14,7 +14,10 @@
 
 <script lang="ts" setup>
 import { reactive, ref } from 'vue'
-import type { SchemaProps, SchemaTableInstance } from 'setaria-components'
+import type {
+  SchemaProps,
+  SchemaTableInstance,
+} from 'setaria-business-framework'
 const schemaTableRef = ref<SchemaTableInstance>()
 
 const schema = reactive<SchemaProps>({

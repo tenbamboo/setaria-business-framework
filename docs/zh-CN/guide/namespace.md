@@ -7,7 +7,7 @@ lang: zh-CN
 
 :::tip
 
-我们提供了 [setaria-components-vite-starter 模版](https://github.com/setaria-components/setaria-components-vite-starter)。 查看代码了解使用方法。
+我们提供了 [setaria-business-framework-vite-starter 模版](https://github.com/setaria-business-framework/setaria-business-framework-vite-starter)。 查看代码了解使用方法。
 
 :::
 
@@ -37,7 +37,7 @@ Element Plus 提供的默认命名空间为 `el`。 在特殊情况下，我们�
 ```scss
 // styles/element/index.scss
 // we can add this to custom namespace, default is 'el'
-@forward 'setaria-components/theme-chalk/src/mixins/config.scss' with (
+@forward 'setaria-business-framework/theme-chalk/src/mixins/config.scss' with (
   $namespace: 'ep'
 );
 // ...

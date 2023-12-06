@@ -12,7 +12,7 @@ Nous sommes ravis que vous souhaitiez contribuer à Element Plus. Avant de soume
 
 - Avant de soumettre une issue, veuillez vérifier si des problèmes similaires n'ont pas déjà été signalés.
 
-- Veuillez spécifier la version de `Element Plus` et `Vue` que vous utilisez, et fournir des informations sur le système d'exploitation et le navigateur. [Playground](https://setaria-components.run/) est recommandé afin de construire une démo pour que votre problème puisse être reproduit clairement.
+- Veuillez spécifier la version de `Element Plus` et `Vue` que vous utilisez, et fournir des informations sur le système d'exploitation et le navigateur. [Playground](https://setaria-business-framework.run/) est recommandé afin de construire une démo pour que votre problème puisse être reproduit clairement.
 
 ## Concernant les pull requests
 
@@ -22,7 +22,7 @@ Nous sommes ravis que vous souhaitiez contribuer à Element Plus. Avant de soume
 
   1. Type: le type doit être l'un des [build, chore, ci, docs, feat, fix, perf, refactor, revert, release, style, test, improvement].
 
-  2. Scope: scope doit être l'un des [components, directives, setaria-components, hooks, locale, test-utils, theme-chalk, tokens, utils, project, core, style, docs, ci, dev, build, deploy, other, typography, color, border, var].
+  2. Scope: scope doit être l'un des [components, directives, setaria-business-framework, hooks, locale, test-utils, theme-chalk, tokens, utils, project, core, style, docs, ci, dev, build, deploy, other, typography, color, border, var].
 
   3. Titre: le titre ne doit pas dépasser 72 caractères.
 

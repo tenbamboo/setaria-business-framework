@@ -13,7 +13,7 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
-    if: ${{ github.repository_owner == 'setaria-components' }}
+    if: ${{ github.repository_owner == 'setaria-business-framework' }}
 
     steps:
       - name: Checkout
@@ -79,6 +79,6 @@ jobs:
           token: ${{ secrets.EP_BOT_TOKEN }}
           branch: main
           folder: docs/.vitepress/dist
-          repository-name: setaria-components/staging
+          repository-name: setaria-business-framework/staging
           git-config-name: ElementPlusBot
-          git-config-email: hello@setaria-components.org
+          git-config-email: hello@setaria-business-framework.org

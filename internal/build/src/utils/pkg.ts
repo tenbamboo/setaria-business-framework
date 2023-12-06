@@ -1,4 +1,7 @@
-import { PKG_NAME, PKG_PREFIX } from '@setaria-components/build-constants'
+import {
+  PKG_NAME,
+  PKG_PREFIX,
+} from '@setaria-business-framework/build-constants'
 import { buildConfig } from '../build-info'
 
 import type { Module } from '../build-info'

@@ -8,7 +8,7 @@ import {
   isClient,
   removeClass,
   throwError,
-} from '@setaria-components/utils'
+} from '@setaria-business-framework/utils'
 import { useNamespace } from '../use-namespace'
 
 import type { Ref } from 'vue'

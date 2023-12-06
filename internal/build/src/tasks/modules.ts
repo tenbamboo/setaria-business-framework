@@ -1,14 +1,19 @@
 import { rollup } from 'rollup'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
+import json from '@rollup/plugin-json'
 import VueMacros from 'unplugin-vue-macros/rollup'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
 import esbuild from 'rollup-plugin-esbuild'
 import glob from 'fast-glob'
-import { epRoot, excludeFiles, pkgRoot } from '@setaria-components/build-utils'
+import {
+  epRoot,
+  excludeFiles,
+  pkgRoot,
+} from '@setaria-business-framework/build-utils'
 import { generateExternal, writeBundles } from '../utils'
-import { ElementPlusAlias } from '../plugins/setaria-components-alias'
+import { ElementPlusAlias } from '../plugins/setaria-business-framework-alias'
 import { buildConfigEntries, target } from '../build-info'
 
 import type { OutputOptions } from 'rollup'
@@ -39,6 +44,7 @@ export const buildModules = async () => {
         extensions: ['.mjs', '.js', '.json', '.ts'],
       }),
       commonjs(),
+      json(),
       esbuild({
         sourceMap: true,
         target,

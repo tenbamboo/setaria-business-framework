@@ -1,9 +1,9 @@
 {
-  "name": "@setaria-components/metadata",
+  "name": "@setaria-business-framework/metadata",
   "version": "0.0.1",
   "description": "Metadata for Element Plus",
   "keywords": [
-    "setaria-components"
+    "setaria-business-framework"
   ],
   "license": "MIT",
   "files": [
@@ -19,9 +19,9 @@
     "dev": "DEV=1 pnpm run build"
   },
   "devDependencies": {
-    "@setaria-components/build": "^0.0.1",
-    "@setaria-components/build-constants": "^0.0.1",
-    "@setaria-components/build-utils": "^0.0.1",
+    "@setaria-business-framework/build": "^0.0.1",
+    "@setaria-business-framework/build-constants": "^0.0.1",
+    "@setaria-business-framework/build-utils": "^0.0.1",
     "@types/lodash-es": "^4.17.6",
     "chalk": "^5.0.1",
     "consola": "^2.15.3",

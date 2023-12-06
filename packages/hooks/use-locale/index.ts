@@ -1,10 +1,10 @@
 import { computed, inject, isRef, ref, unref } from 'vue'
 import { get } from 'lodash-unified'
-import Zhcn from '@setaria-components/locale/lang/zh-cn'
+import Zhcn from '@setaria-business-framework/locale/lang/zh-cn'
 
 import type { MaybeRef } from '@vueuse/core'
 import type { InjectionKey, Ref } from 'vue'
-import type { Language } from '@setaria-components/locale'
+import type { Language } from '@setaria-business-framework/locale'
 
 export type TranslatorOption = Record<string, string | number>
 export type Translator = (path: string, option?: TranslatorOption) => string

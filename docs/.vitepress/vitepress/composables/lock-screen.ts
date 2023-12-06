@@ -6,7 +6,7 @@ import {
   getStyle,
   hasClass,
   removeClass,
-} from '@setaria-components/utils'
+} from '@setaria-business-framework/utils'
 
 export const useLockScreen = () => {
   let scrollBarWidth = 0

@@ -7,7 +7,7 @@ pnpm update:version
 
 pnpm build
 
-cd dist/setaria-components
+cd dist/setaria-business-framework
 npm publish --provenance
 cd -
 

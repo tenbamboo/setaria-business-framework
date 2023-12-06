@@ -15,7 +15,7 @@
 <script lang="ts" setup>
 import { reactive } from 'vue'
 import { ElMessage } from 'element-plus'
-import type { SchemaProps } from 'setaria-components'
+import type { SchemaProps } from 'setaria-business-framework'
 const beforeAddRow = (data) => {
   // 这里返回一个data，是一个基本的对象内容
   return {

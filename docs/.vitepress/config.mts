@@ -1,6 +1,6 @@
 import consola from 'consola'
-import { REPO_BRANCH, REPO_PATH } from '@setaria-components/build-constants'
-import { docsDirName } from '@setaria-components/build-utils'
+import { REPO_BRANCH, REPO_PATH } from '@setaria-business-framework/build-constants'
+import { docsDirName } from '@setaria-business-framework/build-utils'
 import { languages } from './utils/lang'
 import { features, head, mdPlugin, nav, sidebars } from './config'
 import type { UserConfig } from 'vitepress'
@@ -45,8 +45,8 @@ export const config: UserConfig = {
   title: 'Element Plus',
   description: 'a Vue 3 based component library for designers and developers',
   lastUpdated: true,
-  // base: process.env.NODE_ENV === 'production' ? '/setaria-components' : '/',
-  base: '/setaria-components',
+  // base: process.env.NODE_ENV === 'production' ? '/setaria-business-framework' : '/',
+  base: '/setaria-business-framework',
   head,
   themeConfig: {
     repo: REPO_PATH,
@@ -58,7 +58,7 @@ export const config: UserConfig = {
     lastUpdated: 'Last Updated',
 
     logo: '/images/element-plus-logo.svg',
-    logoSmall: '/images/setaria-components-logo-small.svg',
+    logoSmall: '/images/setaria-business-framework-logo-small.svg',
     sidebars,
     nav,
     agolia: {

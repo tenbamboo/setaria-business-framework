@@ -19,7 +19,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 
-import type { UploadUserFile, UploadFile } from 'setaria-components'
+import type { UploadUserFile, UploadFile } from 'setaria-business-framework'
 
 const fileList = ref<UploadUserFile[]>([
   {

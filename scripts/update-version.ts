@@ -3,7 +3,7 @@ import chalk from 'chalk'
 import {
   errorAndExit,
   getWorkspacePackages,
-} from '@setaria-components/build-utils'
+} from '@setaria-business-framework/build-utils'
 import type { Project } from '@pnpm/find-workspace-packages'
 
 async function main() {
@@ -21,15 +21,18 @@ async function main() {
   consola.log(chalk.cyan(`$TAG_VERSION: ${tagVersion}`))
   consola.log(chalk.cyan(`$GIT_HEAD: ${gitHead}`))
 
-  consola.debug(chalk.yellow(`Updating package.json for setaria-components`))
+  consola.debug(
+    chalk.yellow(`Updating package.json for setaria-business-framework`)
+  )
 
   const pkgs = Object.fromEntries(
     (await getWorkspacePackages()).map((pkg) => [pkg.manifest.name!, pkg])
   )
   const elementPlus =
-    pkgs['setaria-components'] || pkgs['@setaria-components/nightly']
-  const eslintConfig = pkgs['@setaria-components/eslint-config']
-  const metadata = pkgs['@setaria-components/metadata']
+    pkgs['setaria-business-framework'] ||
+    pkgs['@setaria-business-framework/nightly']
+  const eslintConfig = pkgs['@setaria-business-framework/eslint-config']
+  const metadata = pkgs['@setaria-business-framework/metadata']
 
   const writeVersion = async (project: Project) => {
     await project.writeProjectManifest({

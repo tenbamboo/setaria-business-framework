@@ -16,7 +16,7 @@
     "rootDir": ".",
     "types": [],
     "paths": {
-      "@setaria-components/*": ["packages/*"]
+      "@setaria-business-framework/*": ["packages/*"]
     }
   }
 }

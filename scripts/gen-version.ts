@@ -1,8 +1,8 @@
 import { writeFile } from 'fs/promises'
 import path from 'path'
 import consola from 'consola'
-import { epRoot } from '@setaria-components/build-utils'
-import pkg from '../packages/setaria-components/package.json' // need to be checked
+import { epRoot } from '@setaria-business-framework/build-utils'
+import pkg from '../packages/setaria-business-framework/package.json' // need to be checked
 
 function getVersion() {
   const tagVer = process.env.TAG_VERSION

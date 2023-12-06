@@ -5,7 +5,7 @@
 ## Installation
 
 ```shell
-npm i setaria-components
+npm i setaria-business-framework
 ```
 
 ## Usage
@@ -13,13 +13,13 @@ npm i setaria-components
 Use Sass import
 
 ```css
-@use 'setaria-components/lib/theme-chalk/index.scss';
+@use 'setaria-business-framework/lib/theme-chalk/index.scss';
 ```
 
 Or Use vite/webpack
 
 ```javascript
-import 'setaria-components/lib/theme-chalk/index.css'
+import 'setaria-business-framework/lib/theme-chalk/index.css'
 ```
 
 Or
@@ -27,15 +27,15 @@ Or
 ```html
 <link
   rel="stylesheet"
-  href="https://unpkg.com/setaria-components/lib/theme-chalk/index.css"
+  href="https://unpkg.com/setaria-business-framework/lib/theme-chalk/index.css"
 />
 ```
 
 ## Import on demand
 
 ```javascript
-import 'setaria-components/lib/theme-chalk/input.css'
-import 'setaria-components/lib/theme-chalk/select.css'
+import 'setaria-business-framework/lib/theme-chalk/input.css'
+import 'setaria-business-framework/lib/theme-chalk/select.css'
 
 // ...
 ```

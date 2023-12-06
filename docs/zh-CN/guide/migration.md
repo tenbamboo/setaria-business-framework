@@ -5,7 +5,7 @@ lang: zh-CN
 
 # 迁移
 
-[此指南](https://github.com/setaria-components/setaria-components/discussions/5658)将帮助您从 Element UI 2.x 升级到 Element Plus。
+[此指南](https://github.com/setaria-business-framework/setaria-business-framework/discussions/5658)将帮助您从 Element UI 2.x 升级到 Element Plus。
 
 ## Vue 3 迁移构建
 

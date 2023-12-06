@@ -1,5 +1,5 @@
 import { computed, getCurrentInstance, inject, unref } from 'vue'
-import { debugWarn, isClient } from '@setaria-components/utils'
+import { debugWarn, isClient } from '@setaria-business-framework/utils'
 import { useGetDerivedNamespace } from '../use-namespace'
 
 import type { InjectionKey, Ref } from 'vue'

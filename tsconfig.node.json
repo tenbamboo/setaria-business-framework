@@ -11,8 +11,8 @@
     "internal/**/*.json",
     "scripts/**/*",
     "packages/theme-chalk/*",
-    "packages/setaria-components/version.ts",
-    "packages/setaria-components/package.json"
+    "packages/setaria-business-framework/version.ts",
+    "packages/setaria-business-framework/package.json"
   ],
   "exclude": ["**/__tests__/**", "**/tests/**", "**/dist"]
 }

@@ -26,7 +26,7 @@ const onVersionChange = (val) => {
 onMounted(async () => {
   try {
     const { data } = await axios.get<Release[]>(
-      'https://api.github.com/repos/setaria-components/setaria-components/releases'
+      'https://api.github.com/repos/setaria-business-framework/setaria-business-framework/releases'
     )
     releases.value = data
     currentRelease.value = data[0]

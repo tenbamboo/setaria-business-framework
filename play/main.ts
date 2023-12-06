@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import '@setaria-components/theme-chalk/src/dark/css-vars.scss'
+import '@setaria-business-framework/theme-chalk/src/dark/css-vars.scss'
 ;(async () => {
   const apps = import.meta.glob('./src/*.vue')
   const name = location.pathname.replace(/^\//, '') || 'App'

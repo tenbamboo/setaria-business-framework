@@ -29,10 +29,10 @@ lang: zh-CN
 ```ts
 // main.ts
 // 如果只想导入css变量
-import 'setaria-components/theme-chalk/dark/css-vars.css'
+import 'setaria-business-framework/theme-chalk/dark/css-vars.css'
 ```
 
-> 也可以参考我们提供的 [setaria-components-vite-starter 模版](https://github.com/setaria-components/setaria-components-vite-starter) 例子。
+> 也可以参考我们提供的 [setaria-business-framework-vite-starter 模版](https://github.com/setaria-business-framework/setaria-business-framework-vite-starter) 例子。
 
 ## 自定义变量
 
@@ -53,7 +53,7 @@ html.dark {
 
 ```ts
 // main.ts
-import 'setaria-components/theme-chalk/dark/css-vars.css'
+import 'setaria-business-framework/theme-chalk/dark/css-vars.css'
 import './styles/dark/css-vars.css'
 ```
 
@@ -66,7 +66,7 @@ import './styles/dark/css-vars.css'
 ```scss
 // styles/element/index.scss
 /* 覆盖你需要的变量 */
-@forward 'setaria-components/theme-chalk/src/dark/var.scss' with (
+@forward 'setaria-business-framework/theme-chalk/src/dark/var.scss' with (
   $bg-color: (
     'page': #0a0a0a,
     '': #626aef,
@@ -80,5 +80,5 @@ import './styles/dark/css-vars.css'
 import './styles/element/index.scss'
 
 // 只想导入scss？
-// import 'setaria-components/theme-chalk/src/dark/css-vars.scss'
+// import 'setaria-business-framework/theme-chalk/src/dark/css-vars.scss'
 ```

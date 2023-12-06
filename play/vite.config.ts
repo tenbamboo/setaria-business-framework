@@ -15,7 +15,7 @@ import {
   getPackageDependencies,
   pkgRoot,
   projRoot,
-} from '@setaria-components/build-utils'
+} from '@setaria-business-framework/build-utils'
 import type { Plugin } from 'vite'
 import './vite.init'
 
@@ -43,11 +43,11 @@ export default defineConfig(async ({ mode }) => {
     resolve: {
       alias: [
         {
-          find: /^setaria-components(\/(es|lib))?$/,
+          find: /^setaria-business-framework(\/(es|lib))?$/,
           replacement: path.resolve(epRoot, 'index.ts'),
         },
         {
-          find: /^setaria-components\/(es|lib)\/(.*)$/,
+          find: /^setaria-business-framework\/(es|lib)\/(.*)$/,
           replacement: `${pkgRoot}/$2`,
         },
       ],

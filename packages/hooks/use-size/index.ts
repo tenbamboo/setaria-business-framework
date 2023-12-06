@@ -1,9 +1,9 @@
 import { computed, inject, unref } from 'vue'
-import { buildProp } from '@setaria-components/utils'
-import { componentSizes } from '@setaria-components/constants'
+import { buildProp } from '@setaria-business-framework/utils'
+import { componentSizes } from '@setaria-business-framework/constants'
 
 import type { InjectionKey, Ref } from 'vue'
-import type { ComponentSize } from '@setaria-components/constants'
+import type { ComponentSize } from '@setaria-business-framework/constants'
 
 export const useSizeProp = buildProp({
   type: String,

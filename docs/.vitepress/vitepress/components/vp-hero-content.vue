@@ -16,7 +16,7 @@
     <p class="mt-1">
       Made with ❤️ by
       <a
-        href="https://github.com/setaria-components"
+        href="https://github.com/setaria-business-framework"
         target="_blank"
         rel="noopener noreferer"
         >Element Plus</a

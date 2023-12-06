@@ -1,4 +1,4 @@
 {
   "root": true,
-  "extends": ["@setaria-components/eslint-config"]
+  "extends": ["@setaria-business-framework/eslint-config"]
 }

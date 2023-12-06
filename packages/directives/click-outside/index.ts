@@ -1,4 +1,4 @@
-import { isClient, isElement } from '@setaria-components/utils'
+import { isClient, isElement } from '@setaria-business-framework/utils'
 
 import type {
   ComponentPublicInstance,

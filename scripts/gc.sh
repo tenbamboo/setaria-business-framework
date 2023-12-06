@@ -51,7 +51,7 @@ const props = defineProps(${INPUT_NAME}Props)
 EOF
 
 cat > $DIRNAME/src/$INPUT_NAME.ts <<EOF
-import { buildProps } from '@setaria-components/utils'
+import { buildProps } from '@setaria-business-framework/utils'
 
 import type { ExtractPropTypes } from 'vue'
 import type $NAME from './$INPUT_NAME.vue'
@@ -63,7 +63,7 @@ export type ${NAME}Instance = InstanceType<typeof $NAME>
 EOF
 
 cat <<EOF >"$DIRNAME/index.ts"
-import { withInstall } from '@setaria-components/utils'
+import { withInstall } from '@setaria-business-framework/utils'
 import $NAME from './src/$INPUT_NAME.vue'
 
 export const El$NAME = withInstall($NAME)

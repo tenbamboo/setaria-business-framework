@@ -1,5 +1,5 @@
 import { computed, onBeforeMount } from 'vue'
-import { isClient } from '@setaria-components/utils'
+import { isClient } from '@setaria-business-framework/utils'
 import { useGetDerivedNamespace } from '../use-namespace'
 import { useIdInjection } from '../use-id'
 

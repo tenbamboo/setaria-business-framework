@@ -39,7 +39,7 @@
 
 <script lang="ts" setup>
 import { reactive, ref } from 'vue'
-import type { SchemaProps } from 'setaria-components'
+import type { SchemaProps } from 'setaria-business-framework'
 
 const canAdd = ref(true)
 const canDelete = ref(true)

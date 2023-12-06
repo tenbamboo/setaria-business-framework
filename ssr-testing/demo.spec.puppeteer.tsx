@@ -4,7 +4,9 @@ import { renderToString } from '@vue/server-renderer'
 import { afterAll, beforeAll, describe, expect, it } from 'vitest'
 import puppeteer from 'puppeteer'
 import glob from 'fast-glob'
-import ElementPlus, { ID_INJECTION_KEY } from '../dist/setaria-components'
+import ElementPlus, {
+  ID_INJECTION_KEY,
+} from '../dist/setaria-business-framework'
 
 import type { Browser } from 'puppeteer'
 
@@ -33,7 +35,7 @@ describe('Cypress Button', () => {
         path: path.join(
           projectRoot,
           'dist',
-          'setaria-components',
+          'setaria-business-framework',
           'dist',
           'index.css'
         ),

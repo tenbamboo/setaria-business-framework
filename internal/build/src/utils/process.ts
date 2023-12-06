@@ -1,7 +1,7 @@
 import { spawn } from 'child_process'
 import chalk from 'chalk'
 import consola from 'consola'
-import { projRoot } from '@setaria-components/build-utils'
+import { projRoot } from '@setaria-business-framework/build-utils'
 
 export const run = async (command: string, cwd: string = projRoot) =>
   new Promise<void>((resolve, reject) => {

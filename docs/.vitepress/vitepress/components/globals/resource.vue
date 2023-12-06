@@ -4,7 +4,7 @@ import { isClient } from '@vueuse/core'
 import { useLang } from '../../composables/lang'
 import resourceLocale from '../../../i18n/pages/resource.json'
 import { sendEvent } from '../../../config/analytics'
-const mirrorUrl = 'setaria-components.gitee.io'
+const mirrorUrl = 'setaria-business-framework.gitee.io'
 const isMirrorUrl = () => {
   if (!isClient) return
   return window.location.hostname === mirrorUrl
@@ -18,9 +18,9 @@ const resourceUrl = {
   },
   gitee: {
     sketch:
-      'https://gitee.com/setaria-components/resources/raw/master/Element_Plus_Design_System_2022_1.0_Beta.zip',
+      'https://gitee.com/setaria-business-framework/resources/raw/master/Element_Plus_Design_System_2022_1.0_Beta.zip',
     axure:
-      'https://gitee.com/setaria-components/resources/raw/master/Element_Components_v2.1.0.rplib',
+      'https://gitee.com/setaria-business-framework/resources/raw/master/Element_Components_v2.1.0.rplib',
   },
 }[isMirrorUrl() ? 'gitee' : 'github']
 

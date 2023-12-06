@@ -12,7 +12,7 @@ We are excited that you are interested in contributing to Element Plus. Before s
 
 - Before submitting an issue, please check if similar problems have already been issued.
 
-- Please specify which version of `Element Plus` and `Vue` you are using, and provide OS and browser information. [Playground](https://setaria-components.run/) is recommended to build a live demo so that your issue can be reproduced clearly.
+- Please specify which version of `Element Plus` and `Vue` you are using, and provide OS and browser information. [Playground](https://setaria-business-framework.run/) is recommended to build a live demo so that your issue can be reproduced clearly.
 
 ## Pull Request Guidelines
 
@@ -22,7 +22,7 @@ We are excited that you are interested in contributing to Element Plus. Before s
 
   1. type: type must be one of [build, chore, ci, docs, feat, fix, perf, refactor, revert, release, style, test, improvement].
 
-  2. scope: scope must be one of [components, directives, setaria-components, hooks, locale, test-utils, theme-chalk, tokens, utils, project, core, style, docs, ci, dev, build, deploy, other, typography, color, border, var].
+  2. scope: scope must be one of [components, directives, setaria-business-framework, hooks, locale, test-utils, theme-chalk, tokens, utils, project, core, style, docs, ci, dev, build, deploy, other, typography, color, border, var].
 
   3. header: header must not be longer than 72 characters.
 

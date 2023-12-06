@@ -1,6 +1,6 @@
 import path from 'path'
-import { PKG_NAME } from '@setaria-components/build-constants'
-import { epOutput } from '@setaria-components/build-utils'
+import { PKG_NAME } from '@setaria-business-framework/build-constants'
+import { epOutput } from '@setaria-business-framework/build-utils'
 
 import type { ModuleFormat } from 'rollup'
 
@@ -13,12 +13,12 @@ export interface BuildInfo {
   output: {
     /** e.g: `es` */
     name: string
-    /** e.g: `dist/setaria-components/es` */
+    /** e.g: `dist/setaria-business-framework/es` */
     path: string
   }
 
   bundle: {
-    /** e.g: `setaria-components/es` */
+    /** e.g: `setaria-business-framework/es` */
     path: string
   }
 }

@@ -14,7 +14,7 @@ import {
   epPackage,
   getPackageDependencies,
   projRoot,
-} from '@setaria-components/build-utils'
+} from '@setaria-business-framework/build-utils'
 import { MarkdownTransform } from './.vitepress/plugins/markdown-transform'
 
 import type { Alias } from 'vite'
@@ -28,14 +28,14 @@ const alias: Alias[] = [
 if (process.env.DOC_ENV !== 'production') {
   alias.push(
     {
-      find: /^setaria-components(\/(es|lib))?$/,
+      find: /^setaria-business-framework(\/(es|lib))?$/,
       replacement: path.resolve(
         projRoot,
-        'packages/setaria-components/index.ts'
+        'packages/setaria-business-framework/index.ts'
       ),
     },
     {
-      find: /^setaria-components\/(es|lib)\/(.*)$/,
+      find: /^setaria-business-framework\/(es|lib)\/(.*)$/,
       replacement: `${path.resolve(projRoot, 'packages')}/$2`,
     }
   )
@@ -50,7 +50,10 @@ export default defineConfig(async ({ mode }) => {
   const optimizeDeps = [...new Set([...epDeps, ...docsDeps])].filter(
     (dep) =>
       !dep.startsWith('@types/') &&
-      !['@setaria-components/metadata', 'setaria-components'].includes(dep)
+      ![
+        '@setaria-business-framework/metadata',
+        'setaria-business-framework',
+      ].includes(dep)
   )
 
   optimizeDeps.push(

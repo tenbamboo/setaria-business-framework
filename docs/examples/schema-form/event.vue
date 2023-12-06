@@ -18,7 +18,7 @@
 <script lang="ts" setup>
 import { reactive, ref } from 'vue'
 import { ElRate } from 'element-plus'
-import type { SchemaProps } from 'setaria-components'
+import type { SchemaProps } from 'setaria-business-framework'
 const formValue = reactive({
   testCustomSlot: 3,
 })

@@ -1,5 +1,5 @@
 {
-  "name": "@setaria-components/utils",
+  "name": "@setaria-business-framework/utils",
   "private": true,
   "license": "MIT",
   "main": "index.ts",

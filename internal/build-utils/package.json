@@ -1,10 +1,10 @@
 {
-  "name": "@setaria-components/build-utils",
+  "name": "@setaria-business-framework/build-utils",
   "version": "0.0.1",
   "private": true,
   "description": "Build utils for Element Plus",
   "keywords": [
-    "setaria-components"
+    "setaria-business-framework"
   ],
   "license": "MIT",
   "main": "./dist/index.cjs",

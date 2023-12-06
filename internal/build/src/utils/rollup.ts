@@ -1,7 +1,7 @@
 import {
   epPackage,
   getPackageDependencies,
-} from '@setaria-components/build-utils'
+} from '@setaria-business-framework/build-utils'
 
 import type { OutputOptions, RollupBuild } from 'rollup'
 
