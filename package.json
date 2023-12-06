@@ -42,7 +42,7 @@
     "postinstall": "pnpm stub && concurrently \"pnpm gen:version\" \"pnpm run -C internal/metadata dev\""
   },
   "peerDependencies": {
-    "@setaria/setaria-ts": "^0.0.8",
+    "@setaria/setaria-ts": "0.0.14",
     "axios": "^1.6.2",
     "element-plus": "2.4.1",
     "pinia": "^2.1.7",
@@ -87,7 +87,7 @@
     "@setaria-business-framework/build": "workspace:^0.0.1",
     "@setaria-business-framework/build-utils": "workspace:^0.0.1",
     "@setaria-business-framework/eslint-config": "workspace:*",
-    "@setaria/setaria-ts": "^0.0.8",
+    "@setaria/setaria-ts": "0.0.14",
     "@types/fs-extra": "^9.0.13",
     "@types/gulp": "^4.0.9",
     "@types/jsdom": "^16.2.14",

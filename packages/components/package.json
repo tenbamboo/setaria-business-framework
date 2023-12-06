@@ -7,7 +7,7 @@
   "unpkg": "index.js",
   "jsdelivr": "index.js",
   "peerDependencies": {
-    "@setaria/setaria-ts": "^0.0.8",
+    "@setaria/setaria-ts": "0.0.14",
     "axios": "^1.6.2",
     "element-plus": "2.4.1",
     "pinia": "^2.1.7",

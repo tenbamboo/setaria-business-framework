@@ -103,8 +103,8 @@ importers:
         specifier: workspace:*
         version: link:internal/eslint-config
       '@setaria/setaria-ts':
-        specifier: ^0.0.8
-        version: 0.0.8(typescript@4.7.4)
+        specifier: 0.0.14
+        version: 0.0.14(@types/lodash-es@4.17.6)(lodash-es@4.17.21)(lodash@4.17.21)(typescript@4.7.4)
       '@types/fs-extra':
         specifier: ^9.0.13
         version: 9.0.13
@@ -259,8 +259,8 @@ importers:
         specifier: workspace:*
         version: link:../internal/metadata
       '@setaria/setaria-ts':
-        specifier: ^0.0.8
-        version: 0.0.8(typescript@4.7.4)
+        specifier: 0.0.14
+        version: 0.0.14(@types/lodash-es@4.17.6)(lodash-es@4.17.21)(lodash@4.17.21)(typescript@4.7.4)
       '@vue/shared':
         specifier: ^3.2.37
         version: 3.2.37
@@ -578,8 +578,8 @@ importers:
   packages/components:
     dependencies:
       '@setaria/setaria-ts':
-        specifier: ^0.0.8
-        version: 0.0.8(typescript@4.7.4)
+        specifier: 0.0.14
+        version: 0.0.14(@types/lodash-es@4.17.6)(lodash-es@4.17.21)(lodash@4.17.21)(typescript@4.7.4)
       axios:
         specifier: ^1.6.2
         version: 1.6.2
@@ -639,8 +639,8 @@ importers:
         specifier: npm:@sxzz/popperjs-es@^2.11.7
         version: /@sxzz/popperjs-es@2.11.7
       '@setaria/setaria-ts':
-        specifier: ^0.0.8
-        version: 0.0.8(typescript@4.7.4)
+        specifier: 0.0.14
+        version: 0.0.14(@types/lodash-es@4.17.6)(lodash-es@4.17.21)(lodash@4.17.21)(typescript@4.7.4)
       '@types/lodash':
         specifier: ^4.14.182
         version: 4.14.182
@@ -3307,20 +3307,23 @@ packages:
       rollup: 2.75.7
     dev: false
 
-  /@setaria/setaria-ts@0.0.8(typescript@4.7.4):
-    resolution: {integrity: sha512-hjGZgJ/+WqXKE1px4aHY/Ge5gF2JjySP4Foh/dsnH2ku1SE98v8p1qcFeWKRXzRkx/x5Fat/OfL7T6bWq9EK5g==}
+  /@setaria/setaria-ts@0.0.14(@types/lodash-es@4.17.6)(lodash-es@4.17.21)(lodash@4.17.21)(typescript@4.7.4):
+    resolution: {integrity: sha512-13/JZxoMOLWEUU6guJrF+ysvBhs4uIzHo2fCO6zAP9PDsPXDSL50XstJfvv3moOZeKuDWysl+5Q9/Kgre+YTgQ==}
     engines: {node: '>=18.0.0'}
     dependencies:
       axios: 1.6.2
-      lodash-es: 4.17.21
+      lodash-unified: 1.0.3(@types/lodash-es@4.17.6)(lodash-es@4.17.21)(lodash@4.17.21)
       pinia: 2.1.7(typescript@4.7.4)(vue@3.3.9)
       vue: 3.3.9(typescript@4.7.4)
       vue-i18n: 9.8.0(vue@3.3.9)
       vue-router: 4.2.5(vue@3.3.9)
       vue-types: 5.1.1(vue@3.3.9)
     transitivePeerDependencies:
+      - '@types/lodash-es'
       - '@vue/composition-api'
       - debug
+      - lodash
+      - lodash-es
       - typescript
 
   /@surma/rollup-plugin-off-main-thread@2.2.3:
@@ -8913,6 +8916,17 @@ packages:
 
   /lodash-unified@1.0.2(@types/lodash-es@4.17.6)(lodash-es@4.17.21)(lodash@4.17.21):
     resolution: {integrity: sha512-OGbEy+1P+UT26CYi4opY4gebD8cWRDxAT6MAObIVQMiqYdxZr1g3QHWCToVsm31x2NkLS4K3+MC2qInaRMa39g==}
+    peerDependencies:
+      '@types/lodash-es': '*'
+      lodash: '*'
+      lodash-es: '*'
+    dependencies:
+      '@types/lodash-es': 4.17.6
+      lodash: 4.17.21
+      lodash-es: 4.17.21
+
+  /lodash-unified@1.0.3(@types/lodash-es@4.17.6)(lodash-es@4.17.21)(lodash@4.17.21):
+    resolution: {integrity: sha512-WK9qSozxXOD7ZJQlpSqOT+om2ZfcT4yO+03FuzAHD0wF6S0l0090LRPDx3vhTTLZ8cFKpBn+IOcVXK6qOcIlfQ==}
     peerDependencies:
       '@types/lodash-es': '*'
       lodash: '*'
