@@ -16,7 +16,7 @@ export class Framework extends Setaria {
     // 注入配置内容
     injectConfig(config)
     super(config, envParmas, outterApp)
-    setupUI(this.app)
+    setupUI(this.app, config)
   }
 }
 export default {
