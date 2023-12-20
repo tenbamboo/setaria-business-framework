@@ -1,26 +1,10 @@
 {
   "test": {
-    "text": "Schema组件",
+    "text": "业务复合组件",
     "children": [
       {
-        "link": "/hello-would",
-        "text": "hello would"
-      },
-      {
-        "link": "/schema-form",
-        "text": "Schema Form"
-      },
-      {
-        "link": "/search-form",
-        "text": "Search Form"
-      },
-      {
-        "link": "/schema-table",
-        "text": "Schema Table"
-      },
-      {
-        "link": "/schema-table-edit",
-        "text": "Schema Table For Edit"
+        "link": "/search-page",
+        "text": "Search Page"
       }
     ]
   }

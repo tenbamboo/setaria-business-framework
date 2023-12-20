@@ -41,6 +41,19 @@ if (process.env.DOC_ENV !== 'production') {
   )
 }
 
+const serverProxy = {
+  '^/api/': {
+    // 远程服务地址
+    // target: 'http://49.233.49.69:8848/', // 外网Dev
+    // target: 'http://10.199.134.160:8200/', // 内网Dev
+    // target: 'http://10.199.134.149:9210/', // 内网Dev Docker
+    // target: 'http://10.199.134.160:9200/', // 内网Sit
+    target: 'http://10.199.130.50:9200/', // 内网UAT
+    secure: false,
+    changeOrigin: true,
+  },
+}
+
 export default defineConfig(async ({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
 
@@ -67,6 +80,7 @@ export default defineConfig(async ({ mode }) => {
     server: {
       host: true,
       https: !!env.HTTPS,
+      proxy: serverProxy,
       fs: {
         allow: [projRoot],
       },

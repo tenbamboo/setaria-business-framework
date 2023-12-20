@@ -1,0 +1,21 @@
+@use 'mixins/mixins' as *;
+@use 'mixins/var' as *;
+@use 'common/var' as *;
+
+@include b(schema-form) {
+}
+
+.bf-search-page_condition-form {
+  .el-card__header {
+    padding: 8px 20px;
+  }
+}
+.bf-search-page_result-table {
+  margin-top: 10px;
+  .el-card__header {
+    padding: 8px 20px;
+  }
+  .el-card__body {
+    padding: 10px;
+  }
+}

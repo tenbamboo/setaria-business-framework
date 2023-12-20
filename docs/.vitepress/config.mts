@@ -1,5 +1,8 @@
 import consola from 'consola'
-import { REPO_BRANCH, REPO_PATH } from '@setaria-business-framework/build-constants'
+import {
+  REPO_BRANCH,
+  REPO_PATH,
+} from '@setaria-business-framework/build-constants'
 import { docsDirName } from '@setaria-business-framework/build-utils'
 import { languages } from './utils/lang'
 import { features, head, mdPlugin, nav, sidebars } from './config'
@@ -42,7 +45,7 @@ languages.forEach((lang) => {
 })
 
 export const config: UserConfig = {
-  title: 'Element Plus',
+  title: 'Setaria Business Framework',
   description: 'a Vue 3 based component library for designers and developers',
   lastUpdated: true,
   // base: process.env.NODE_ENV === 'production' ? '/setaria-business-framework' : '/',

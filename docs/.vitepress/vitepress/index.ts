@@ -8,6 +8,7 @@ import '../../../packages/theme-chalk/src/reset.scss'
 // for dark mode
 // import '../../../packages/theme-chalk/src/dark/css-vars.scss'
 import 'element-plus/dist/index.css'
+import 'setaria-components/dist/index.css'
 
 import './styles/css-vars.scss'
 import './styles/app.scss'

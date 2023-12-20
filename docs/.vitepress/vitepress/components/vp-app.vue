@@ -1,12 +1,16 @@
 <script setup lang="ts">
-import { onMounted } from 'vue'
+import { computed, onMounted } from 'vue'
 // import { ElMessageBox } from 'setaria-business-framework'
 import nprogress from 'nprogress'
 // import dayjs from 'dayjs'
 import { isClient, useEventListener, useToggle } from '@vueuse/core'
-import { useSidebar } from '../composables/sidebar'
-import { useToggleWidgets } from '../composables/toggle-widgets'
 // import { useLang } from '../composables/lang'
+
+import { merge } from 'lodash-es'
+import elementZh from 'element-plus/dist/locale/zh-cn.mjs'
+import zhCn from 'setaria-components/dist/locale/zh-cn.mjs'
+import { useToggleWidgets } from '../composables/toggle-widgets'
+import { useSidebar } from '../composables/sidebar'
 import { breakpoints } from '../constant'
 import VPOverlay from './vp-overlay.vue'
 import VPSkipLink from './vp-skip-link.vue'
@@ -112,47 +116,55 @@ onMounted(async () => {
     }
   })
 })
+const locale = computed(() => {
+  // if (locale.value === 'zh-cn') {
+  return merge(elementZh, zhCn)
+  // }
+  // return merge(elementEN, en)
+})
 </script>
 
 <template>
   <div class="App">
-    <VPSkipLink />
-    <VPOverlay
-      class="overlay"
-      :show="isSidebarOpen"
-      @click="toggleSidebar(false)"
-    />
-    <VPNav />
-    <VPSubNav
-      v-if="hasSidebar"
-      :is-sidebar-open="isSidebarOpen"
-      @open-menu="toggleSidebar(true)"
-    />
-    <VPSidebar :open="isSidebarOpen" @close="toggleSidebar(false)">
-      <!-- <template #top>
+    <el-config-provider :locale="locale">
+      <VPSkipLink />
+      <VPOverlay
+        class="overlay"
+        :show="isSidebarOpen"
+        @click="toggleSidebar(false)"
+      />
+      <VPNav />
+      <VPSubNav
+        v-if="hasSidebar"
+        :is-sidebar-open="isSidebarOpen"
+        @open-menu="toggleSidebar(true)"
+      />
+      <VPSidebar :open="isSidebarOpen" @close="toggleSidebar(false)">
+        <!-- <template #top>
         <VPSponsors />
       </template> -->
-      <template #bottom>
-        <slot name="sidebar-bottom" />
-      </template>
-    </VPSidebar>
-    <VPContent :is-sidebar-open="isSidebarOpen">
-      <template #content-top>
-        <slot name="content-top" />
-      </template>
-      <template #content-bottom>
-        <slot name="content-bottom" />
-      </template>
-      <template #aside-top>
-        <slot name="aside-top" />
-      </template>
-      <template #aside-mid>
-        <slot name="aside-mid" />
-      </template>
-      <template #aside-bottom>
-        <slot name="aside-bottom" />
-      </template>
-    </VPContent>
-    <Debug />
+        <template #bottom>
+          <slot name="sidebar-bottom" />
+        </template>
+      </VPSidebar>
+      <VPContent :is-sidebar-open="isSidebarOpen">
+        <template #content-top>
+          <slot name="content-top" />
+        </template>
+        <template #content-bottom>
+          <slot name="content-bottom" />
+        </template>
+        <template #aside-top>
+          <slot name="aside-top" />
+        </template>
+        <template #aside-mid>
+          <slot name="aside-mid" />
+        </template>
+        <template #aside-bottom>
+          <slot name="aside-bottom" />
+        </template>
+      </VPContent>
+      <Debug />
+    </el-config-provider>
   </div>
 </template>

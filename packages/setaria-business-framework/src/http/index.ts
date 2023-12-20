@@ -3,6 +3,7 @@ import controllRepeatByRequest from './interceptors/request/controllRepeatByRequ
 import compensateError from './interceptors/response/compensateError'
 import sessionInvalid from './interceptors/response/sessionInvalid'
 import controllRepeatByResponse from './interceptors/response/controllRepeatByResponse'
+import peelLevel from './interceptors/response/peelLevel'
 
 import type { HttpConfig, InterceptorRaw } from '@setaria/setaria-ts'
 
@@ -12,6 +13,7 @@ const responseInterceptor: InterceptorRaw[] = [
   controllRepeatByResponse,
   compensateError,
   sessionInvalid,
+  peelLevel,
 ]
 
 export const http: HttpConfig[] = [

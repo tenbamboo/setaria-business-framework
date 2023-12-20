@@ -13,6 +13,7 @@ function gotoLoginPage() {
 
 export default {
   onRejected: (res: ServiceError) => {
+    debugger
     const { errorMessage, errorCode } = res
 
     if (+errorCode === 999) {
