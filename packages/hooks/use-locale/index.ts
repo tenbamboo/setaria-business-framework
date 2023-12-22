@@ -1,9 +1,11 @@
 import { computed, inject, isRef, ref, unref } from 'vue'
-import { get } from 'lodash-unified'
-import Zhcn from '@setaria-business-framework/locale/lang/zh-cn'
+import { get, merge } from 'lodash-unified'
 
+// import elementZh from 'element-plus/dist/locale/zh-cn.mjs'
+import { localeContextKey } from 'element-plus'
+import Zhcn from '@setaria-business-framework/locale/lang/zh-cn'
 import type { MaybeRef } from '@vueuse/core'
-import type { InjectionKey, Ref } from 'vue'
+import type { Ref } from 'vue'
 import type { Language } from '@setaria-business-framework/locale'
 
 export type TranslatorOption = Record<string, string | number>
@@ -41,10 +43,10 @@ export const buildLocaleContext = (
   }
 }
 
-export const localeContextKey: InjectionKey<Ref<Language | undefined>> =
-  Symbol('localeContextKey')
+// export const localeContextKey: InjectionKey<Ref<Language | undefined>> =
+//   Symbol('localeContextKey')
 
 export const useLocale = (localeOverrides?: Ref<Language | undefined>) => {
   const locale = localeOverrides || inject(localeContextKey, ref())!
-  return buildLocaleContext(computed(() => locale.value || Zhcn))
+  return buildLocaleContext(computed(() => locale.value || merge(Zhcn)))
 }

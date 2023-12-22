@@ -1,16 +1,18 @@
 /* eslint-disable @typescript-eslint/ban-types */
 // import { computed, nextTick, reactive, ref } from 'vue'
 import { nextTick, ref, watch } from 'vue'
-import { ElCard, useLocale } from 'element-plus'
+import { ElCard, ElLink } from 'element-plus'
 // import { Rank, Setting } from '@element-plus/icons-vue'
-import { cloneDeep, isEmpty } from 'lodash-unified'
+import { cloneDeep } from 'lodash-unified'
 // import XEUtils from 'xe-utils'
 import { ScSchemaTable, schemaTableProps } from 'setaria-components'
+import { useI18n } from 'vue-i18n'
 
 import {
   getSchemaByKeyArray,
   isFunction,
 } from '@setaria-business-framework/utils'
+import { getStorageData, setStorageData } from './common'
 import type { Slots } from 'vue'
 import type {
   SchemaProps,
@@ -18,11 +20,6 @@ import type {
   SchemaTableInstance,
   // SearchFormEvents,
 } from 'setaria-components'
-// import type { CheckboxValueType } from 'element-plus'
-// import type { VxeGridInstance } from 'vxe-table'
-
-// const visibleStorageKey = 'VXE_TABLE_CUSTOM_COLUMN_VISIBLE'
-// const dragSortStorageKey = 'VXE_TABLE_CUSTOM_COLUMN_DRAG_SORT'
 
 export declare interface PageRequestParams {
   pageSize?: number | string
@@ -38,6 +35,13 @@ export declare interface PageResponseParams {
   }
   code: number | string
   message: string
+}
+
+declare interface TableRef {
+  setSelection: Function
+  getSelection: Function
+  clearSelection: Function
+  getTableInstance: Function
 }
 
 export const useResultTable = (
@@ -59,26 +63,18 @@ export const useResultTable = (
   const innerOrderItem = ref<string>('')
   const innerOrderType = ref<string>('')
   const isLoading = ref<boolean>(false)
-  const { t } = useLocale()
+  const { t } = useI18n()
 
-  const getResultTableTitle = () => {
-    return props.tableTitle || t('common.title2')
+  const getTableRef = () => {
+    return tableRef.value as unknown as TableRef
   }
 
-  // const handlerDataChange: SearchFormEvents.DataChange = (
-  //   schemaKey,
-  //   val,
-  //   model
-  // ) => {
-  //   console.log(schemaKey, val, model)
-  // }
-
-  // const handlerDataReset: SearchFormEvents.DataReset = () => {
-  //   console.log()
-  // }
+  const getResultTableTitle = () => {
+    return props.tableTitle || '搜索结果'
+  }
 
   const createSearchCondition = () => {
-    const params = cloneDeep(props.conditionData)
+    const params = cloneDeep(conditionInfo.innerConditionData.value)
     // if (isFunction(props.beforeRequest)) {
     //   params = props.beforeRequest(params)
     // }
@@ -96,7 +92,7 @@ export const useResultTable = (
             pageNum: innerPageNum.value,
           } as PageRequestParams
           // 设置翻页信息
-          if (!isEmpty(innerOrderType) && !isEmpty(innerOrderItem)) {
+          if (innerOrderType.value && innerOrderItem.value) {
             params.orderBy = [
               {
                 name: innerOrderItem.value,
@@ -104,7 +100,9 @@ export const useResultTable = (
               },
             ]
           }
-          // writeEnterDetailStorage(params)
+          // 设置存储各个数据
+          setStorageData(props.tableId, params)
+
           // 执行请求
           props
             .request(params)
@@ -119,7 +117,7 @@ export const useResultTable = (
                 innerPageTotal.value = 0
               }
               nextTick().then(() => {
-                tableRef.value?.getTableInstance().recalculate(true)
+                getTableRef().getTableInstance()!.recalculate(true)
                 emit('search-success', tableData.value)
               })
               resolve(res)
@@ -164,6 +162,32 @@ export const useResultTable = (
     emit('sort-change', params)
   }
 
+  const handlerSelectionChange: SchemaTableEvents.SelectionChange = (
+    list,
+    currentOperItem
+  ) => {
+    emit('selection-change', list, currentOperItem)
+  }
+
+  const handlerSelectionAll: SchemaTableEvents.SelectionAll = (list) => {
+    emit('selection-all', list)
+  }
+
+  const handlerCellClick: SchemaTableEvents.CellClick = (params) => {
+    emit('cell-click', params)
+  }
+
+  const handlerCellDbClick: SchemaTableEvents.CellDbClick = (params) => {
+    emit('cell-dbclick', params)
+  }
+
+  const handlerOperButtonClick: SchemaTableEvents.OperButtonClick = (
+    key,
+    scope
+  ) => {
+    emit('oper-button-click', key, scope)
+  }
+
   const search = (isReset = false) => {
     if (isReset) {
       innerPageNum.value = 1
@@ -177,8 +201,33 @@ export const useResultTable = (
     return fetchData()
   }
 
+  const setSearchInfoFromStorageData = () => {
+    const storageData = getStorageData(props.tableId)
+
+    innerPageNum.value = storageData.pageNum
+    innerPageSize.value = storageData.pageSize || props?.pageSizes?.[0] || 10
+    if (storageData?.orderBy?.length) {
+      innerOrderItem.value = storageData?.orderBy?.[0]?.name
+      innerOrderType.value = storageData?.orderBy?.[0]?.type
+    }
+  }
+
+  const setSelection = (rows: any) => {
+    getTableRef().setSelection(rows)
+  }
+  const getSelection = () => {
+    return getTableRef().getSelection()
+  }
+  const clearSelection = () => {
+    return getTableRef().clearSelection()
+  }
+
   return {
     search,
+    tableRef,
+    setSelection,
+    getSelection,
+    clearSelection,
     resultTablemRender: () => {
       watch(
         () => props.tableSchema,
@@ -221,6 +270,65 @@ export const useResultTable = (
         return tableSlots
       }
 
+      const handlerExportData = () => {
+        return new Promise((resolve, reject) => {
+          const requestInterface = () => {
+            if (isFunction(props.exportData)) {
+              isLoading.value = true
+              // 执行请求
+              props
+                .exportData(createSearchCondition())
+                .then((res: any) => {
+                  emit('export-success', res)
+                  resolve(true)
+                })
+                .catch((e: any) => {
+                  emit('export-error', e)
+                  reject(new Error('导出失败，请重试'))
+                  // throw e;
+                })
+                .finally(() => {
+                  isLoading.value = false
+                })
+            } else {
+              reject(new Error('未指定exportData参数'))
+              // reject(new Error(this.$t('ExportData_Parameter_Not_Specified')));
+            }
+          }
+
+          conditionInfo.searchFormRef.value.validate(
+            (conditionValidate: boolean) => {
+              if (conditionValidate) {
+                requestInterface()
+              } else {
+                reject(new Error(t('common.inputRequiredFirst')))
+              }
+            }
+          )
+        })
+      }
+
+      const getBatchControlSlot = () => {
+        const res: any[] = []
+
+        if (props.exportData) {
+          res.push(
+            <ElLink
+              underline={false}
+              type="primary"
+              onClick={handlerExportData}
+            >
+              {t('common.exportData')}
+            </ElLink>
+          )
+        }
+
+        if (slots.batchControl) {
+          res.push(slots.batchControl())
+        }
+        return res
+      }
+
       const tableProps = Object.keys(props).reduce((res, key) => {
         if (key in schemaTableProps) {
           res[key as keyof typeof props] = props[key as keyof typeof props]
@@ -233,6 +341,7 @@ export const useResultTable = (
           search()
         })
       }
+      setSearchInfoFromStorageData()
 
       return (
         <ElCard
@@ -255,6 +364,14 @@ export const useResultTable = (
             page-total={innerPageTotal.value}
             onPage-change={handlerPageChange}
             onSort-change={handlerSortChange}
+            onSelection-change={handlerSelectionChange}
+            onSelection-all={handlerSelectionAll}
+            onCell-click={handlerCellClick}
+            onCell-dbclick={handlerCellDbClick}
+            onOper-button-click={handlerOperButtonClick}
+            v-slots={{
+              batchControl: getBatchControlSlot,
+            }}
             // {...{
             //   'onUpdate:pageSize': (val: any) => {
             //     innerPageSize.value = val

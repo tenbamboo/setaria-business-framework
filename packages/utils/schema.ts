@@ -1,5 +1,5 @@
 // import _ from 'lodash'
-import Setaria, { i18n } from '@setaria/setaria-ts'
+import { i18n } from '@setaria/setaria-ts'
 import type { SchemaProps } from 'setaria-components'
 
 declare type AnyObj = { [key: string]: any }

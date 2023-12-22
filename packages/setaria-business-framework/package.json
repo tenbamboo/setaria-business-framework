@@ -1,6 +1,6 @@
 {
   "name": "setaria-business-framework",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A Component Library for Vue 3",
   "keywords": [
     "component library",
@@ -71,11 +71,11 @@
     "lib/components/*/style/*"
   ],
   "peerDependencies": {
-    "@setaria/setaria-ts": "file:D:/git/setaria-ts",
+    "@setaria/setaria-ts": "^0.0.15",
     "axios": "^1.6.2",
     "element-plus": "2.4.1",
     "pinia": "^2.1.7",
-    "setaria-components": "file:D:/git/setaria-components/dist/setaria-components",
+    "setaria-components": "0.0.10",
     "vue": "^3.3.9",
     "vue-i18n": "9.8.0",
     "vue-router": "^4.2.5",

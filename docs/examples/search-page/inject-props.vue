@@ -4,11 +4,8 @@
     :schema="baseSchema"
     :condition-schema="conditionSchema"
     :request="handlerRequest"
-    :label-mode="false"
-    :show-oper="true"
-    :selection-type="'checkbox'"
-    :form-save="handlerFormSave"
-    :form-rules="formRules"
+    :column-width="'120px'"
+    :seq-column="true"
   >
     <template #condition.status="scope">
       <el-rate v-model="scope.data.status" />
@@ -38,16 +35,15 @@
 
 <script lang="ts" setup>
 import { reactive, ref } from 'vue'
-import qs from 'qs'
-import { ElMessage, ElRate } from 'element-plus'
+import { ElRate } from 'element-plus'
 import { http } from '@setaria/setaria-ts'
-import type { SchemaProps } from 'setaria-components'
+import type { SchemaProps, SchemaUiPropsByTable } from 'setaria-components'
 
 const request = http.admin
 const serachPage = ref()
 
 const baseSchema = reactive<SchemaProps>({
-  required: ['compId', 'dictId'],
+  required: [],
   properties: {
     compId: {
       type: 'string',
@@ -84,53 +80,11 @@ const conditionSchema = [
   'orderId',
   'status',
 ]
-// const tableUi = reactive<Record<string, SchemaUiPropsByTable>>({})
-
-const formRules = {
-  dictName: [
-    {
-      validator: (rule: any, value: any, callback: any) => {
-        if (!value?.includes('Hello')) {
-          callback(new Error('需包含Hello字样'))
-        }
-        callback()
-      },
-      trigger: 'blur',
-    },
-  ],
-}
 
 const handlerRequest = (pageInfo) => {
   return request.post('/t-rmbs-dict/pageSize', pageInfo).then((res) => {
     console.log(res)
     return res
-  })
-}
-
-const handlerFormSave = (data, mode) => {
-  let fun = Promise.resolve()
-  let label = ''
-  // 这里用于快速获取数据，实际业务代码请将接口请求相关代码独立出来
-  if (mode === 'add') {
-    fun = request.post(
-      `/t-rmbs-dict/save?${qs.stringify(data, { skipNulls: true })}`
-    )
-    label = '新增'
-  } else if (mode === 'update') {
-    fun = request.post(
-      `/t-rmbs-dict/update?${qs.stringify(data, { skipNulls: true })}`
-    )
-    label = '修改'
-  } else if (mode === 'delete') {
-    fun = request.post(
-      '/t-rmbs-dict/removeByIdList',
-      data.map((item) => item.id)
-    )
-    label = '删除'
-  }
-  return fun.then(() => {
-    serachPage.value.search()
-    ElMessage.success(`${label}成功`)
   })
 }
 </script>

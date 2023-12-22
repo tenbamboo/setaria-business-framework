@@ -1,6 +1,6 @@
-import { provide } from 'vue'
+// import { provide } from 'vue'
 
-import type { InjectionKey, ObjectDirective, Ref } from 'vue'
+import type { InjectionKey, ObjectDirective } from 'vue'
 
 type ForwardRefSetter = <T>(el: T) => void
 
@@ -11,15 +11,15 @@ export type ForwardRefInjectionContext = {
 export const FORWARD_REF_INJECTION_KEY: InjectionKey<ForwardRefInjectionContext> =
   Symbol('elForwardRef')
 
-export const useForwardRef = <T>(forwardRef: Ref<T | null>) => {
-  const setForwardRef = (el: T) => {
-    forwardRef.value = el
-  }
+// export const useForwardRef = <T>(forwardRef: Ref<T | null>) => {
+//   const setForwardRef = (el: T) => {
+//     forwardRef.value = el
+//   }
 
-  provide(FORWARD_REF_INJECTION_KEY, {
-    setForwardRef,
-  })
-}
+//   provide(FORWARD_REF_INJECTION_KEY, {
+//     setForwardRef,
+//   })
+// }
 
 export const useForwardRefDirective = (
   setForwardRef: ForwardRefSetter

@@ -7,8 +7,8 @@ import { isClient, useEventListener, useToggle } from '@vueuse/core'
 // import { useLang } from '../composables/lang'
 
 import { merge } from 'lodash-es'
-import elementZh from 'element-plus/dist/locale/zh-cn.mjs'
-import zhCn from 'setaria-components/dist/locale/zh-cn.mjs'
+// import elementZh from 'element-plus/dist/locale/zh-cn.mjs'
+// import zhCn from 'setaria-components/dist/locale/zh-cn.mjs'
 import { useToggleWidgets } from '../composables/toggle-widgets'
 import { useSidebar } from '../composables/sidebar'
 import { breakpoints } from '../constant'
@@ -118,7 +118,7 @@ onMounted(async () => {
 })
 const locale = computed(() => {
   // if (locale.value === 'zh-cn') {
-  return merge(elementZh, zhCn)
+  return {} //merge(elementZh, zhCn)
   // }
   // return merge(elementEN, en)
 })

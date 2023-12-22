@@ -2,6 +2,7 @@
   <bf-search-page
     :schema="baseSchema"
     :condition-schema="conditionSchema"
+    :default-condition-data="conditionData"
     :request="handlerRequest"
   />
   <!-- <el-button @click="test1">test</el-button> -->
@@ -41,6 +42,9 @@ const baseSchema = reactive<SchemaProps>({
     },
     status: { type: 'string', description: '', title: '状态' },
   },
+})
+const conditionData = reactive({
+  dictName: 'Hello1',
 })
 
 const conditionSchema = [

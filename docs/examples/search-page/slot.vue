@@ -2,7 +2,6 @@
   <bf-search-page
     :schema="baseSchema"
     :condition-schema="conditionSchema"
-    :condition-data="conditionData"
     :request="handlerRequest"
   >
     <template #condition.status="scope">
@@ -10,14 +9,11 @@
     </template>
     <template #table.status="scope"> !!!{{ scope.data.status }}!!! </template>
   </bf-search-page>
-  {{ conditionData }}
-  <!-- <el-button @click="test1">test</el-button> -->
 </template>
 
 <script lang="ts" setup>
 import { reactive, ref } from 'vue'
 import { ElRate } from 'element-plus'
-import { createDefaultObjectBySchema } from 'setaria-business-framework'
 import { http } from '@setaria/setaria-ts'
 import type { SchemaProps, SchemaUiPropsByTable } from 'setaria-components'
 
@@ -51,7 +47,6 @@ const baseSchema = reactive<SchemaProps>({
     status: { type: 'string', description: '', title: '状态' },
   },
 })
-const conditionData = reactive(createDefaultObjectBySchema(baseSchema))
 
 const conditionSchema = [
   'dictName',

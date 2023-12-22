@@ -3,7 +3,6 @@
     ref="serachPage"
     :schema="baseSchema"
     :condition-schema="conditionSchema"
-    :condition-data="conditionData"
     :request="handlerRequest"
     :is-initial-search="false"
   >
@@ -30,7 +29,6 @@
       </div>
     </template>
   </bf-search-page>
-  {{ conditionData }}
   <!-- <el-button @click="test1">test</el-button> -->
 </template>
 
@@ -38,7 +36,6 @@
 import { reactive, ref } from 'vue'
 import qs from 'qs'
 import { ElMessage, ElRate } from 'element-plus'
-import { createDefaultObjectBySchema } from 'setaria-business-framework'
 import { http } from '@setaria/setaria-ts'
 import type { SchemaProps, SchemaUiPropsByTable } from 'setaria-components'
 
@@ -75,7 +72,6 @@ const baseSchema = reactive<SchemaProps>({
     status: { type: 'string', description: '', title: '状态' },
   },
 })
-const conditionData = reactive(createDefaultObjectBySchema(baseSchema))
 
 // 这里通过required 来控制必填
 const conditionSchema = reactive({

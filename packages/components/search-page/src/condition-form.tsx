@@ -1,16 +1,19 @@
 /* eslint-disable @typescript-eslint/ban-types */
 // import { computed, nextTick, reactive, ref } from 'vue'
 import { ref, watch } from 'vue'
-import { ElCard, useLocale } from 'element-plus'
+import { ElCard } from 'element-plus'
 // import { Rank, Setting } from '@element-plus/icons-vue'
 // import { isArray } from 'lodash-unified'
 // import XEUtils from 'xe-utils'
 import { ScSearchForm } from 'setaria-components'
-
+import { cloneDeep, merge } from 'lodash-unified'
 import {
+  createDefaultObjectBySchema,
   getSchemaByKeyArray,
   isFunction,
 } from '@setaria-business-framework/utils'
+import { getStorageData } from './common'
+
 import type {
   SchemaFormInstance,
   SchemaProps,
@@ -18,7 +21,7 @@ import type {
 } from 'setaria-components'
 // import type { CheckboxValueType } from 'element-plus'
 // import type { VxeGridInstance } from 'vxe-table'
-import type { Ref, Slots } from 'vue'
+import type { Slots } from 'vue'
 // const visibleStorageKey = 'VXE_TABLE_CUSTOM_COLUMN_VISIBLE'
 // const dragSortStorageKey = 'VXE_TABLE_CUSTOM_COLUMN_DRAG_SORT'
 const COLUMNS = 3
@@ -33,14 +36,16 @@ export const useConditionForm = (
     properties: {},
     required: [],
   })
-  const { t } = useLocale()
+  const innerConditionData = ref({})
+  // const { t } = useLocale()
   const searchFormRef = ref<SchemaFormInstance>()
 
   return {
     searchFormRef,
+    innerConditionData,
     conditionFormRender: (tableInfo: any) => {
       const getConditionTitle = () => {
-        return props.conditionTitle || t('common.title')
+        return props.conditionTitle || '搜索条件'
       }
 
       const handlerDataChange: SearchFormEvents.DataChange = (
@@ -48,9 +53,22 @@ export const useConditionForm = (
         val,
         model
       ) => {
+        // props.conditionData[schemaKey] = val
         emit('condition-change', schemaKey, val, model)
       }
       const handlerDataReset: SearchFormEvents.DataReset = () => {
+        if (tableInfo.tableRef.value.getSelection()?.length) {
+          emit('selection-change', [])
+          // 清空选择的数据
+          tableInfo.tableRef.value.clearSelection()
+        }
+
+        innerConditionData.value = merge(
+          createDefaultObjectBySchema(props.schema)
+          // 这块有一个争议，是否在重置的时候把默认的值赋值进来
+          // cloneDeep(props.defaultConditionData)
+        )
+
         if (props.isResetAfterRequest) {
           tableInfo.search(true)
         }
@@ -77,6 +95,22 @@ export const useConditionForm = (
         }
       )
 
+      watch(
+        () => props.defaultConditionData,
+        () => {
+          const storageData = getStorageData(props.tableId)
+          innerConditionData.value = merge(
+            createDefaultObjectBySchema(props.schema),
+            cloneDeep(props.defaultConditionData),
+            storageData
+          )
+        },
+        {
+          immediate: true,
+          deep: true,
+        }
+      )
+
       const getConditionSlots = () => {
         const SLOT_PREFIX = 'condition.'
         const conditionSlots = {} as {
@@ -92,12 +126,19 @@ export const useConditionForm = (
               }
             }
           }
-          // customSlots[key] = (scope: any) => {
-          //   return slots[key]?.({ status: 'edit', data: scope })
-          // }
         })
+        if (Object.keys(conditionSlots).length) {
+          return conditionSlots
+        }
 
-        return conditionSlots
+        return null
+      }
+
+      const getFormButtonSlot = () => {
+        if (isFunction(slots.conditionButton)) {
+          return (slots.conditionButton as Function)()
+        }
+        return null
       }
       return (
         <ElCard
@@ -111,7 +152,7 @@ export const useConditionForm = (
             ref={searchFormRef}
             label-position="top"
             label-suffix=":"
-            modelValue={props.conditionData}
+            modelValue={innerConditionData.value}
             button-layout={props.conditionButtonLayout}
             columns={COLUMNS}
             expand={props.expand}
@@ -121,6 +162,9 @@ export const useConditionForm = (
             collapse={props.collapse}
             onData-change={handlerDataChange}
             onData-reset={handlerDataReset}
+            v-slots={{
+              button: getFormButtonSlot,
+            }}
             // on-expandChange={onExpand}
             // nativeOnSubmit={onSubmit}
           >

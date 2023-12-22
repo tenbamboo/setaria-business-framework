@@ -162,8 +162,6 @@ export const searchPageProps = buildProps({
       type: Boolean,
       default: false,
     },
-    // 行主键
-    rowKey: String,
     canAdd: {
       type: Boolean,
       default: true,
@@ -261,9 +259,9 @@ export const searchPageProps = buildProps({
     type: Object as PropType<Record<string, SchemaUiPropsByTable>>,
   },
   /**
-   * 查询条件值
+   * 默认查询条件值
    */
-  conditionData: {
+  defaultConditionData: {
     type: Object as PropType<Record<string, any>>,
   },
 
@@ -278,6 +276,9 @@ export const searchPageProps = buildProps({
   isResetAfterRequest: {
     type: Boolean,
     default: true,
+  },
+  exportData: {
+    type: Function,
   },
 } as const)
 
