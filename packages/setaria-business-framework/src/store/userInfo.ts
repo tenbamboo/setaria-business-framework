@@ -1,7 +1,18 @@
 import { defineStore } from 'pinia'
 import { store } from '@setaria/setaria-ts'
 // import type { StoreNullable } from '../types/'
-import type { UserInfo } from '../types/store'
+// import type { UserInfo } from '../types/store'
+
+export declare interface UserInfo {
+  userId?: string | number
+  username?: string
+  realName?: string
+  avatar?: string
+  desc?: string
+  homePath?: string
+  // roles: RoleInfo[];
+}
+
 type StoreNullable<T> = T | null
 
 interface UserState {

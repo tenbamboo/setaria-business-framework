@@ -1,5 +1,54 @@
 {
-  "test": {
+  "baseDoc": {
+    "text": "框架基础说明",
+    "children": [
+      {
+        "text": "环境准备",
+        "link": "/installation"
+      },
+      {
+        "link": "/router",
+        "text": "路由"
+      },
+      {
+        "link": "/vuex",
+        "text": "状态管理"
+      },
+      {
+        "link": "/http",
+        "text": "服务调用"
+      },
+      {
+        "link": "/i18n",
+        "text": "国际化-未完成"
+      },
+      {
+        "link": "/json-schema",
+        "text": "JsonSchema"
+      },
+      {
+        "link": "/json-ui-schema",
+        "text": "JsonUiSchema"
+      },
+      {
+        "link": "/json-rule",
+        "text": "JsonRule"
+      },
+      {
+        "link": "/schema-utils",
+        "text": "Schema 工具方法"
+      },
+      {
+        "link": "/schema-ui-utils",
+        "text": "Schema UI 工具方法"
+      },
+      {
+        "link": "/OSS",
+        "text": "!文件服务 工具方法-未完成"
+      }
+    ]
+  },
+  "business": {
     "text": "业务复合组件",
     "children": [
       {

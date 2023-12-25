@@ -1,0 +1,2875 @@
+{
+  "ACTReport": {
+    "title": "ACTReport",
+    "type": "object",
+    "properties": {
+      "_id": { "type": "string", "title": "_id", "description": "" },
+      "comlptTime": {
+        "type": "string",
+        "description": "",
+        "format": "date-time",
+        "title": "驾驶舱关账时间"
+      },
+      "comments": {
+        "type": "string",
+        "description": "",
+        "title": "已延迟备注"
+      },
+      "delayType": { "type": "string", "description": "", "title": "延迟类型" },
+      "deptId": { "type": "string", "description": "", "title": "部门id" },
+      "deptName": { "type": "string", "description": "", "title": "责任部门" },
+      "diff1Time": {
+        "type": "string",
+        "description": "",
+        "title": "差异（与驾驶舱关账时间形成）"
+      },
+      "diffTime": {
+        "type": "string",
+        "description": "",
+        "title": "提前、滞后时长"
+      },
+      "during": { "type": "string", "description": "", "title": "期间" },
+      "falseOU": {
+        "type": "integer",
+        "description": "",
+        "format": "int32",
+        "title": "异常OU数量"
+      },
+      "fullname": { "type": "string", "description": "", "title": "执行人" },
+      "infTask": {
+        "type": "string",
+        "description": "",
+        "title": "影响相关工作项"
+      },
+      "isAbnormal": {
+        "type": "string",
+        "description": "",
+        "title": "是否异常"
+      },
+      "isAlert": {
+        "type": "string",
+        "description": "",
+        "title": "是否有过提醒"
+      },
+      "isRejected": {
+        "type": "string",
+        "description": "",
+        "title": "是否发生逆向"
+      },
+      "item2Id": { "type": "string", "description": "", "title": "OU小类" },
+      "item2Name": { "type": "string", "description": "", "title": "OU小类" },
+      "itemId": { "type": "string", "description": "", "title": "OU大类id" },
+      "itemName": { "type": "string", "description": "", "title": "OU大类" },
+      "orgId": { "type": "string", "description": "", "title": "单位名称ID" },
+      "orgName": {
+        "type": "string",
+        "description": "",
+        "title": "单位名称（OU）"
+      },
+      "realEndTime": {
+        "type": "string",
+        "description": "",
+        "format": "date-time",
+        "title": "实际关账时间"
+      },
+      "rejectCNT": { "type": "string", "description": "", "title": "逆向次数" },
+      "rejectComment": {
+        "type": "string",
+        "description": "",
+        "title": "最后一次逆向备注"
+      },
+      "rejectDate": {
+        "type": "string",
+        "description": "",
+        "format": "date-time",
+        "title": "最后一次发生逆向的时间点"
+      },
+      "rejectType": {
+        "type": "string",
+        "description": "",
+        "title": "最后一次逆向类型"
+      },
+      "status": { "type": "string", "description": "", "title": "关账状态" },
+      "taskId": { "type": "string", "description": "", "title": "任务ID" },
+      "taskName": {
+        "type": "string",
+        "description": "",
+        "title": "关账任务（工作项）"
+      },
+      "taskRunTime": {
+        "type": "string",
+        "description": "",
+        "format": "date-time",
+        "title": "关账清单时间"
+      },
+      "trueOU": {
+        "type": "integer",
+        "description": "",
+        "format": "int32",
+        "title": "正常OU数量"
+      }
+    }
+  },
+  "CacTaskRejectRelationParam": {
+    "title": "CacTaskRejectRelationParam",
+    "type": "object",
+    "properties": {
+      "idList": {
+        "type": "array",
+        "description": "",
+        "items": { "type": "string" },
+        "title": "id"
+      },
+      "rejectId": { "type": "string", "description": "", "title": "rejectId" }
+    },
+    "description": "逆向申请单明细行参数"
+  },
+  "CompleteTaskParam": {
+    "title": "CompleteTaskParam",
+    "type": "object",
+    "properties": {
+      "comments": { "type": "string", "description": "", "title": "comments" },
+      "ids": { "type": "string", "description": "", "title": "ids" },
+      "typeId": { "type": "string", "description": "", "title": "typeId" }
+    },
+    "description": "我的待办工作项完成"
+  },
+  "ConfigRuleParam": {
+    "title": "ConfigRuleParam",
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "id"
+      },
+      "readonlyFlag": {
+        "type": "string",
+        "description": "",
+        "title": "readonlyFlag"
+      },
+      "ruleTypeDetls": {
+        "type": "string",
+        "description": "",
+        "title": "ruleTypeDetls"
+      },
+      "taskId": { "type": "string", "description": "", "title": "taskId" }
+    },
+    "description": "执行规则"
+  },
+  "GroupingByOUDetailParam": {
+    "title": "GroupingByOUDetailParam",
+    "type": "object",
+    "properties": {
+      "completeCount": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "已完成"
+      },
+      "doingIsDelayCount": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "进行中-已延迟"
+      },
+      "doingNormalCount": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "进行中-正常"
+      },
+      "endDate": { "type": "string", "description": "", "title": "结束日期" },
+      "fullName": { "type": "string", "description": "", "title": "执行人" },
+      "isRejectedCount": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "已逆向"
+      },
+      "notStartedCount": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "未开始总数"
+      },
+      "orgId": {
+        "type": "integer",
+        "description": "",
+        "format": "int32",
+        "title": "OU编码"
+      },
+      "orgName": { "type": "string", "description": "", "title": "OU名称" },
+      "ouCount": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "涉及OU数量"
+      },
+      "startDate": { "type": "string", "description": "", "title": "开始日期" },
+      "taskCount": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "工作项总数"
+      },
+      "taskId": {
+        "type": "integer",
+        "format": "int64",
+        "title": "taskId",
+        "description": ""
+      },
+      "taskName": {
+        "type": "string",
+        "description": "",
+        "title": "工作项名称"
+      },
+      "taskNo": { "type": "string", "description": "", "title": "工作项编码" },
+      "taskRunDeptId": {
+        "type": "string",
+        "title": "taskRunDeptId",
+        "description": ""
+      },
+      "taskRunDeptName": {
+        "type": "string",
+        "description": "",
+        "title": "责任部门"
+      },
+      "userId": {
+        "type": "integer",
+        "format": "int64",
+        "title": "userId",
+        "description": ""
+      },
+      "userName": { "type": "string", "description": "", "title": "执行人编码" }
+    },
+    "description": "我的监控"
+  },
+  "I18n": { "title": "I18n", "type": "object" },
+  "ListExecuteTaskParam": {
+    "title": "ListExecuteTaskParam",
+    "type": "object",
+    "properties": {
+      "comments": { "type": "string", "description": "", "title": "备注说明" },
+      "compltTime": {
+        "type": "string",
+        "description": "",
+        "title": "完成时间"
+      },
+      "dataType": { "type": "string", "description": "", "title": "参数" },
+      "delayType": { "type": "string", "description": "", "title": "延迟类型" },
+      "deptId": { "type": "string", "description": "", "title": "部门Id" },
+      "deptName": { "type": "string", "description": "", "title": "执行部门" },
+      "detlTaskRunType": {
+        "type": "string",
+        "description": "",
+        "title": "本次执行方式"
+      },
+      "endDate": {
+        "type": "string",
+        "description": "",
+        "title": "工作项运行结束时间"
+      },
+      "endTime": {
+        "type": "string",
+        "description": "",
+        "title": "完成结束时间"
+      },
+      "fullname": { "type": "string", "description": "", "title": "执行人" },
+      "id": { "type": "string", "description": "", "title": "主键" },
+      "isDelay": {
+        "type": "string",
+        "description": "",
+        "title": "是否延迟；0：未延迟；1：已延迟"
+      },
+      "isRejected": {
+        "type": "string",
+        "description": "",
+        "title": "是否产生过逆向；0：未逆向；1：有逆向；"
+      },
+      "orgId": { "type": "string", "description": "", "title": "公司OUID" },
+      "orgName": { "type": "string", "description": "", "title": "公司OU" },
+      "parameter": { "type": "string", "description": "", "title": "参数" },
+      "queryType": {
+        "type": "string",
+        "description": "",
+        "title": "计划发布标识"
+      },
+      "rejectComment": {
+        "type": "string",
+        "description": "",
+        "title": "逆向原因"
+      },
+      "rejectType": {
+        "type": "string",
+        "description": "",
+        "title": "逆向类型"
+      },
+      "ruleLogicDesc0": {
+        "type": "string",
+        "description": "",
+        "title": "执行规则描述"
+      },
+      "ruleLogicDesc3": {
+        "type": "string",
+        "description": "",
+        "title": "分析规则描述"
+      },
+      "ruleName0": {
+        "type": "string",
+        "description": "",
+        "title": "执行规则名称"
+      },
+      "ruleName3": {
+        "type": "string",
+        "description": "",
+        "title": "分析规则名称"
+      },
+      "sendPlan": { "type": "string", "description": "", "title": "请求类型" },
+      "startDate": {
+        "type": "string",
+        "description": "",
+        "title": "工作项运行开始时间"
+      },
+      "startTime": {
+        "type": "string",
+        "description": "",
+        "title": "完成开始时间"
+      },
+      "state": { "type": "string", "description": "", "title": "状态" },
+      "status": {
+        "type": "string",
+        "description": "",
+        "title": "状态：0：未开始；1：进行中；2：已完成"
+      },
+      "taskId": { "type": "string", "description": "", "title": "任务ID" },
+      "taskName": {
+        "type": "string",
+        "description": "",
+        "title": "工作项名称"
+      },
+      "taskNo": { "type": "string", "description": "", "title": "工作项编码" },
+      "taskRunDeptId": {
+        "type": "string",
+        "description": "",
+        "title": "工作项执行部门ID"
+      },
+      "taskRunFullname": {
+        "type": "string",
+        "description": "",
+        "title": "执行人名称"
+      },
+      "taskRunTime": {
+        "type": "string",
+        "description": "",
+        "title": "截止时间"
+      },
+      "taskRunTimeDate": {
+        "type": "string",
+        "description": "",
+        "title": "执行日期"
+      },
+      "taskRunTimeHour": {
+        "type": "string",
+        "description": "",
+        "title": "执行时间"
+      },
+      "taskRunType": {
+        "type": "string",
+        "description": "",
+        "title": "执行方式"
+      },
+      "taskRunUserId": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "执行人ID"
+      },
+      "type": {
+        "type": "string",
+        "description": "",
+        "title": "查询还是导出标识"
+      }
+    },
+    "description": "工作项参数"
+  },
+  "LongthReport": {
+    "title": "LongthReport",
+    "type": "object",
+    "properties": {
+      "_id": { "type": "string", "title": "_id", "description": "" },
+      "ave": {
+        "type": "number",
+        "description": "",
+        "format": "double",
+        "title": "平均值"
+      },
+      "diff": {
+        "type": "number",
+        "description": "",
+        "format": "double",
+        "title": "与平均值比较"
+      },
+      "during": { "type": "string", "description": "", "title": "期间" },
+      "endDate": {
+        "type": "string",
+        "description": "",
+        "format": "date-time",
+        "title": "结束时间"
+      },
+      "itemId": { "type": "string", "description": "", "title": "OU大类ID" },
+      "itemName": { "type": "string", "description": "", "title": "OU大类" },
+      "longth": {
+        "type": "number",
+        "description": "",
+        "format": "double",
+        "title": "关账总时长"
+      },
+      "max": {
+        "type": "number",
+        "description": "",
+        "format": "double",
+        "title": "最大值"
+      },
+      "min": {
+        "type": "number",
+        "description": "",
+        "format": "double",
+        "title": "最小值"
+      },
+      "orgId": {
+        "type": "string",
+        "description": "",
+        "title": "单位名称(OUID)"
+      },
+      "orgName": {
+        "type": "string",
+        "description": "",
+        "title": "单位名称(OU名称)"
+      },
+      "startDate": {
+        "type": "string",
+        "description": "",
+        "format": "date-time",
+        "title": "开始时间"
+      }
+    }
+  },
+  "OrderBy": {
+    "title": "OrderBy",
+    "type": "object",
+    "properties": {
+      "name": { "type": "string", "description": "", "title": "排序字段" },
+      "type": { "type": "string", "description": "", "title": "排序类型" }
+    },
+    "description": "排序"
+  },
+  "Pageable": {
+    "title": "Pageable",
+    "type": "object",
+    "properties": {
+      "offset": {
+        "type": "integer",
+        "format": "int64",
+        "title": "offset",
+        "description": ""
+      },
+      "pageNumber": {
+        "type": "integer",
+        "format": "int32",
+        "title": "pageNumber",
+        "description": ""
+      },
+      "pageSize": {
+        "type": "integer",
+        "format": "int32",
+        "title": "pageSize",
+        "description": ""
+      },
+      "paged": { "type": "boolean", "title": "paged", "description": "" },
+      "sort": {
+        "$ref": "#/components/schemas/SortRes",
+        "title": "sort",
+        "description": ""
+      },
+      "unpaged": { "type": "boolean", "title": "unpaged", "description": "" }
+    }
+  },
+  "QueryACTReportParam": {
+    "title": "QueryACTReportParam",
+    "type": "object",
+    "properties": {
+      "compare": { "type": "string", "description": "", "title": "compare" },
+      "dept": { "type": "string", "description": "", "title": "dept" },
+      "during": { "type": "string", "description": "", "title": "during" },
+      "itemId": { "type": "string", "description": "", "title": "itemId" },
+      "name": { "type": "string", "description": "", "title": "name" },
+      "orgId": { "type": "string", "description": "", "title": "orgId" },
+      "ouItem": { "type": "string", "description": "", "title": "ouItem" },
+      "ouItem2": { "type": "string", "description": "", "title": "ouItem2" },
+      "taskId": { "type": "string", "description": "", "title": "taskId" }
+    },
+    "description": "异常类型配置"
+  },
+  "QueryCacSysUserRoleParam": {
+    "title": "QueryCacSysUserRoleParam",
+    "type": "object",
+    "properties": {
+      "cockpitFlag": {
+        "type": "string",
+        "description": "",
+        "title": "cockpitFlag"
+      },
+      "groupId": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "groupId"
+      },
+      "groupName": {
+        "type": "string",
+        "description": "",
+        "title": "HR部门名称"
+      },
+      "groupNo": { "type": "string", "description": "", "title": "HR部门编码" },
+      "id": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "id"
+      },
+      "relationType": {
+        "type": "string",
+        "description": "",
+        "title": "relationType"
+      },
+      "roleId": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "角色编码"
+      },
+      "roleName": { "type": "string", "description": "", "title": "角色名称" },
+      "userFullName": {
+        "type": "string",
+        "description": "",
+        "title": "人员姓名"
+      },
+      "userId": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "userId"
+      },
+      "userName": { "type": "string", "description": "", "title": "人员编码" },
+      "userNum": { "type": "string", "description": "", "title": "人员编码" },
+      "userStatus": {
+        "type": "string",
+        "description": "",
+        "title": "人员是否启用"
+      }
+    },
+    "description": "用户角色统计参数"
+  },
+  "QueryCacTaskDetlParam": {
+    "title": "QueryCacTaskDetlParam",
+    "type": "object",
+    "properties": {
+      "allName": { "type": "string", "title": "allName", "description": "" },
+      "comments": { "type": "string", "description": "", "title": "备注说明" },
+      "completeCount": {
+        "type": "string",
+        "description": "",
+        "title": "已完成"
+      },
+      "compltTime": {
+        "type": "string",
+        "description": "",
+        "title": "完成时间"
+      },
+      "delayType": { "type": "string", "description": "", "title": "延迟类型" },
+      "deptId": { "type": "string", "description": "", "title": "部门Id" },
+      "deptName": { "type": "string", "description": "", "title": "执行部门" },
+      "detltaskRunType": {
+        "type": "string",
+        "description": "",
+        "title": "本次执行方式"
+      },
+      "doingIsDelayCount": {
+        "type": "string",
+        "description": "",
+        "title": "进行中-已延迟"
+      },
+      "doingNormalCount": {
+        "type": "string",
+        "description": "",
+        "title": "进行中-正常"
+      },
+      "endDate": {
+        "type": "string",
+        "description": "",
+        "title": "工作项运行结束时间"
+      },
+      "endTime": {
+        "type": "string",
+        "description": "",
+        "title": "完成结束时间"
+      },
+      "erpRequestStatus": {
+        "type": "string",
+        "description": "",
+        "title": "ERP运行状态"
+      },
+      "fullname": { "type": "string", "description": "", "title": "执行人" },
+      "id": { "type": "string", "description": "", "title": "主键" },
+      "isDelay": {
+        "type": "string",
+        "description": "",
+        "title": "是否延迟；0：未延迟；1：已延迟"
+      },
+      "isRejected": {
+        "type": "string",
+        "description": "",
+        "title": "是否产生过逆向；0：未逆向；1：有逆向；"
+      },
+      "isRejectedCount": {
+        "type": "string",
+        "description": "",
+        "title": "进行中-已逆向"
+      },
+      "notStartedCount": {
+        "type": "string",
+        "description": "",
+        "title": "未开始"
+      },
+      "orgId": { "type": "string", "description": "", "title": "公司OUID" },
+      "orgName": { "type": "string", "description": "", "title": "公司OU" },
+      "ouCount": { "type": "string", "description": "", "title": "涉及OU数量" },
+      "queryType": {
+        "type": "string",
+        "description": "",
+        "title": "计划发布标识"
+      },
+      "rejectComment": {
+        "type": "string",
+        "description": "",
+        "title": "ERP运行状态"
+      },
+      "rejectType": {
+        "type": "string",
+        "description": "",
+        "title": "逆向类型"
+      },
+      "rejectomment": {
+        "type": "string",
+        "description": "",
+        "title": "逆向原因"
+      },
+      "rule10CompareStatus": {
+        "type": "string",
+        "description": "",
+        "title": "规则10比对状态，1：无差异，完成工作项，-1：有差异，显示下载地址"
+      },
+      "ruleLogicDesc0": {
+        "type": "string",
+        "description": "",
+        "title": "执行规则描述"
+      },
+      "ruleLogicDesc1": {
+        "type": "string",
+        "description": "",
+        "title": "控制逻辑描述--导出使用"
+      },
+      "ruleLogicDesc2": {
+        "type": "string",
+        "description": "",
+        "title": "提醒逻辑描述--导出使用"
+      },
+      "ruleLogicDesc3": {
+        "type": "string",
+        "description": "",
+        "title": "分析规则描述"
+      },
+      "ruleName0": {
+        "type": "string",
+        "description": "",
+        "title": "执行规则名称"
+      },
+      "ruleName1": {
+        "type": "string",
+        "description": "",
+        "title": "控制规则名称--导出使用"
+      },
+      "ruleName2": {
+        "type": "string",
+        "description": "",
+        "title": "提醒规则名称--导出使用"
+      },
+      "ruleName3": {
+        "type": "string",
+        "description": "",
+        "title": "分析规则名称"
+      },
+      "sendPlan": { "type": "string", "description": "", "title": "请求类型" },
+      "startDate": {
+        "type": "string",
+        "description": "",
+        "title": "工作项运行开始时间"
+      },
+      "startTime": {
+        "type": "string",
+        "description": "",
+        "title": "完成开始时间"
+      },
+      "status": {
+        "type": "string",
+        "description": "",
+        "title": "状态：0：未开始；1：进行中；2：已完成"
+      },
+      "taskCount": {
+        "type": "string",
+        "description": "",
+        "title": "工作项总数"
+      },
+      "taskId": { "type": "string", "description": "", "title": "任务ID" },
+      "taskName": {
+        "type": "string",
+        "description": "",
+        "title": "工作项名称"
+      },
+      "taskNo": { "type": "string", "description": "", "title": "工作项编码" },
+      "taskRunDeptId": {
+        "type": "string",
+        "description": "",
+        "title": "工作项执行部门ID"
+      },
+      "taskRunDeptName": {
+        "type": "string",
+        "description": "",
+        "title": "责任部门"
+      },
+      "taskRunFullname": {
+        "type": "string",
+        "description": "",
+        "title": "执行人名称"
+      },
+      "taskRunTime": {
+        "type": "string",
+        "description": "",
+        "title": "截止时间"
+      },
+      "taskRunTimeDate": {
+        "type": "string",
+        "description": "",
+        "title": "执行日期"
+      },
+      "taskRunTimeHour": {
+        "type": "string",
+        "description": "",
+        "title": "执行时间"
+      },
+      "taskRunType": {
+        "type": "string",
+        "description": "",
+        "title": "执行方式"
+      },
+      "taskRunTypeName": {
+        "type": "string",
+        "description": "",
+        "title": "工作项执行方式：0手动；1自动--导出使用"
+      },
+      "taskRunUserId": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "执行人ID"
+      },
+      "type": {
+        "type": "string",
+        "description": "",
+        "title": "查询还是导出标识"
+      },
+      "userName": { "type": "string", "description": "", "title": "执行人编码" }
+    },
+    "description": "工作项参数"
+  },
+  "QueryCacTaskRejectParam": {
+    "title": "QueryCacTaskRejectParam",
+    "type": "object",
+    "properties": {
+      "applyDeptName": {
+        "type": "string",
+        "description": "",
+        "title": "applyDeptName"
+      },
+      "applySecondDeptId": {
+        "type": "string",
+        "description": "",
+        "title": "applySecondDeptId"
+      },
+      "applySecondDeptName": {
+        "type": "string",
+        "description": "",
+        "title": "applySecondDeptName"
+      },
+      "applyUserName": {
+        "type": "string",
+        "description": "",
+        "title": "applyUserName"
+      },
+      "applyUserNum": {
+        "type": "string",
+        "description": "",
+        "title": "applyUserNum"
+      },
+      "applyUserTel": {
+        "type": "string",
+        "description": "",
+        "title": "applyUserTel"
+      },
+      "buSegCode": {
+        "type": "string",
+        "description": "",
+        "title": "buSegCode"
+      },
+      "compltTime": {
+        "type": "string",
+        "description": "",
+        "format": "date-time",
+        "title": "完成时间"
+      },
+      "fullName": { "type": "string", "description": "", "title": "执行人" },
+      "id": { "type": "string", "description": "", "title": "id" },
+      "isDelay": { "type": "string", "description": "", "title": "是否延迟" },
+      "isRejected": {
+        "type": "string",
+        "description": "",
+        "title": "是否逆向"
+      },
+      "orgId": { "type": "string", "description": "", "title": "orgId" },
+      "orgName": { "type": "string", "description": "", "title": "公司OU" },
+      "rejectId": { "type": "string", "description": "", "title": "rejectId" },
+      "rejectReason": {
+        "type": "string",
+        "description": "",
+        "title": "rejectReason"
+      },
+      "rejectType": {
+        "type": "string",
+        "description": "",
+        "title": "rejectType"
+      },
+      "status": { "type": "string", "description": "", "title": "当前状态" },
+      "taskId": { "type": "string", "description": "", "title": "taskId" },
+      "taskName": {
+        "type": "string",
+        "description": "",
+        "title": "工作项名称"
+      },
+      "taskRunTime": {
+        "type": "string",
+        "description": "",
+        "format": "date-time",
+        "title": "截止时间"
+      },
+      "taxNumber": {
+        "type": "string",
+        "description": "",
+        "title": "taxNumber"
+      },
+      "type": { "type": "string", "description": "", "title": "type" },
+      "unitName": { "type": "string", "description": "", "title": "unitName" }
+    },
+    "description": "逆向申请"
+  },
+  "QueryFinishedTCacProcessRecordParam": {
+    "title": "QueryFinishedTCacProcessRecordParam",
+    "type": "object",
+    "properties": {
+      "applyUserName": {
+        "type": "string",
+        "description": "",
+        "title": "起草人"
+      },
+      "deptName": { "type": "string", "description": "", "title": "执行部门" },
+      "detlCount": {
+        "type": "integer",
+        "description": "",
+        "format": "int32",
+        "title": "工作项数量"
+      },
+      "endDate": { "type": "string", "description": "", "title": "结束时间" },
+      "flag": { "type": "string", "title": "flag", "description": "" },
+      "id": { "type": "string", "description": "", "title": "id" },
+      "month": { "type": "string", "description": "", "title": "类型" },
+      "orgId": { "type": "string", "description": "", "title": "OU编码" },
+      "orgName": { "type": "string", "description": "", "title": "OU名称" },
+      "ouCount": {
+        "type": "integer",
+        "description": "",
+        "format": "int32",
+        "title": "涉及OU数量"
+      },
+      "settingId": {
+        "type": "string",
+        "title": "settingId",
+        "description": ""
+      },
+      "startDate": { "type": "string", "description": "", "title": "开始时间" },
+      "submitFullName": {
+        "type": "string",
+        "description": "",
+        "title": "上一级审批人"
+      },
+      "submitTime": {
+        "type": "string",
+        "description": "",
+        "format": "date-time",
+        "title": "提交时间"
+      },
+      "taskCount": {
+        "type": "integer",
+        "description": "",
+        "format": "int32",
+        "title": "工作项数量"
+      },
+      "taskId": { "type": "string", "title": "taskId", "description": "" },
+      "taskName": {
+        "type": "string",
+        "description": "",
+        "title": "工作项名称"
+      },
+      "taskNo": { "type": "string", "description": "", "title": "工作项编码" },
+      "taskRunDeptId": {
+        "type": "string",
+        "title": "taskRunDeptId",
+        "description": ""
+      },
+      "taskRunTimeDate": {
+        "type": "string",
+        "description": "",
+        "title": "执行日期"
+      },
+      "taskRunTimeHour": {
+        "type": "string",
+        "description": "",
+        "title": "执行日期"
+      },
+      "taskRunType": {
+        "type": "string",
+        "description": "",
+        "title": "执行方式"
+      },
+      "type": { "type": "string", "description": "", "title": "类型" }
+    },
+    "description": "我的已办申请"
+  },
+  "QueryLongthReportParam": {
+    "title": "QueryLongthReportParam",
+    "type": "object",
+    "properties": {
+      "compare": { "type": "string", "description": "", "title": "compare" },
+      "dept": { "type": "string", "description": "", "title": "dept" },
+      "during": { "type": "string", "description": "", "title": "during" },
+      "itemId": { "type": "string", "description": "", "title": "itemId" },
+      "name": { "type": "string", "description": "", "title": "name" },
+      "orgId": { "type": "string", "description": "", "title": "orgId" },
+      "ouItem": { "type": "string", "description": "", "title": "ouItem" },
+      "ouItem2": { "type": "string", "description": "", "title": "ouItem2" },
+      "taskId": { "type": "string", "description": "", "title": "taskId" }
+    },
+    "description": "各单位管账时长分析"
+  },
+  "QueryTCacProcessRecordDetailParam": {
+    "title": "QueryTCacProcessRecordDetailParam",
+    "type": "object",
+    "properties": {
+      "allName": { "type": "string", "description": "", "title": "统筹岗人员" },
+      "comments": { "type": "string", "description": "", "title": "comments" },
+      "deptName": { "type": "string", "description": "", "title": "执行部门" },
+      "endDate": { "type": "string", "description": "", "title": "endDate" },
+      "flag": { "type": "string", "description": "", "title": "flag" },
+      "fullName": {
+        "type": "string",
+        "description": "",
+        "title": "执行人名称"
+      },
+      "id": { "type": "string", "description": "", "title": "id" },
+      "month": { "type": "string", "description": "", "title": "计划名称" },
+      "orgId": { "type": "string", "description": "", "title": "公司OUID" },
+      "orgName": { "type": "string", "description": "", "title": "公司OU" },
+      "rejectId": { "type": "string", "description": "", "title": "rejectId" },
+      "settingId": {
+        "type": "string",
+        "description": "",
+        "title": "settingId"
+      },
+      "startDate": {
+        "type": "string",
+        "description": "",
+        "title": "startDate"
+      },
+      "state": { "type": "string", "description": "", "title": "state" },
+      "submitFullname": {
+        "type": "string",
+        "description": "",
+        "title": "submitFullname"
+      },
+      "taskId": { "type": "string", "description": "", "title": "taskId" },
+      "taskName": {
+        "type": "string",
+        "description": "",
+        "title": "工作项名称"
+      },
+      "taskNo": { "type": "string", "description": "", "title": "工作项编码" },
+      "taskRunDeptId": {
+        "type": "string",
+        "description": "",
+        "title": "taskRunDeptId"
+      },
+      "taskRunTimeDate": {
+        "type": "string",
+        "description": "",
+        "title": "执行日期"
+      },
+      "taskRunTimeHour": {
+        "type": "string",
+        "description": "",
+        "title": "执行时间"
+      },
+      "taskRunType": {
+        "type": "string",
+        "description": "",
+        "title": "执行方式"
+      },
+      "type": { "type": "string", "description": "", "title": "type" },
+      "users": { "type": "string", "description": "", "title": "users" }
+    },
+    "description": "我的待办申请详情"
+  },
+  "QueryTCacProcessRecordParam": {
+    "title": "QueryTCacProcessRecordParam",
+    "type": "object",
+    "properties": {
+      "applyUserName": {
+        "type": "string",
+        "description": "",
+        "title": "起草人"
+      },
+      "comments": { "type": "string", "description": "", "title": "备注意见" },
+      "endDate": { "type": "string", "description": "", "title": "结束时间" },
+      "id": { "type": "string", "description": "", "title": "id" },
+      "month": { "type": "string", "description": "", "title": "类型" },
+      "ouCount": {
+        "type": "integer",
+        "description": "",
+        "format": "int32",
+        "title": "涉及OU数量"
+      },
+      "startDate": { "type": "string", "description": "", "title": "开始时间" },
+      "state": { "type": "string", "description": "", "title": "状态" },
+      "submitFullName": {
+        "type": "string",
+        "description": "",
+        "title": "上一级审批人"
+      },
+      "submitTime": {
+        "type": "string",
+        "description": "",
+        "format": "date-time",
+        "title": "提交时间"
+      },
+      "taskCount": {
+        "type": "integer",
+        "description": "",
+        "format": "int32",
+        "title": "工作项数量"
+      },
+      "type": { "type": "string", "description": "", "title": "类型" }
+    },
+    "description": "逆向申请单,待办申请"
+  },
+  "QueryTCacTaskCommentTypeParam": {
+    "title": "QueryTCacTaskCommentTypeParam",
+    "type": "object",
+    "properties": {
+      "flag": { "type": "string", "description": "", "title": "flag" },
+      "id": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "主键"
+      },
+      "typeId": {
+        "type": "string",
+        "description": "",
+        "title": "类型ID,1为逆向类型，2为延迟类型"
+      }
+    },
+    "description": "异常类型配置"
+  },
+  "QueryTCacTaskRejectTodoParam": {
+    "title": "QueryTCacTaskRejectTodoParam",
+    "type": "object",
+    "properties": {
+      "buSegName": {
+        "type": "string",
+        "description": "",
+        "title": "所属事业部"
+      },
+      "id": { "type": "string", "description": "", "title": "编码" },
+      "orgName": { "type": "string", "description": "", "title": "公司OU" },
+      "rejectReason": {
+        "type": "string",
+        "description": "",
+        "title": "逆向原因"
+      },
+      "rejectType": {
+        "type": "string",
+        "description": "",
+        "title": "逆向申请类型"
+      },
+      "taskId": {
+        "type": "string",
+        "description": "",
+        "title": "查询条件工作项名称"
+      },
+      "taskRunDeptId": {
+        "type": "string",
+        "description": "",
+        "title": "查询条件负责部门"
+      },
+      "taskRunType": {
+        "type": "string",
+        "description": "",
+        "title": "查询条件执行方式"
+      },
+      "userName": { "type": "string", "description": "", "title": "用户名称" }
+    },
+    "description": "逆向申请草稿"
+  },
+  "QueryUserParam": {
+    "title": "QueryUserParam",
+    "type": "object",
+    "properties": {
+      "comments": { "type": "string", "description": "", "title": "comments" },
+      "fullName": { "type": "string", "description": "", "title": "fullName" },
+      "groupId": { "type": "string", "description": "", "title": "groupId" },
+      "groupName": {
+        "type": "string",
+        "description": "",
+        "title": "groupName"
+      },
+      "id": { "type": "string", "description": "", "title": "id" },
+      "mobile": { "type": "string", "description": "", "title": "mobile" },
+      "userId": { "type": "string", "description": "", "title": "userId" },
+      "userName": { "type": "string", "description": "", "title": "userName" }
+    },
+    "description": "转办人员"
+  },
+  "RuleTaskOuParam": {
+    "title": "RuleTaskOuParam",
+    "type": "object",
+    "properties": {
+      "orgId": { "type": "string", "description": "", "title": "orgId" },
+      "orgIds": { "type": "string", "description": "", "title": "orgIds" },
+      "ruleTaskId": {
+        "type": "string",
+        "description": "",
+        "title": "ruleTaskId"
+      }
+    },
+    "description": "保存规则OU参数saveRuleTaskOU"
+  },
+  "SaveCacReportParam": {
+    "title": "SaveCacReportParam",
+    "type": "object",
+    "properties": {
+      "col": { "type": "string", "description": "", "title": "col" },
+      "id": { "type": "string", "description": "", "title": "id" },
+      "name": { "type": "string", "description": "", "title": "name" }
+    },
+    "description": "配置动态报表保存参数"
+  },
+  "SortReq": { "title": "SortReq", "type": "object" },
+  "SortRes": {
+    "title": "SortRes",
+    "type": "object",
+    "properties": {
+      "empty": { "type": "boolean", "title": "empty", "description": "" },
+      "sorted": { "type": "boolean", "title": "sorted", "description": "" },
+      "unsorted": { "type": "boolean", "title": "unsorted", "description": "" }
+    }
+  },
+  "TCacInteractiveType": {
+    "title": "TCacInteractiveType",
+    "type": "object",
+    "properties": {
+      "createDate": {
+        "type": "string",
+        "description": "",
+        "format": "date-time",
+        "title": "创建时间"
+      },
+      "createFullName": {
+        "type": "string",
+        "description": "",
+        "title": "创建人名称"
+      },
+      "createUserId": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "创建人ID"
+      },
+      "createUserName": {
+        "type": "string",
+        "description": "",
+        "title": "创建人编码"
+      },
+      "id": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "主键"
+      },
+      "typeCode": {
+        "type": "string",
+        "description": "",
+        "title": "请求值编码"
+      },
+      "typeName": {
+        "type": "string",
+        "description": "",
+        "title": "请求值名称"
+      },
+      "updDate": {
+        "type": "string",
+        "description": "",
+        "format": "date-time",
+        "title": "更新时间"
+      },
+      "updFullName": {
+        "type": "string",
+        "description": "",
+        "title": "更新人名称"
+      },
+      "updUserId": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "更新人ID"
+      },
+      "updUserName": {
+        "type": "string",
+        "description": "",
+        "title": "更新人编码"
+      }
+    },
+    "description": "交互类型配置表"
+  },
+  "TCacOuItem": {
+    "title": "TCacOuItem",
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "主键ID"
+      },
+      "ouItemId": { "type": "string", "description": "", "title": "大类编码" },
+      "ouItemName": { "type": "string", "description": "", "title": "大类名" }
+    },
+    "description": "OU大类表"
+  },
+  "TCacOuItem2": {
+    "title": "TCacOuItem2",
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "OU小类与OU大类映射关系"
+      },
+      "ouItem2Id": { "type": "string", "description": "", "title": "小类编码" },
+      "ouItem2Name": {
+        "type": "string",
+        "description": "",
+        "title": "OU小类名"
+      },
+      "ouItemId": {
+        "type": "string",
+        "description": "",
+        "title": "关联OU的大类ID"
+      }
+    },
+    "description": "OU小类表"
+  },
+  "TCacOuItemParam": {
+    "title": "TCacOuItemParam",
+    "type": "object",
+    "properties": {
+      "coSegCode": { "type": "string", "description": "", "title": "OU的编码" },
+      "id": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "主键"
+      },
+      "orgId": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "公司OUID"
+      },
+      "orgName": { "type": "string", "description": "", "title": "ORG名称" },
+      "ouItem2Id": { "type": "string", "description": "", "title": "小类编码" },
+      "ouItem2Name": {
+        "type": "string",
+        "description": "",
+        "title": "小类名称"
+      },
+      "ouItemId": { "type": "string", "description": "", "title": "大类编码" },
+      "ouItemName": { "type": "string", "description": "", "title": "大类名称" }
+    },
+    "description": "OU大类配置查询参数"
+  },
+  "TCacOuRelationDto": {
+    "title": "TCacOuRelationDto",
+    "type": "object",
+    "properties": {
+      "coSegCode": { "type": "string", "description": "", "title": "OU的编码" },
+      "id": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "主键"
+      },
+      "orgId": {
+        "type": "integer",
+        "description": "",
+        "format": "int32",
+        "title": "公司OUID"
+      },
+      "orgName": { "type": "string", "description": "", "title": "ORG名称" },
+      "ouItem2Id": { "type": "string", "description": "", "title": "小类编码" },
+      "ouItem2Name": {
+        "type": "string",
+        "description": "",
+        "title": "小类名称"
+      }
+    },
+    "description": "配置公司ou Dto"
+  },
+  "TCacProcessRecord": {
+    "title": "TCacProcessRecord",
+    "type": "object",
+    "properties": {
+      "comments": { "type": "string", "description": "", "title": "审批意见" },
+      "createTime": {
+        "type": "string",
+        "description": "",
+        "format": "date-time",
+        "title": "操作时间"
+      },
+      "createUserId": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "操作人"
+      },
+      "createUsername": {
+        "type": "string",
+        "description": "",
+        "title": "创建人名称"
+      },
+      "curActorId": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "当前环节处理人"
+      },
+      "curActorName": {
+        "type": "string",
+        "description": "",
+        "title": "当前环节处理人名称"
+      },
+      "currentStatus": {
+        "type": "string",
+        "description": "",
+        "title": "审批状态；0：待审批；1：已审批；"
+      },
+      "endTime": {
+        "type": "string",
+        "description": "",
+        "format": "date-time",
+        "title": "审批结束时间"
+      },
+      "id": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "主键"
+      },
+      "rejectId": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "逆向审批ID"
+      },
+      "startTime": {
+        "type": "string",
+        "description": "",
+        "format": "date-time",
+        "title": "审批开始时间"
+      },
+      "status": {
+        "type": "string",
+        "description": "",
+        "title": "审批结果；0：同意；1：退回；2：转办；其他状态需要在添加"
+      },
+      "sysSettingId": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "工作项审批信息；"
+      },
+      "type": {
+        "type": "string",
+        "description": "",
+        "title": "审批类型；0：关账任务项审批；1：逆向审批；"
+      }
+    },
+    "description": "工作项审批记录"
+  },
+  "TCacProcessRejectApprover": {
+    "title": "TCacProcessRejectApprover",
+    "type": "object",
+    "properties": {
+      "approver1St": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "一级审批人"
+      },
+      "approver2Nd": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "二级审批人"
+      },
+      "approver3Rd": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "三级审批人"
+      },
+      "id": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "主键"
+      },
+      "orgId": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "OU的ORG_ID"
+      },
+      "taskId": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "工作项"
+      },
+      "taskRunDeptId": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "工作项执行部门"
+      },
+      "updDate": {
+        "type": "string",
+        "description": "",
+        "format": "date-time",
+        "title": "更新日期"
+      },
+      "updFullname": {
+        "type": "string",
+        "description": "",
+        "title": "修改人全称"
+      },
+      "updUsername": {
+        "type": "string",
+        "description": "",
+        "title": "更新人名称"
+      }
+    },
+    "description": "逆向审批配置"
+  },
+  "TCacProcessRejectApproverDto": {
+    "title": "TCacProcessRejectApproverDto",
+    "type": "object",
+    "properties": {
+      "approver1St": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "一级审批人"
+      },
+      "approver2Nd": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "二级审批人"
+      },
+      "approver3Rd": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "三级审批人"
+      },
+      "deptName": {
+        "type": "string",
+        "description": "",
+        "title": "工作项执行部门"
+      },
+      "fullname1": {
+        "type": "string",
+        "description": "",
+        "title": "一级审批人全名"
+      },
+      "fullname2": {
+        "type": "string",
+        "description": "",
+        "title": "二级审批人全名"
+      },
+      "fullname3": {
+        "type": "string",
+        "description": "",
+        "title": "三级审批人全名"
+      },
+      "id": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "主键"
+      },
+      "orgId": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "OU的ORG_ID"
+      },
+      "orgName": {
+        "type": "string",
+        "description": "",
+        "title": "OU的ORG名称"
+      },
+      "taskName": {
+        "type": "string",
+        "description": "",
+        "title": "工作项名称"
+      },
+      "taskNo": { "type": "string", "description": "", "title": "工作项" },
+      "taskRunDeptId": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "工作项执行部门"
+      },
+      "updDate": {
+        "type": "string",
+        "description": "",
+        "format": "date-time",
+        "title": "更新日期"
+      },
+      "updFullname": {
+        "type": "string",
+        "description": "",
+        "title": "修改人全称"
+      },
+      "updUsername": {
+        "type": "string",
+        "description": "",
+        "title": "更新人名称"
+      },
+      "username1": {
+        "type": "string",
+        "description": "",
+        "title": "一级审批人"
+      },
+      "username2": {
+        "type": "string",
+        "description": "",
+        "title": "二级审批人"
+      },
+      "username3": {
+        "type": "string",
+        "description": "",
+        "title": "三级审批人"
+      }
+    },
+    "description": "逆向审批配置"
+  },
+  "TCacProcessRejectApproverParam": {
+    "title": "TCacProcessRejectApproverParam",
+    "type": "object",
+    "properties": {
+      "approver1stName": {
+        "type": "string",
+        "description": "",
+        "title": "一级审批人全名"
+      },
+      "approver2ndName": {
+        "type": "string",
+        "description": "",
+        "title": "二级审批人全名"
+      },
+      "approver3rdName": {
+        "type": "string",
+        "description": "",
+        "title": "三级审批人全名"
+      },
+      "orgId": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "OU的ORG_ID"
+      },
+      "taskId": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "工作项"
+      },
+      "taskRunDeptId": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "工作项执行部门"
+      }
+    },
+    "description": "逆向审批配置查询参数"
+  },
+  "TCacReport": {
+    "title": "TCacReport",
+    "type": "object",
+    "properties": {
+      "col": { "type": "string", "description": "", "title": "字段" },
+      "id": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "主键"
+      },
+      "name": { "type": "string", "description": "", "title": "名称" },
+      "updDate": {
+        "type": "string",
+        "description": "",
+        "format": "date-time",
+        "title": "更新日期"
+      },
+      "updUserId": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "修改用户ID"
+      },
+      "updUserName": {
+        "type": "string",
+        "description": "",
+        "title": "修改用户名"
+      }
+    },
+    "description": "驾驶舱报表"
+  },
+  "TCacRule": {
+    "title": "TCacRule",
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "主键"
+      },
+      "ruleAlertDesc": {
+        "type": "string",
+        "description": "",
+        "title": "规则提醒描述"
+      },
+      "ruleCtlDesc": {
+        "type": "string",
+        "description": "",
+        "title": "规则控制描述"
+      },
+      "ruleLogicDesc": {
+        "type": "string",
+        "description": "",
+        "title": "规则逻辑描述"
+      },
+      "ruleName": { "type": "string", "description": "", "title": "规则名称" },
+      "ruleNo": { "type": "string", "description": "", "title": "规则编码" }
+    },
+    "description": "规则概要信息表"
+  },
+  "TCacRuleSetting4Param": {
+    "title": "TCacRuleSetting4Param",
+    "type": "object",
+    "properties": {
+      "basicDate": {
+        "type": "string",
+        "description": "",
+        "format": "date-time",
+        "title": "basicDate"
+      },
+      "id": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "主键"
+      },
+      "requestCode": {
+        "type": "string",
+        "description": "",
+        "title": "请求编码"
+      },
+      "requestName": {
+        "type": "string",
+        "description": "",
+        "title": "请求名称"
+      },
+      "rootRuleId": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "rootRuleId"
+      },
+      "ruleId": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "规则ID"
+      },
+      "runtimeFirst": {
+        "type": "string",
+        "description": "",
+        "format": "date-time",
+        "title": "请求运行时间1"
+      },
+      "runtimeFirstCoefficient": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "请求运行时间1执行系数"
+      },
+      "runtimeSecond": {
+        "type": "string",
+        "description": "",
+        "format": "date-time",
+        "title": "请求运行时间2"
+      },
+      "runtimeSecondCoefficient": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "请求运行时间2执行系数"
+      },
+      "runtimeThird": {
+        "type": "string",
+        "description": "",
+        "format": "date-time",
+        "title": "请求运行时间3"
+      },
+      "runtimeThirdCoefficient": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "请求运行时间3执行系数"
+      },
+      "taskName": { "type": "string", "description": "", "title": "工作项名称" }
+    },
+    "description": "TCacRuleSetting4Param"
+  },
+  "TCacRuleSettingParam": {
+    "title": "TCacRuleSettingParam",
+    "type": "object",
+    "properties": {
+      "accCnt": {
+        "type": "integer",
+        "description": "",
+        "format": "int32",
+        "title": "凭证笔数"
+      },
+      "accCode": { "type": "string", "description": "", "title": "科目" },
+      "accCodeList": {
+        "type": "string",
+        "description": "",
+        "title": "科目数组"
+      },
+      "accName": { "type": "string", "description": "", "title": "科目名称" },
+      "accNameList": {
+        "type": "string",
+        "description": "",
+        "title": "科目数组"
+      },
+      "erpAcl": { "type": "string", "description": "", "title": "ERP余额" },
+      "id": {
+        "type": "integer",
+        "format": "int64",
+        "title": "id",
+        "description": ""
+      },
+      "item2Id": {
+        "type": "string",
+        "description": "",
+        "title": "业务大类编码"
+      },
+      "item2IdList": {
+        "type": "string",
+        "description": "",
+        "title": "业务大类ID"
+      },
+      "item2Name": {
+        "type": "string",
+        "description": "",
+        "title": "业务大类名称"
+      },
+      "item2NameList": {
+        "type": "string",
+        "description": "",
+        "title": "业务大类名称"
+      },
+      "itemCnt": {
+        "type": "integer",
+        "description": "",
+        "format": "int32",
+        "title": "笔数"
+      },
+      "itemId": {
+        "type": "string",
+        "description": "",
+        "title": "报账单模版ID"
+      },
+      "itemName": {
+        "type": "string",
+        "description": "",
+        "title": "报账单模板名称"
+      },
+      "itemType": { "type": "string", "description": "", "title": "业务类型" },
+      "requestCode": {
+        "type": "string",
+        "description": "",
+        "title": "请求编码"
+      },
+      "requestName": {
+        "type": "string",
+        "description": "",
+        "title": "请求名称"
+      },
+      "ruleId": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "规则逻辑Id"
+      },
+      "runtimeFirst": {
+        "type": "string",
+        "description": "",
+        "format": "date-time",
+        "title": "请求运行时间1"
+      },
+      "runtimeFirstCoefficient": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "请求运行时间1执行系数"
+      },
+      "runtimeSecond": {
+        "type": "string",
+        "description": "",
+        "format": "date-time",
+        "title": "请求运行时间2"
+      },
+      "runtimeSecondCoefficient": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "请求运行时间2执行系数"
+      },
+      "runtimeThird": {
+        "type": "string",
+        "description": "",
+        "format": "date-time",
+        "title": "请求运行时间3"
+      },
+      "runtimeThirdCoefficient": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "请求运行时间3执行系数"
+      },
+      "settingType": {
+        "type": "string",
+        "description": "",
+        "title": "规则类型,大类配置：TCacRuleSetting1； 科目配置：TCacRuleSetting2，仓库配置：TCacRuleSetting3"
+      },
+      "source": { "type": "string", "description": "", "title": "来源" },
+      "sourceName": {
+        "type": "string",
+        "description": "",
+        "title": "来源名称"
+      },
+      "whType": { "type": "string", "description": "", "title": "仓库类型" },
+      "whTypeName": {
+        "type": "string",
+        "description": "",
+        "title": "仓库类型名称"
+      }
+    },
+    "description": "规则信息DTO"
+  },
+  "TCacRuleTask": {
+    "title": "TCacRuleTask",
+    "type": "object",
+    "properties": {
+      "documentsEndTime": {
+        "type": "string",
+        "description": "",
+        "format": "date-time",
+        "title": "到单截止时间"
+      },
+      "id": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "主键"
+      },
+      "name": {
+        "type": "string",
+        "description": "",
+        "title": "工作项规则描述"
+      },
+      "ruleId": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "规则ID"
+      },
+      "ruleOu": {
+        "type": "string",
+        "description": "",
+        "title": "适用OU，多个OU用逗号隔开"
+      },
+      "ruleType": {
+        "type": "string",
+        "description": "",
+        "title": "规则类型。0：执行规则；1：控制规则；2：提醒规则；3：分析规则"
+      },
+      "status": {
+        "type": "string",
+        "description": "",
+        "title": "是否已同步库存，0 未同步，1 已同步"
+      },
+      "taskId": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "工作项ID"
+      },
+      "taskName": { "type": "string", "description": "", "title": "任务名称" },
+      "taskNo": { "type": "string", "description": "", "title": "工作项编码" }
+    },
+    "description": "规则与工作项对应关系，使用所有规则包括分析规则"
+  },
+  "TCacRuleTask0": {
+    "title": "TCacRuleTask0",
+    "type": "object",
+    "properties": {
+      "readonlyFlag": {
+        "type": "boolean",
+        "description": "",
+        "example": false,
+        "title": "readonlyFlag"
+      },
+      "ruleId": {
+        "type": "string",
+        "description": "",
+        "title": "规则主键ruleId"
+      },
+      "ruleType": {
+        "type": "string",
+        "description": "",
+        "title": "规则类型。0：执行规则；1：控制规则；2：提醒规则；3：分析规则"
+      },
+      "ruleTypeDetls": {
+        "type": "string",
+        "description": "",
+        "title": "规则类型readonlyFlag=true时"
+      },
+      "taskId": { "type": "string", "description": "", "title": "taskIdQue" },
+      "taskIdQue": {
+        "type": "string",
+        "description": "",
+        "title": "主键taskId"
+      }
+    },
+    "description": "规则查询用参数"
+  },
+  "TCacTask": {
+    "title": "TCacTask",
+    "type": "object",
+    "properties": {
+      "basicDate": {
+        "type": "string",
+        "title": "basicDate",
+        "description": ""
+      },
+      "documentsEndTime": {
+        "type": "string",
+        "description": "",
+        "format": "date-time",
+        "title": "到单截止时间"
+      },
+      "documentsEndTimeStr": {
+        "type": "string",
+        "title": "documentsEndTimeStr",
+        "description": ""
+      },
+      "id": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "主键"
+      },
+      "ids": {
+        "type": "array",
+        "items": { "type": "integer", "format": "int64" },
+        "title": "ids",
+        "description": ""
+      },
+      "isEnable": {
+        "type": "string",
+        "description": "",
+        "title": "是否启用(0:不启用，1：启用)"
+      },
+      "isQuarterSpecialized": {
+        "type": "string",
+        "description": "",
+        "title": "是否为季度专用工作项(0：不是，1：是)"
+      },
+      "month": { "type": "string", "title": "month", "description": "" },
+      "ouItem2Id": {
+        "type": "string",
+        "description": "",
+        "title": "工作项适用OU小类编码"
+      },
+      "ouItem2Name": {
+        "type": "string",
+        "description": "",
+        "title": "工作项适用OU小类名称"
+      },
+      "sysSettingId": {
+        "type": "integer",
+        "format": "int64",
+        "title": "sysSettingId",
+        "description": ""
+      },
+      "taskCoefficient": {
+        "type": "number",
+        "description": "",
+        "format": "bigdecimal",
+        "title": "执行系数"
+      },
+      "taskCoefficientStr": {
+        "type": "string",
+        "title": "taskCoefficientStr",
+        "description": ""
+      },
+      "taskName": {
+        "type": "string",
+        "description": "",
+        "title": "工作项名称"
+      },
+      "taskNo": { "type": "string", "description": "", "title": "工作项编码" },
+      "taskReltId": {
+        "type": "string",
+        "description": "",
+        "title": "前置工作项编码组合"
+      },
+      "taskRunDeptId": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "工作项执行部门"
+      },
+      "taskRunDeptName": {
+        "type": "string",
+        "title": "taskRunDeptName",
+        "description": ""
+      },
+      "taskRunTime": {
+        "type": "string",
+        "description": "",
+        "format": "date-time",
+        "title": "执行时间：对应页面执行日期+执行时间字段"
+      },
+      "taskRunTimeDate": {
+        "type": "string",
+        "description": "",
+        "title": "对应页面执行日期"
+      },
+      "taskRunTimeHour": {
+        "type": "string",
+        "description": "",
+        "title": "执行时间字段"
+      },
+      "taskRunType": {
+        "type": "string",
+        "description": "",
+        "title": "工作项执行方式：0手动；1自动"
+      }
+    },
+    "description": "工作项表"
+  },
+  "TCacTaskCommentType": {
+    "title": "TCacTaskCommentType",
+    "type": "object",
+    "properties": {
+      "comments": { "type": "string", "description": "", "title": "类型内容" },
+      "id": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "主键"
+      },
+      "typeId": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "类型ID,1为逆向类型，2为延迟类型"
+      },
+      "updTime": {
+        "type": "string",
+        "description": "",
+        "format": "date-time",
+        "title": "更新时间"
+      },
+      "updUserId": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "更新人"
+      },
+      "updUsername": {
+        "type": "string",
+        "description": "",
+        "title": "更新人名称"
+      },
+      "updUsernum": {
+        "type": "string",
+        "description": "",
+        "title": "更新人编码"
+      }
+    },
+    "description": "延迟类型配置表"
+  },
+  "TCacTaskDto": {
+    "title": "TCacTaskDto",
+    "type": "object",
+    "properties": {
+      "deptId": {
+        "type": "string",
+        "description": "",
+        "title": "工作项执行部门ID"
+      },
+      "deptName": {
+        "type": "string",
+        "description": "",
+        "title": "工作项执行部门名称"
+      },
+      "documentsEndTime": {
+        "type": "string",
+        "description": "",
+        "format": "date-time",
+        "title": "到单截止时间"
+      },
+      "id": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "主键"
+      },
+      "isEnable": {
+        "type": "string",
+        "description": "",
+        "title": "是否启用(0:不启用，1：启用)"
+      },
+      "isEnableName": {
+        "type": "string",
+        "description": "",
+        "title": "是否启用(0:不启用，1：启用)--导出使用"
+      },
+      "isQuarterSpecialized": {
+        "type": "string",
+        "description": "",
+        "title": "是否为季度专用工作项(0：不是，1：是)"
+      },
+      "isQuarterSpecializedName": {
+        "type": "string",
+        "description": "",
+        "title": "是否为季度专用工作项(0：不是，1：是)--导出使用"
+      },
+      "ouItem2Id": {
+        "type": "string",
+        "description": "",
+        "title": "工作项适用OU小类Id"
+      },
+      "ouItem2Name": {
+        "type": "string",
+        "description": "",
+        "title": "工作项适用OU小类名称"
+      },
+      "taskCoefficient": {
+        "type": "string",
+        "description": "",
+        "title": "执行系数"
+      },
+      "taskName": {
+        "type": "string",
+        "description": "",
+        "title": "工作项名称"
+      },
+      "taskNo": { "type": "string", "description": "", "title": "工作项编码" },
+      "taskReltId": {
+        "type": "string",
+        "description": "",
+        "title": "前置工作项编码组合"
+      },
+      "taskRunDeptId": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "工作项执行部门Id"
+      },
+      "taskRunTime": {
+        "type": "string",
+        "description": "",
+        "format": "date-time",
+        "title": "执行时间"
+      },
+      "taskRunTimeDate": {
+        "type": "string",
+        "description": "",
+        "title": "对应页面执行日期"
+      },
+      "taskRunTimeHour": {
+        "type": "string",
+        "description": "",
+        "title": "执行时间字段"
+      },
+      "taskRunType": {
+        "type": "string",
+        "description": "",
+        "title": "工作项执行方式：0手动；1自动"
+      },
+      "taskRunTypeName": {
+        "type": "string",
+        "description": "",
+        "title": "工作项执行方式：0手动；1自动--导出使用"
+      }
+    }
+  },
+  "TCacTaskParam": {
+    "title": "TCacTaskParam",
+    "type": "object",
+    "properties": {
+      "documentsEndDate": {
+        "type": "string",
+        "format": "date-time",
+        "title": "documentsEndDate",
+        "description": ""
+      },
+      "documentsStartDate": {
+        "type": "string",
+        "format": "date-time",
+        "title": "documentsStartDate",
+        "description": ""
+      },
+      "endDate": {
+        "type": "string",
+        "format": "date-time",
+        "title": "endDate",
+        "description": ""
+      },
+      "isEnable": {
+        "type": "string",
+        "description": "",
+        "title": "是否启用(0:不启用，1：启用)"
+      },
+      "isQuarterSpecialized": {
+        "type": "string",
+        "description": "",
+        "title": "是否为季度专用工作项(0：不是，1：是)"
+      },
+      "ouItem2Id": {
+        "type": "string",
+        "description": "",
+        "title": "工作项适用OU小类编码"
+      },
+      "startDate": {
+        "type": "string",
+        "format": "date-time",
+        "title": "startDate",
+        "description": ""
+      },
+      "taskNo": { "type": "string", "description": "", "title": "工作项编码" },
+      "taskRunDeptId": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "工作项执行部门"
+      },
+      "taskRunType": {
+        "type": "string",
+        "description": "",
+        "title": "工作项执行方式：0手动；1自动"
+      }
+    }
+  },
+  "TCacTaskRole": {
+    "title": "TCacTaskRole",
+    "type": "object",
+    "properties": {
+      "id": { "type": "string", "description": "", "title": "id" },
+      "orgIds": {
+        "type": "string",
+        "description": "",
+        "title": "OU的ORG_ID列表"
+      },
+      "orgNames": {
+        "type": "string",
+        "description": "",
+        "title": "OU的ORG名字列表"
+      },
+      "roleId": { "type": "string", "description": "", "title": "角色ID" },
+      "roleType": {
+        "type": "string",
+        "description": "",
+        "title": "角色类型；0：统筹人；1：分析人"
+      },
+      "taskIds": {
+        "type": "string",
+        "description": "",
+        "title": "工作项ID列表"
+      },
+      "taskNames": {
+        "type": "string",
+        "description": "",
+        "title": "工作项列表"
+      },
+      "taskRunDeptIds": {
+        "type": "string",
+        "description": "",
+        "title": "工作项执行部门id列表"
+      },
+      "taskRunDeptNames": {
+        "type": "string",
+        "description": "",
+        "title": "工作项执行部门列表"
+      }
+    },
+    "description": "统筹人/分析人数据权限设定"
+  },
+  "TCacTaskRoleParam": {
+    "title": "TCacTaskRoleParam",
+    "type": "object",
+    "properties": {
+      "deptId": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "部门id"
+      },
+      "deptName": { "type": "string", "description": "", "title": "部门名称" },
+      "id": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "主键"
+      },
+      "ids": { "type": "string", "description": "", "title": "主键列表" },
+      "name": { "type": "string", "description": "", "title": "角色名称" },
+      "orgId": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "OU的ORG_ID"
+      },
+      "orgName": { "type": "string", "description": "", "title": "公司OU" },
+      "roleId": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "角色ID"
+      },
+      "roleType": {
+        "type": "string",
+        "description": "",
+        "title": "角色类型；0：统筹人；1：分析人"
+      },
+      "taskId": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "工作项id"
+      },
+      "taskName": { "type": "string", "description": "", "title": "任务名称" },
+      "taskNo": { "type": "string", "description": "", "title": "工作项编码" },
+      "taskRunDeptId": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "工作项执行部门id"
+      },
+      "usreRoleId": {
+        "type": "integer",
+        "format": "int64",
+        "title": "usreRoleId",
+        "description": ""
+      }
+    }
+  },
+  "TCacTaskSetting": {
+    "title": "TCacTaskSetting",
+    "type": "object",
+    "properties": {
+      "apprlStep": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "审批步骤：1，2，3级审批"
+      },
+      "approveDate": {
+        "type": "string",
+        "description": "",
+        "format": "date-time",
+        "title": "审批完成时间"
+      },
+      "basicDate": {
+        "type": "string",
+        "description": "",
+        "format": "date-time",
+        "title": "基础日期"
+      },
+      "id": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "主键"
+      },
+      "isHandleWholePlan": {
+        "type": "string",
+        "description": "",
+        "title": "程序是否正在处理当前整个关账计划，防止点击完同意后，刷新页面重复点击同意，造成重复处理    1 为正在处理   ，非1为不在处理"
+      },
+      "isOpeningCockpit": {
+        "type": "string",
+        "description": "",
+        "title": "当这条工作项整体计划变为3 已完成 的时候，下个月开启的时候，在这个字段上标识正在开启的状态 1，因为驾驶舱每个月只允许正常开启一次，如果已经标识了正在开启，就不允许其他人同时也点击开启了"
+      },
+      "month": { "type": "string", "description": "", "title": "月份" },
+      "ouCount": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "涉及OU数量"
+      },
+      "status": {
+        "type": "string",
+        "description": "",
+        "title": "期间状态：0：工作项设定中；1：审批中；2：已发布；3：执行完成；"
+      },
+      "submitFullname": {
+        "type": "string",
+        "description": "",
+        "title": "提交人名称"
+      },
+      "submitTime": {
+        "type": "string",
+        "description": "",
+        "format": "date-time",
+        "title": "提交时间"
+      },
+      "submitUsername": {
+        "type": "string",
+        "description": "",
+        "title": "提交人编码"
+      },
+      "taskCount": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "涉及工作项数量"
+      }
+    },
+    "description": "关账驾驶舱工作计划配置"
+  },
+  "TaskDetlForAddDto": {
+    "title": "TaskDetlForAddDto",
+    "type": "object",
+    "properties": {
+      "comments": { "type": "string", "description": "", "title": "备注" },
+      "compltTime": {
+        "type": "string",
+        "description": "",
+        "format": "date-time",
+        "title": "完成时间"
+      },
+      "createTime": {
+        "type": "string",
+        "description": "",
+        "format": "date-time",
+        "title": "创建时间"
+      },
+      "createUserId": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "创建人"
+      },
+      "createUsername": {
+        "type": "string",
+        "description": "",
+        "title": "创建人名称"
+      },
+      "delayType": { "type": "string", "description": "", "title": "延迟类型" },
+      "deptName": { "type": "string", "description": "", "title": "执行部门" },
+      "downloadUrl": {
+        "type": "string",
+        "description": "",
+        "title": "规则10下载地址"
+      },
+      "during": { "type": "string", "description": "", "title": "期间-YYYYMM" },
+      "erpRequestId": {
+        "type": "string",
+        "description": "",
+        "title": "保存规则八配置的工作项在调用ERP时传送的请求的具体ID"
+      },
+      "erpRequestStatus": {
+        "type": "string",
+        "description": "",
+        "title": "//ERP请求状态，1：请求运行中，-1：请求发送失败，-2：请求运行异常"
+      },
+      "id": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "主键"
+      },
+      "infTask": {
+        "type": "string",
+        "description": "",
+        "title": "影响相关工作项"
+      },
+      "isAlert": {
+        "type": "string",
+        "description": "",
+        "title": "是否有过邮件提醒。触发提醒规则。0：无；1：有"
+      },
+      "isDelay": {
+        "type": "string",
+        "description": "",
+        "title": "是否延迟；0：未延迟；1：已延迟"
+      },
+      "isRejected": {
+        "type": "string",
+        "description": "",
+        "title": "是否产生过逆向；0：未逆向；1：有逆向；"
+      },
+      "nextMonthTaskRunUserId": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "下月开启驾驶舱的时候，赋值到当月的执行人Id"
+      },
+      "orgId": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "OU的ORGID"
+      },
+      "orgName": { "type": "string", "description": "", "title": "公司OU" },
+      "realEndTime": {
+        "type": "string",
+        "description": "",
+        "format": "date-time",
+        "title": "实际关账时间"
+      },
+      "rejectCnt": {
+        "type": "integer",
+        "description": "",
+        "format": "int32",
+        "title": "发起逆向次数"
+      },
+      "rejectComment": {
+        "type": "string",
+        "description": "",
+        "title": "逆向备注"
+      },
+      "rejectTime": {
+        "type": "string",
+        "description": "",
+        "format": "date-time",
+        "title": "逆向时间"
+      },
+      "rejectType": {
+        "type": "string",
+        "description": "",
+        "title": "逆向类型"
+      },
+      "rejectedCnt": {
+        "type": "integer",
+        "description": "",
+        "format": "int32",
+        "title": "被逆向次数"
+      },
+      "rejectedType": {
+        "type": "string",
+        "description": "",
+        "title": "//逆向类型，1为主逆向，2为被逆向"
+      },
+      "rule10CompareStatus": {
+        "type": "string",
+        "description": "",
+        "title": "规则10比对状态，1：无差异，完成工作项，-1：有差异，显示下载地址"
+      },
+      "rule9IslasttimeInvokeflag": {
+        "type": "string",
+        "description": "",
+        "title": "表示该工作项是否是最后一次调用，空 表示不是最后一次； 1表示最后一次。"
+      },
+      "rule9WhichtimeInvokeflag": {
+        "type": "string",
+        "description": "",
+        "title": "表示该工作项已经被第几次调用过，first 第一次；second 第二次；third 第三次"
+      },
+      "ruleId": {
+        "type": "string",
+        "description": "",
+        "title": "规则11的情况下，标识t_cac_rule表ID字段。"
+      },
+      "status": {
+        "type": "string",
+        "description": "",
+        "title": "状态：0：未开始；1：进行中；2：已完成"
+      },
+      "syncStatus": {
+        "type": "string",
+        "description": "",
+        "title": "规则11的情况下，标识是否同步了试算表。1，已同步"
+      },
+      "sysSettingId": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "整体任务项信息"
+      },
+      "taskId": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "对应的工作项ID"
+      },
+      "taskName": {
+        "type": "string",
+        "description": "",
+        "title": "工作项名称"
+      },
+      "taskNo": { "type": "string", "description": "", "title": "工作项编码" },
+      "taskRunType": {
+        "type": "string",
+        "description": "",
+        "title": "执行方式，新增的时候，取头上的执行方式，后面可以修改"
+      },
+      "taskRunUserId": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "执行人ID"
+      },
+      "updTime": {
+        "type": "string",
+        "description": "",
+        "format": "date-time",
+        "title": "更新时间"
+      },
+      "updUserId": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "更新人"
+      },
+      "updUsername": {
+        "type": "string",
+        "description": "",
+        "title": "更新人名称"
+      }
+    },
+    "description": "工作项详细信息-在途，如果在途数据不可以锁定基础工作项，该表需要将工作项表中字段添加进来。"
+  },
+  "TotalOu": {
+    "title": "TotalOu",
+    "type": "object",
+    "properties": {
+      "coSegCode": { "type": "string", "description": "", "title": "OU编码" },
+      "dateFrom": {
+        "type": "string",
+        "description": "",
+        "format": "date-time",
+        "title": "null"
+      },
+      "dateTo": {
+        "type": "string",
+        "description": "",
+        "format": "date-time",
+        "title": "null"
+      },
+      "enableFlag": { "type": "string", "description": "", "title": "null" },
+      "legalEntityId": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "null"
+      },
+      "legalName": { "type": "string", "description": "", "title": "null" },
+      "orgId": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "部门ID"
+      },
+      "orgName": { "type": "string", "description": "", "title": "部门名称" },
+      "ouId": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "公司ID"
+      },
+      "setOfBooksId": {
+        "type": "integer",
+        "description": "",
+        "format": "int64",
+        "title": "账套ID"
+      }
+    },
+    "description": "null"
+  },
+  "ViewPrepositionParam": {
+    "title": "ViewPrepositionParam",
+    "type": "object",
+    "properties": {
+      "comments": { "type": "string", "description": "", "title": "备注说明" },
+      "compltTime": {
+        "type": "string",
+        "description": "",
+        "title": "完成时间"
+      },
+      "delayType": { "type": "string", "description": "", "title": "延迟类型" },
+      "deptName": { "type": "string", "description": "", "title": "执行部门" },
+      "detlTaskRunType": {
+        "type": "string",
+        "description": "",
+        "title": "执行方式"
+      },
+      "fullname": { "type": "string", "description": "", "title": "执行人" },
+      "id": { "type": "string", "description": "", "title": "主键" },
+      "isDelay": {
+        "type": "string",
+        "description": "",
+        "title": "是否延迟；0：未延迟；1：已延迟"
+      },
+      "isRejected": {
+        "type": "string",
+        "description": "",
+        "title": "是否产生过逆向；0：未逆向；1：有逆向；"
+      },
+      "orgId": { "type": "string", "description": "", "title": "公司OU" },
+      "orgName": { "type": "string", "description": "", "title": "公司OU" },
+      "rejectComment": {
+        "type": "string",
+        "description": "",
+        "title": "逆向意见"
+      },
+      "rejectType": {
+        "type": "string",
+        "description": "",
+        "title": "逆向类型"
+      },
+      "rejectedType": {
+        "type": "string",
+        "description": "",
+        "title": "逆向类型"
+      },
+      "status": {
+        "type": "string",
+        "description": "",
+        "title": "状态：0：未开始；1：进行中；2：已完成"
+      },
+      "taskId": { "type": "string", "description": "", "title": "工作项编码" },
+      "taskName": {
+        "type": "string",
+        "description": "",
+        "title": "工作项名称"
+      },
+      "taskNo": { "type": "string", "description": "", "title": "工作项编码" },
+      "taskRunTime": {
+        "type": "string",
+        "description": "",
+        "title": "截止时间"
+      },
+      "taskRunType": {
+        "type": "string",
+        "description": "",
+        "title": "执行方式"
+      }
+    },
+    "description": "查看前置参数"
+  },
+  "ViewRuleParam": {
+    "title": "ViewRuleParam",
+    "type": "object",
+    "properties": {
+      "count1": {
+        "type": "string",
+        "description": "",
+        "title": "执行逻辑详情"
+      },
+      "count2": {
+        "type": "string",
+        "description": "",
+        "title": "控制逻辑详情"
+      },
+      "id": { "type": "string", "title": "id", "description": "" },
+      "ruleCtlDesc": {
+        "type": "string",
+        "description": "",
+        "title": "控制逻辑描述"
+      },
+      "ruleLogicDesc": {
+        "type": "string",
+        "description": "",
+        "title": "执行逻辑描述"
+      },
+      "ruleName": { "type": "string", "description": "", "title": "规则名称" },
+      "ruleNo": { "type": "string", "description": "", "title": "规则编码" },
+      "ruleType": { "type": "string", "title": "ruleType", "description": "" },
+      "taskId": { "type": "string", "description": "", "title": "任务ID" }
+    },
+    "description": "查看执行规则参数"
+  }
+}

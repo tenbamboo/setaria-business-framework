@@ -8,5 +8,6 @@ play
 ssr-testing/cases/*
 docs/.vitepress/i18n/*
 docs/.vitepress/crowdin/*
+docs/json-schema/*
 !docs/.vitepress/crowdin/en-US
 !.*

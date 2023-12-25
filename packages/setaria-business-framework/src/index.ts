@@ -1,5 +1,6 @@
 import { Setaria } from '@setaria/setaria-ts'
 import { setupUI } from './ui/'
+import { setupSchema } from './schema/'
 import { injectConfig } from './injection'
 import { setEnvParams } from './utils/envParams'
 import type { FrameworkConfig, ViteEnv } from '@setaria/setaria-ts'
@@ -17,6 +18,7 @@ export class Framework extends Setaria {
     injectConfig(config)
     super(config, envParmas, outterApp)
     setupUI(this.app, config)
+    setupSchema(config)
   }
 }
 export default {
@@ -24,7 +26,5 @@ export default {
     new Framework(config.config, config.envParmas, app)
   },
 }
-
-export * from './store/'
 
 // export type * from './types/store'

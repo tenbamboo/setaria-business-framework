@@ -3,6 +3,7 @@ import { defineComponent } from 'vue'
 import { searchPageProps } from './props'
 import { useConditionForm } from './condition-form'
 import { useResultTable } from './result-table'
+
 export default defineComponent({
   name: 'BfSearchPage',
   props: searchPageProps,

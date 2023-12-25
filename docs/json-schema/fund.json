@@ -1,0 +1,32 @@
+{
+  "Dict": {
+    "required": ["compId", "dictId"],
+    "properties": {
+      "compId": {
+        "type": "string",
+        "description": "",
+        "title": "公司id"
+      },
+      "dictId": { "type": "string", "description": "", "title": "字典id" },
+      "dictName": { "type": "string", "description": "", "title": "字典名称" },
+      "dispValue": { "type": "string", "description": "", "title": "展示值" },
+      "fldValue": { "type": "string", "description": "", "title": "字典值" },
+      "id": {
+        "type": "string",
+        "description": "",
+        "title": "主键id"
+      },
+      "orderId": {
+        "type": "string",
+        "description": "",
+        "title": "排序"
+      },
+      "parentId": {
+        "type": "string",
+        "description": "",
+        "title": "父级id"
+      },
+      "status": { "type": "string", "description": "", "title": "状态" }
+    }
+  }
+}

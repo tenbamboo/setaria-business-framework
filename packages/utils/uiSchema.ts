@@ -1,5 +1,3 @@
-// import cloneDeep from 'lodash/cloneDeep';
-// import { get, merge } from 'lodash-unified'
 import type { SchemaProps, SchemaUiPropsByTable } from 'setaria-components'
 
 declare type UiSchemaType = { [key: string]: SchemaUiPropsByTable }

@@ -1,0 +1,23 @@
+{
+  "jsonSchema": {
+    "schemaInput": {
+      "swaggerUrls": {
+        "claim": {
+          "url": "http://10.199.134.149:9900/claim/v3/api-docs?group=claim",
+          "name": "报账单服务"
+        },
+        "oper": {
+          "url": "http://10.199.134.149:9300/operating/v3/api-docs?group=OPERATING-DEFAULT",
+          "name": "运营服务"
+        }
+      }
+    },
+    "schemaOutput": "./json-schema",
+    "interfaceOutput": "./interface",
+    "setting": {
+      "isOutputApiManagementFile": false,
+      "isTitleNullCompletionByPropKey": false,
+      "isGenerateInterfaceByTypescript": false
+    }
+  }
+}

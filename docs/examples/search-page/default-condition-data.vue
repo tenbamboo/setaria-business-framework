@@ -5,13 +5,13 @@
     :default-condition-data="conditionData"
     :request="handlerRequest"
   />
-  <!-- <el-button @click="test1">test</el-button> -->
 </template>
 
 <script lang="ts" setup>
 import { reactive, ref } from 'vue'
 import { http } from '@setaria/setaria-ts'
-import type { SchemaProps, SchemaUiPropsByTable } from 'setaria-components'
+import type { SchemaProps } from 'setaria-components'
+import type { SeachPageEvents } from 'setaria-business-framework'
 
 const baseSchema = reactive<SchemaProps>({
   required: [],
@@ -56,7 +56,7 @@ const conditionSchema = [
 ]
 // const tableUi = reactive<Record<string, SchemaUiPropsByTable>>({})
 
-const handlerRequest = (pageInfo) => {
+const handlerRequest: SeachPageEvents.Request = (pageInfo) => {
   return http.admin.post('/t-rmbs-dict/pageSize', pageInfo).then((res) => {
     console.log(res)
     return res

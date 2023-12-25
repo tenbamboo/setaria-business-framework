@@ -91,13 +91,19 @@ search-page/reserve
 
 :::
 
-:::
-
 ## 导出功能
 
 :::demo 通过`export-data`来传递导出的接口
 
 search-page/export-data
+
+:::
+
+## 完整功能
+
+:::demo
+
+search-page/full
 
 :::
 

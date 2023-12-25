@@ -1,10 +1,20 @@
-// import _ from 'lodash'
 import { i18n } from '@setaria/setaria-ts'
+import { cloneDeep } from 'lodash-unified'
+import { useSchemaStore } from '@setaria-business-framework/store'
 import type { SchemaProps } from 'setaria-components'
-
 declare type AnyObj = { [key: string]: any }
 
 // import { Message } from 'setaria';
+/**
+ * 获取原始Schema数据
+ * @param {String} apiKey 服务名
+ * @param {String} schemaKey 类名
+ * @returns SchemaProps
+ */
+export function getSchema(apiKey: string, schemaKey: string): SchemaProps {
+  const schemaStore = useSchemaStore()
+  return cloneDeep(schemaStore.getSchemaItem(apiKey, schemaKey)) as SchemaProps
+}
 
 /**
  * 根据字符串数组取得对应的schema对象
@@ -220,6 +230,7 @@ export function replaceLabelsToI18n(schema: SchemaProps, prefix: string) {
 }
 
 export default {
+  getSchema,
   getSchemaByKeyArray,
   createDefaultObjectBySchema,
   replaceSchemaLabels,

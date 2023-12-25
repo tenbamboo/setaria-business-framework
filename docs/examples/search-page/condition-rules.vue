@@ -34,10 +34,10 @@
 
 <script lang="ts" setup>
 import { reactive, ref } from 'vue'
-import qs from 'qs'
-import { ElMessage, ElRate } from 'element-plus'
+import { ElRate } from 'element-plus'
 import { http } from '@setaria/setaria-ts'
 import type { SchemaProps, SchemaUiPropsByTable } from 'setaria-components'
+import type { SeachPageEvents } from 'setaria-business-framework'
 
 const request = http.admin
 const serachPage = ref()
@@ -89,7 +89,7 @@ const conditionSchema = reactive({
   },
 })
 
-const handlerRequest = (pageInfo) => {
+const handlerRequest: SeachPageEvents.Request = (pageInfo) => {
   if (!pageInfo?.dictName?.includes('Hello')) {
     return Promise.reject(new Error('字典名称需包含Hello'))
   }

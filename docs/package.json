@@ -7,13 +7,14 @@
     "serve": "NODE_ENV=production vitepress serve . --port 5001",
     "gen-locale": "rimraf .vitepress/i18n && tsx .vitepress/build/crowdin-generate.ts",
     "crowdin-credentials": "tsx .vitepress/build/crowdin-credentials.ts",
-    "deploy": "gh-pages -d .vitepress/dist"
+    "deploy": "gh-pages -d .vitepress/dist",
+    "generate-schema": "setaria --script generate-json-schema"
   },
   "dependencies": {
     "@docsearch/js": "^3.1.0",
     "@element-plus/icons-vue": "^2.0.9",
     "@setaria-business-framework/metadata": "workspace:*",
-    "@setaria/setaria-ts": "^0.0.15",
+    "@setaria/setaria-ts": "^0.0.17",
     "@vue/shared": "^3.2.37",
     "@vueuse/core": "^9.1.0",
     "axios": "^1.6.2",
@@ -50,7 +51,7 @@
     "markdown-it-container": "^3.0.0",
     "octokit": "^2.0.3",
     "prismjs": "^1.28.0",
-    "swagger-to-jsonschema": "^0.0.1",
+    "swagger-to-jsonschema": "^0.0.4",
     "unocss": "0.33.5",
     "unplugin-icons": "^0.14.6",
     "unplugin-vue-components": "^0.20.1",

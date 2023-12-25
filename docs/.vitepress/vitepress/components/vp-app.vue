@@ -3,7 +3,7 @@ import { computed, onMounted } from 'vue'
 import nprogress from 'nprogress'
 // import dayjs from 'dayjs'
 import { isClient, useEventListener, useToggle } from '@vueuse/core'
-import { merge } from 'lodash-es'
+// import { merge } from 'lodash-es'
 import { zhCn } from '@setaria-business-framework/locale'
 import { useToggleWidgets } from '../composables/toggle-widgets'
 import { useSidebar } from '../composables/sidebar'
@@ -114,7 +114,7 @@ onMounted(async () => {
 })
 const locale = computed(() => {
   // if (locale.value === 'zh-cn') {
-  return merge(zhCn)
+  return zhCn
   // }
   // return merge(elementEN, en)
 })

@@ -39,10 +39,11 @@
     "docs:crowdin-credentials": "pnpm run -C docs crowdin-credentials",
     "stub": "pnpm run -r --parallel stub",
     "prepare": "husky install",
-    "postinstall": "pnpm stub && concurrently \"pnpm gen:version\" \"pnpm run -C internal/metadata dev\""
+    "postinstall": "pnpm stub && concurrently \"pnpm gen:version\" \"pnpm run -C internal/metadata dev\"",
+    "docs:generate-schema": "pnpm run -C docs generate-schema"
   },
   "peerDependencies": {
-    "@setaria/setaria-ts": "^0.0.15",
+    "@setaria/setaria-ts": "^0.0.17",
     "axios": "^1.6.2",
     "element-plus": "2.4.1",
     "pinia": "^2.1.7",
@@ -62,6 +63,7 @@
     "@setaria-business-framework/directives": "workspace:*",
     "@setaria-business-framework/hooks": "workspace:*",
     "@setaria-business-framework/locale": "workspace:*",
+    "@setaria-business-framework/store": "workspace:*",
     "@setaria-business-framework/test-utils": "workspace:*",
     "@setaria-business-framework/theme-chalk": "workspace:*",
     "@setaria-business-framework/utils": "workspace:*",
@@ -87,7 +89,7 @@
     "@setaria-business-framework/build": "workspace:^0.0.1",
     "@setaria-business-framework/build-utils": "workspace:^0.0.1",
     "@setaria-business-framework/eslint-config": "workspace:*",
-    "@setaria/setaria-ts": "^0.0.15",
+    "@setaria/setaria-ts": "^0.0.17",
     "@types/fs-extra": "^9.0.13",
     "@types/gulp": "^4.0.9",
     "@types/jsdom": "^16.2.14",

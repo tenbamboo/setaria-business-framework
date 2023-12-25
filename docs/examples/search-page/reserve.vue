@@ -39,6 +39,7 @@ import { reactive, ref } from 'vue'
 import { ElRate } from 'element-plus'
 import { http } from '@setaria/setaria-ts'
 import type { SchemaProps, SchemaTableEvents } from 'setaria-components'
+import type { SeachPageEvents } from 'setaria-business-framework'
 
 const request = http.admin
 const serachPage = ref()
@@ -85,7 +86,7 @@ const conditionSchema = [
   'status',
 ]
 
-const handlerRequest = (pageInfo) => {
+const handlerRequest: SeachPageEvents.Request = (pageInfo) => {
   return request.post('/t-rmbs-dict/pageSize', pageInfo).then((res) => {
     console.log(res)
     return res
