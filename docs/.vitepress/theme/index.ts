@@ -39,6 +39,7 @@ export default define<Theme>({
       locale: 'zh-cn', // 设置语言环境
       fallbackLocale: 'zh-cn',
       silentTranslationWarn: true, // 关闭警告
+      silentFallbackWarn: true,
       messages: {
         'zh-cn': {}, //merge(elementZh, zhCn),
         'en-us': {}, //merge(elementZh, zhCn),

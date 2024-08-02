@@ -5,6 +5,8 @@ import 'normalize.css'
 // reset
 import '../../../packages/theme-chalk/src/reset.scss'
 
+import './mock/'
+
 // for dark mode
 // import '../../../packages/theme-chalk/src/dark/css-vars.scss'
 import 'element-plus/dist/index.css'

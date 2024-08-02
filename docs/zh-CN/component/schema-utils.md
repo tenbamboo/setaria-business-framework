@@ -1,4 +1,11 @@
-### getSchema
+---
+title: SchemaUtils
+lang: zh-CN
+---
+
+# SchemaUtils
+
+## getSchema
 
 通过 Swagger Json Schema 获取实体信息
 
@@ -17,7 +24,7 @@ import { getSchema } from 'setaria-business-framework'
 const schema = getSchema('Demo', 'AutoSignOffConfig')
 ```
 
-### getSchemaByKeyArray
+## getSchemaByKeyArray
 
 通过给定的 arr 数据从 schema 中摘取对应的 JSON schema 数据并返回重新组织的 schmea 对象
 
@@ -43,7 +50,7 @@ getSchemaByKeyArray(baseSchema, [
 ])
 ```
 
-### createDefaultObjectBySchema
+## createDefaultObjectBySchema
 
 通过 schmea 创建属性的默认值
 
@@ -64,13 +71,13 @@ const schema = getSchema('Demo', 'AutoSignOffConfig')
 const data = createDefaultObjectBySchema(schema)
 ```
 
-<!-- ### schemaFiledCustomAppend
+<!-- ## schemaFiledCustomAppend
 
 批量在属性下增加对应的内容，比如批量增加 { format: 'date' }（转换为日期组件）
 
 需要注意的是，此方法需要引入`util`
 
-### 参数说明
+## 参数说明
 
 | 参数     | 说明               | 类型   |
 | -------- | ------------------ | ------ |
@@ -98,13 +105,13 @@ SchemaUtils.schemaFiledCustomAppend(
 )
 ``` -->
 
-<!-- ### schemaFiledUiSet
+<!-- ## schemaFiledUiSet
 
 批量增加 UI 的属性，比如可清空等属性
 
 需要注意的是，此方法需要引入`util`
 
-### 参数说明
+## 参数说明
 
 | 参数          | 说明             | 类型   |
 | ------------- | ---------------- | ------ |
@@ -148,13 +155,13 @@ SchemaUtils.schemaFiledUiSet(
 )
 ``` -->
 
-<!-- ### schemaFiledOneOfSet
+<!-- ## schemaFiledOneOfSet
 
 在一个属性下增加下拉的功能
 
 需要注意的是，此方法需要引入`util`
 
-### 参数说明
+## 参数说明
 
 | 参数      | 说明                                                                | 类型   |
 | --------- | ------------------------------------------------------------------- | ------ |
@@ -199,7 +206,7 @@ SchemaUtils.schemaFiledOneOfSet(
 )
 ``` -->
 
-### replaceSchemaLabels
+## replaceSchemaLabels
 
 批量替换 schema 中的 label 内容
 
@@ -219,7 +226,7 @@ replaceSchemaLabels(this, schema, {
 })
 ```
 
-### replaceLabelsToI18n
+## replaceLabelsToI18n
 
 批量国际化 替换 schmea 的 label 内容
 
@@ -237,11 +244,11 @@ import { replaceLabelsToI18n } from 'setaria-business-framework'
 replaceLabelsToI18n(schema, 'Role')
 ```
 
-<!-- ### calculateSchema
+<!-- ## calculateSchema
 
 根据 schemaArray 数组及 excludeSchemaArray 计算真实的 schema
 
-### 参数说明
+## 参数说明
 
 | 参数               | 说明                               | 类型   |
 | ------------------ | ---------------------------------- | ------ |

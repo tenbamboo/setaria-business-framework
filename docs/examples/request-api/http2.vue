@@ -9,27 +9,27 @@ import { http } from '@setaria/setaria-ts'
 
 const fetchBusiness = (p: any) => {
   http
-    .base({
-      method: 'get',
-      url: '/users/current-user',
+    .admin({
+      method: 'post',
+      url: '/t-rmbs-dict/listByCode',
       isControllRepeat: true, // 通过此属性来控制在大量请求时的节流
     })
     .then((res) => {
       console.log('第1', res)
     })
   http
-    .base({
-      method: 'get',
-      url: '/users/current-user',
+    .admin({
+      method: 'post',
+      url: '/t-rmbs-dict/listByCode',
       isControllRepeat: true, // 通过此属性来控制在大量请求时的节流
     })
     .then((res) => {
       console.log('第2', res)
     })
   http
-    .base({
-      method: 'get',
-      url: '/users/current-user',
+    .admin({
+      method: 'post',
+      url: '/t-rmbs-dict/listByCode',
       isControllRepeat: true, // 通过此属性来控制在大量请求时的节流
     })
     .then((res) => {

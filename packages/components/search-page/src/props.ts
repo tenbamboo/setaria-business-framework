@@ -28,6 +28,7 @@ export const searchPageProps = buildProps({
     },
     border: {
       type: definePropType<VxeTablePropTypes.Border>([Boolean, String]),
+      // type: [Boolean, String],
       default: true,
     },
     tableId: {

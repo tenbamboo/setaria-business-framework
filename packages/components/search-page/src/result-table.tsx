@@ -150,9 +150,12 @@ export const useResultTable = (
     })
   }
 
-  const handlerPageChange: SchemaTableEvents.PageChange = (params) => {
+  const handlerPageChange: SchemaTableEvents.PageChange = (
+    currentPage,
+    pageSize
+  ) => {
     search()
-    emit('page-change', params)
+    emit('page-change', currentPage, pageSize)
   }
   const handlerSortChange: SchemaTableEvents.SortChange = (params) => {
     innerOrderItem.value = params.field

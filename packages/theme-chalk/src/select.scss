@@ -1,0 +1,40 @@
+@use 'mixins/mixins' as *;
+@use 'mixins/var' as *;
+@use 'common/var' as *;
+
+.remote-select-container {
+  &.remote-select-container__append {
+    .el-select {
+      vertical-align: middle;
+      display: table-cell;
+    }
+
+    .remote-append {
+      background-color: #f5f7fa;
+      color: #909399;
+      vertical-align: middle;
+      display: table-cell;
+      position: relative;
+      border: 1px solid #dcdfe6;
+      border-radius: 4px;
+      width: 1px;
+      white-space: nowrap;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      border-left: 0;
+
+      .el-button {
+        border-color: transparent;
+        background-color: transparent;
+        color: inherit;
+        border-top: 0;
+        border-bottom: 0;
+      }
+    }
+  }
+
+  .el-select .el-select__tags .el-select__input {
+    border: none;
+    background: transparent;
+  }
+}

@@ -1,4 +1,11 @@
-<!-- ### disabled
+---
+title: SchemaUiUtils
+lang: zh-CN
+---
+
+# SchemaUiUtils
+
+<!-- ## disabled
 
 快捷设置 UI 内容为表单项不可用
 
@@ -12,7 +19,7 @@ const uiSchema = {
 }
 ```
 
-### unDisabled
+## unDisabled
 
 快捷设置 UI 内容为表单项可用
 
@@ -26,7 +33,7 @@ const uiSchema = {
 }
 ``` -->
 
-<!-- ### hidden
+<!-- ## hidden
 
 快捷设置 UI 内容为表单&表格项隐藏
 
@@ -40,7 +47,7 @@ const uiSchema = {
 }
 ```
 
-### unHidden
+## unHidden
 
 快捷设置 UI 内容为表单&表格项不隐藏
 
@@ -54,7 +61,7 @@ const uiSchema = {
 }
 ``` -->
 
-<!-- ### formItemHidden
+<!-- ## formItemHidden
 
 快捷设置 UI 内容为表单项隐藏
 
@@ -68,7 +75,7 @@ const uiSchema = {
 }
 ```
 
-### formItemUnHidden
+## formItemUnHidden
 
 快捷设置 UI 内容为表单项不隐藏
 
@@ -82,7 +89,7 @@ const uiSchema = {
 }
 ``` -->
 
-<!-- ### tableHidden
+<!-- ## tableHidden
 
 快捷设置 UI 内容为表格项隐藏
 
@@ -113,7 +120,7 @@ const uiSchema = {
 }
 ```
 
-### tableUnHidden
+## tableUnHidden
 
 快捷设置 UI 内容为表格项不藏
 
@@ -144,7 +151,7 @@ const uiSchema = {
 }
 ``` -->
 
-<!-- ### columnMinWidth
+<!-- ## columnMinWidth
 
 快捷设置表格列的最小宽度
 
@@ -176,7 +183,7 @@ const uiSchema = {
 }
 ``` -->
 
-### addRequired
+## addRequired
 
 批量操作 schema 对象中的必填字段
 
@@ -213,7 +220,7 @@ const schema = {
 addRequired(schema, ['fullname', 'sex'])
 ```
 
-### removeRequired
+## removeRequired
 
 批量操作 schema 对象`移除`必填字段
 
@@ -250,7 +257,7 @@ const schema = {
 removeRequired(schema, ['fullname', 'sex'])
 ```
 
-### addDisabled
+## addDisabled
 
 批量操作 ui-schema 对象中设置不可用字段
 
@@ -296,7 +303,7 @@ const uiSchema = {
 addDisabled(uiSchema, ['fullname', 'sex'])
 ```
 
-### removeDisabled
+## removeDisabled
 
 批量操作 ui-schema 对象中设置`移除`不可用字段
 
@@ -342,7 +349,7 @@ const uiSchema = {
 removeDisabled(uiSchema, ['fullname', 'sex'])
 ```
 
-### addHidden
+## addHidden
 
 批量操作 ui-schema 对象中设置隐藏字段
 
@@ -386,7 +393,7 @@ const uiSchema = {
 addHidden(uiSchema, ['fullname', 'sex'])
 ```
 
-### removeHidden
+## removeHidden
 
 批量操作 ui-schema 对象中设置`移除`隐藏字段
 
@@ -430,7 +437,7 @@ const uiSchema = {
 removeHidden(uiSchema, ['fullname', 'sex'])
 ```
 
-### addFormItemHidden
+## addFormItemHidden
 
 批量操作 ui-schema 对象中设置表单状态下隐藏字段
 
@@ -474,7 +481,7 @@ const uiSchema = {
 addFormItemHidden(uiSchema, ['fullname', 'sex'])
 ```
 
-### removeFormItemHidden
+## removeFormItemHidden
 
 批量操作 ui-schema 对象中设置`移除`设置表单状态的隐藏字段
 
@@ -519,7 +526,7 @@ const uiSchema = {
 removeFormItemHidden(uiSchema, ['fullname', 'sex'])
 ```
 
-### addTableItemHidden
+## addTableItemHidden
 
 批量操作 ui-schema 对象中设置表格状态下隐藏字段
 
@@ -563,7 +570,7 @@ const uiSchema = {
 addTableItemHidden(uiSchema, ['fullname', 'sex'])
 ```
 
-### removeTableItemHidden
+## removeTableItemHidden
 
 批量操作 ui-schema 对象中设置`移除`设置表单状态的隐藏字段
 
@@ -608,7 +615,7 @@ const uiSchema = {
 removeTableItemHidden(uiSchema, ['fullname', 'sex'])
 ```
 
-### formatPriceType
+## formatPriceType
 
 快捷设置 scehma 内容为为货币类型
 
@@ -631,7 +638,7 @@ const schema = {
 }
 ```
 
-### formatDateTimeType
+## formatDateTimeType
 
 快捷设置 scehma 内容为为日期时间类型
 
@@ -656,7 +663,7 @@ const schema = {
 }
 ```
 
-### formatDateType
+## formatDateType
 
 快捷设置 scehma 内容为为日期类型
 
@@ -681,7 +688,7 @@ const schema = {
 }
 ```
 
-<!-- ### getIndexItem
+<!-- ## getIndexItem
 
 快捷获取表格序号功能的schemaItem
 
@@ -705,7 +712,7 @@ const schema = {
 }
 ``` -->
 
-<!-- ### getStartDateOptions
+<!-- ## getStartDateOptions
 
 获取datePicker的开始与结束时间的禁用逻辑(开始逻辑)
 
@@ -740,7 +747,7 @@ const conditionUiSchema={
 }
 ``` -->
 
-<!-- ### getEndDateOptions
+<!-- ## getEndDateOptions
 
 获取datePicker的开始与结束时间的禁用逻辑(开始逻辑)
 

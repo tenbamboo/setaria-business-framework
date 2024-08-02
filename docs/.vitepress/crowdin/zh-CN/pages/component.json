@@ -15,7 +15,7 @@
         "text": "状态管理"
       },
       {
-        "link": "/http",
+        "link": "/request-api",
         "text": "服务调用"
       },
       {
@@ -49,11 +49,24 @@
     ]
   },
   "business": {
-    "text": "业务复合组件",
+    "text": "业务复杂组件",
     "children": [
       {
         "link": "/search-page",
         "text": "Search Page"
+      }
+    ]
+  },
+  "select": {
+    "text": "业务下拉组件",
+    "children": [
+      {
+        "link": "/remote-select",
+        "text": "Remote Select"
+      },
+      {
+        "link": "/dict-select",
+        "text": "Dict Select"
       }
     ]
   }

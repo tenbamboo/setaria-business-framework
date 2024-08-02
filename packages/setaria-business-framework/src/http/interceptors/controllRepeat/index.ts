@@ -59,7 +59,7 @@ const allowRequest = (key: string) => {
 }
 
 // 获取统一Key
-const getKey = (config: CustomAxiosRequestConfig) =>
+export const getKey = (config: CustomAxiosRequestConfig) =>
   config.url + JSON.stringify(config.data) + config.method
 
 // 请求拦截
@@ -84,6 +84,9 @@ export const responseControllRepeat = (res: AxiosResponse) => {
     const data = res?.data
     const key = getKey(config)
     allowRequest(key)
+    if (res.data) {
+      res.data.controllRepeatFlag = key
+    }
 
     // 查找已取消的信息
     cancelList
