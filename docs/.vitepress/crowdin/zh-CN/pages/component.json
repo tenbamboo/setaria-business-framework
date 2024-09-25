@@ -48,6 +48,15 @@
       }
     ]
   },
+  "businessBase": {
+    "text": "业务基础组件",
+    "children": [
+      {
+        "link": "/fake-component",
+        "text": "Fake Component"
+      }
+    ]
+  },
   "business": {
     "text": "业务复杂组件",
     "children": [
@@ -57,6 +66,7 @@
       }
     ]
   },
+
   "select": {
     "text": "业务下拉组件",
     "children": [

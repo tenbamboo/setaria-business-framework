@@ -1,5 +1,6 @@
 export * from './hello-would'
 export * from './search-page'
+export * from './fake-component'
 export * from './select/remote-select'
 export * from './select/dict-select'
 
