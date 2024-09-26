@@ -54,6 +54,10 @@
       {
         "link": "/fake-component",
         "text": "Fake Component"
+      },
+      {
+        "link": "/chinese-money",
+        "text": "Chinese Money"
       }
     ]
   },

@@ -11,7 +11,7 @@ export type SelectValueType = Array<string | number | boolean>
 
 export const remoteSelectProps = {
   modelValue: {
-    type: [Number, String, Boolean],
+    type: [Number, String],
     default: undefined,
   },
   labelMode: {
