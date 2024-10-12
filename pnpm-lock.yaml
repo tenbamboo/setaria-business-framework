@@ -300,8 +300,8 @@ importers:
         specifier: 0.0.13
         version: 0.0.13(element-plus@2.7.8)(vue@3.4.35)(vxe-table@4.7.59)(xe-utils@3.5.13)
       setaria-mockjs:
-        specifier: ^1.0.1
-        version: 1.0.1
+        specifier: ^1.0.2
+        version: 1.0.2
       vue:
         specifier: ^3.4.35
         version: 3.4.35(typescript@4.7.4)
@@ -7408,7 +7408,7 @@ packages:
     resolution: {integrity: sha512-oWb1Z6mkHIskLzEJ/XWX0srkpkTQ7vaopMQkyaEIoq0fmtFVxOthb8cCxeT+p3ynTdkk/RZwbgG4brR5BeWECw==}
     engines: {node: '>= 4.0'}
     os: [darwin]
-    deprecated: The v1 package contains DANGEROUS / INSECURE binaries. Upgrade to safe fsevents v2
+    deprecated: Upgrade to fsevents v2 to mitigate potential security issues
     requiresBuild: true
     dependencies:
       bindings: 1.5.0
@@ -10779,8 +10779,8 @@ packages:
     transitivePeerDependencies:
       - '@vue/composition-api'
 
-  /setaria-mockjs@1.0.1:
-    resolution: {integrity: sha512-04haxECLxpEk6p+x5krz+llIAvRgvXfZwYXB7Us3LH57z/nvKcK7OVQaofsl8vYPvQnm+r+kG3z8eV+z6GoYeA==}
+  /setaria-mockjs@1.0.2:
+    resolution: {integrity: sha512-LwwTk55QsuBUTqJNT+hGe6l5cBALhmhc2kKbAMJClEIDAdxNCxJKz5w3QIoNkD2/PFPMWqJz4y4h0eBfKQMGiA==}
     hasBin: true
     dependencies:
       commander: 11.1.0

@@ -28,7 +28,7 @@
     "qs": "^6.10.1",
     "setaria-business-framework": "npm:setaria-business-framework@latest",
     "setaria-components": "0.0.13",
-    "setaria-mockjs": "^1.0.1",
+    "setaria-mockjs": "^1.0.2",
     "vue": "^3.4.35",
     "vue-i18n": "9.8.0",
     "vue-router": "^4.2.5",
