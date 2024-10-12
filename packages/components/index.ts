@@ -1,6 +1,7 @@
 export * from './hello-would'
 export * from './search-page'
 export * from './fake-component'
+export * from './file-dragger'
 export * from './chinese-money'
 export * from './select/remote-select'
 export * from './select/dict-select'

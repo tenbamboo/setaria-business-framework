@@ -29,7 +29,7 @@
 
 ### 框架主要依赖
 
-[Vue2](https://cn.vuejs.org/index.html)
+[Vue3](https://cn.vuejs.org/index.html)
 
 [Setaria](https://github.com/setariajs/setaria)
 
@@ -37,6 +37,6 @@
 
 [Setaria-Components](https://tenbamboo.github.io/setaria-components/zh-CN/)
 
-[Vxe-Table](https://vxetable.cn/v3/)
+[Vxe-Table](https://vxetable.cn/v4/#/)
 
 [Json-Schema](https://json-schema.org/)

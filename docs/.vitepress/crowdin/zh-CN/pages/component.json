@@ -58,6 +58,10 @@
       {
         "link": "/chinese-money",
         "text": "Chinese Money"
+      },
+      {
+        "link": "/file-dragger",
+        "text": "File Dragger"
       }
     ]
   },
