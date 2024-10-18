@@ -8,6 +8,8 @@ import { BfChineseMoney } from '@setaria-business-framework/components/chinese-m
 import { BfRemoteSelect } from '@setaria-business-framework/components/select/remote-select'
 import { BfDictSelect } from '@setaria-business-framework/components/select/dict-select'
 
+import { BfBasicSearchHelp } from '@setaria-business-framework/components/search-help/basic/dialog'
+
 import type { Plugin } from 'vue'
 
 export default [
@@ -19,4 +21,6 @@ export default [
 
   BfRemoteSelect,
   BfDictSelect,
+
+  BfBasicSearchHelp,
 ] as Plugin[]

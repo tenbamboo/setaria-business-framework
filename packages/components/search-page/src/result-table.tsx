@@ -6,6 +6,7 @@ import { ElCard, ElLink } from 'element-plus'
 import { cloneDeep } from 'lodash-unified'
 // import XEUtils from 'xe-utils'
 import { ScSchemaTable, schemaTableProps } from 'setaria-components'
+import { ApplicationError } from '@setaria/setaria-ts'
 import { useI18n } from 'vue-i18n'
 
 import {
@@ -37,7 +38,7 @@ export declare interface PageResponseParams {
   message: string
 }
 
-declare interface TableRef {
+export declare interface TableRef {
   setSelection: Function
   getSelection: Function
   clearSelection: Function
@@ -131,7 +132,7 @@ export const useResultTable = (
               isLoading.value = false
             })
         } else {
-          reject(new Error('未指定request参数'))
+          reject(new ApplicationError('SearchPageError', '未指定request参数'))
         }
       }
       // if (this.$refs.searchConditionCardRef) {
@@ -140,7 +141,12 @@ export const useResultTable = (
           if (conditionValidate) {
             requestInterface()
           } else {
-            reject(new Error(t('common.inputRequiredFirst')))
+            reject(
+              new ApplicationError(
+                'SearchPageError',
+                t('common.inputRequiredFirst')
+              )
+            )
           }
         }
       )
@@ -287,15 +293,19 @@ export const useResultTable = (
                 })
                 .catch((e: any) => {
                   emit('export-error', e)
-                  reject(new Error('导出失败，请重试'))
+                  reject(
+                    new ApplicationError('SearchPageError', '导出失败，请重试')
+                  )
                   // throw e;
                 })
                 .finally(() => {
                   isLoading.value = false
                 })
             } else {
-              reject(new Error('未指定exportData参数'))
-              // reject(new Error(this.$t('ExportData_Parameter_Not_Specified')));
+              reject(
+                new ApplicationError('SearchPageError', '未指定exportData参数')
+              )
+              // reject(new ApplicationError(this.$t('ExportData_Parameter_Not_Specified')));
             }
           }
 
@@ -304,7 +314,12 @@ export const useResultTable = (
               if (conditionValidate) {
                 requestInterface()
               } else {
-                reject(new Error(t('common.inputRequiredFirst')))
+                reject(
+                  new ApplicationError(
+                    'SearchPageError',
+                    t('common.inputRequiredFirst')
+                  )
+                )
               }
             }
           )

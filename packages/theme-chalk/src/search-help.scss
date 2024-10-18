@@ -1,0 +1,22 @@
+@use 'mixins/mixins' as *;
+@use 'mixins/var' as *;
+@use 'common/var' as *;
+
+@include b(search-help) {
+}
+
+.bf-search-help-dailog {
+  .only-pick-area {
+    margin: 20px 0;
+    text-align: right;
+  }
+}
+// .bf-search-page_result-table {
+//   margin-top: 10px;
+//   .el-card__header {
+//     padding: 8px 20px;
+//   }
+//   .el-card__body {
+//     padding: 10px;
+//   }
+// }

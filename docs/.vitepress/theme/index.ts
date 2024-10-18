@@ -41,7 +41,10 @@ export default define<Theme>({
       silentTranslationWarn: true, // 关闭警告
       silentFallbackWarn: true,
       messages: {
-        'zh-cn': {}, //merge(elementZh, zhCn),
+        'zh-cn': {
+          // 用于演示使用，后续应对接业务系统I18N模块
+          'common.exportData': '导出数据',
+        }, //merge(elementZh, zhCn),
         'en-us': {}, //merge(elementZh, zhCn),
       }, // 设置语言环境信息
     })

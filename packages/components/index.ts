@@ -6,6 +6,8 @@ export * from './chinese-money'
 export * from './select/remote-select'
 export * from './select/dict-select'
 
+export * from './search-help/basic/dialog'
+
 // plugins
 // export * from './infinite-scroll'
 // export * from './loading'

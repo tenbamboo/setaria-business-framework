@@ -8,6 +8,8 @@ declare module '@vue/runtime-core' {
     BfChineseMoney: typeof import('setaria-business-framework')['BfChineseMoney']
     BfRemoteSelect: typeof import('setaria-business-framework')['BfRemoteSelect']
     BfDictSelect: typeof import('setaria-business-framework')['BfDictSelect']
+
+    BfBasicSearchHelp: typeof import('setaria-business-framework')['BfBasicSearchHelp']
   }
 }
 

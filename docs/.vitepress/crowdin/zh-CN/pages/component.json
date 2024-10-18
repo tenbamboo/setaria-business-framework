@@ -87,5 +87,14 @@
         "text": "Dict Select"
       }
     ]
+  },
+  "search-help": {
+    "text": "业务搜索帮助组件",
+    "children": [
+      {
+        "link": "/basic-search-help",
+        "text": "Basic Search Help"
+      }
+    ]
   }
 }
