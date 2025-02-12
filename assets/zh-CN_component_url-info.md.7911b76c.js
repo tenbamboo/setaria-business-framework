@@ -1,0 +1,1 @@
+import{o as t,c as e}from"./app.827654e5.js";const s='{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"zh-CN/component/url-info.md","lastUpdated":1703520431000}',a={},_=Object.assign(a,{__name:"url-info",setup(o){return(n,r)=>(t(),e("div"))}});export{s as __pageData,_ as default};
