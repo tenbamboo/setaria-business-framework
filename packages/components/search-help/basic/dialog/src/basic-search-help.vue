@@ -122,7 +122,7 @@ const { t } = useI18n()
 const {
   innerVisible,
   // handlerSelectChange,
-  // handlerSelectBlue,
+  // handlerSelectBlur,
   // handlerSelectDone,
 } = useSeachHelpCommon(props, emit)
 
@@ -346,7 +346,7 @@ watch(
     if (Array.isArray(props.conditionSchema)) {
       innerConditionSchema.value = getSchemaByKeyArray(
         props.schema as SchemaProps,
-        props.conditionSchema
+        props.conditionSchema as string[]
       )
     } else {
       innerConditionSchema.value = props.conditionSchema
@@ -368,7 +368,10 @@ watch(
   () => {
     if (Array.isArray(props.tableSchema)) {
       innerTableSchema.value = {
-        ...getSchemaByKeyArray(props.schema as SchemaProps, props.tableSchema),
+        ...getSchemaByKeyArray(
+          props.schema as SchemaProps,
+          props.tableSchema as string[]
+        ),
         ...{ required: props.schema?.required || [] },
       }
     } else {

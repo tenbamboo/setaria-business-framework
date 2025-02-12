@@ -94,6 +94,10 @@
       {
         "link": "/basic-search-help",
         "text": "Basic Search Help"
+      },
+      {
+        "link": "/basic-input-search-help",
+        "text": "Basic Input Search Help"
       }
     ]
   }

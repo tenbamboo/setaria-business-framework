@@ -14,7 +14,7 @@ export const useSelectCommon = (props: any, emit: any) => {
     emit('change', val)
   }
 
-  const handlerSelectBlue = (evt: FocusEvent) => {
+  const handlerSelectBlur = (evt: FocusEvent) => {
     emit('blur', evt)
   }
 
@@ -28,7 +28,7 @@ export const useSelectCommon = (props: any, emit: any) => {
   return {
     innerValue,
     handlerSelectChange,
-    handlerSelectBlue,
+    handlerSelectBlur,
     handlerSelectDone,
   }
 }

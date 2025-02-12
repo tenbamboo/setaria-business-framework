@@ -9,6 +9,7 @@ import { BfRemoteSelect } from '@setaria-business-framework/components/select/re
 import { BfDictSelect } from '@setaria-business-framework/components/select/dict-select'
 
 import { BfBasicSearchHelp } from '@setaria-business-framework/components/search-help/basic/dialog'
+import { BfBasicInputSearchHelp } from '@setaria-business-framework/components/search-help/basic/input'
 
 import type { Plugin } from 'vue'
 
@@ -23,4 +24,5 @@ export default [
   BfDictSelect,
 
   BfBasicSearchHelp,
+  BfBasicInputSearchHelp,
 ] as Plugin[]

@@ -129,9 +129,13 @@ const handlerFormSave = (data, mode) => {
     )
     label = '删除'
   }
-  return fun.then(() => {
-    serachPage.value.search()
-    ElMessage.success(`${label}成功`)
-  })
+  return fun
+    .then(() => {
+      serachPage.value.search()
+      ElMessage.success(`${label}成功`)
+    })
+    .catch((e) => {
+      console.log('错误啦', e)
+    })
 }
 </script>

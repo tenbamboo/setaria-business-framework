@@ -7,5 +7,6 @@ export default BfBasicSearchHelp
 
 export * from './src/basic-search-help.vue'
 export * from './src/propsAndEmit'
+export * from './src/event.type'
 
 export type { BasicSearchHelpInstance } from './src/instance'

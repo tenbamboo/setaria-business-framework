@@ -61,8 +61,6 @@ basic-search-help/validate
 
 ### BasicSearchHelp Attributes
 
-此组件已继承`el-select`和`remote-select`，可使用以上组件所有属性。
-
 | 名称                | 说明                                                                         | 类型                                   | 默认值     | 必填 |
 | ------------------- | ---------------------------------------------------------------------------- | -------------------------------------- | ---------- | ---- |
 | v-model:visible     | 控制显示                                                                     | Boolean                                | —          | 是   |
@@ -94,9 +92,8 @@ basic-search-help/validate
 
 ### BasicSearchHelp Exposes
 
-| 方法名         | 说明                 | 类型                     |
-| -------------- | -------------------- | ------------------------ |
-| getOptionsList | 获取下拉选项中的数据 | ^[Function]`() => Array` |
+| 方法名 | 说明 | 类型 |
+| ------ | ---- | ---- |
 
 ### BasicSearchHelp Slots
 
@@ -104,3 +101,4 @@ basic-search-help/validate
 | ------------------ | ------------------------ |
 | condition.[字段名] | 对应搜索表单项自定义插槽 |
 | table.[字段名]     | 对应表格项自定义插槽     |
+| controlButtons     | 对应搜索表单按钮内容     |

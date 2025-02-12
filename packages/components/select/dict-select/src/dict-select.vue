@@ -17,7 +17,7 @@
     :disabled-options="props.disabledOptions"
     :before-change="props.beforeChange"
     @change="handlerSelectChange"
-    @blur="handlerSelectBlue"
+    @blur="handlerSelectBlur"
     @done="handlerSelectDone"
   >
     <template #append>
@@ -46,7 +46,7 @@ const emit = defineEmits(remoteSelectEmits)
 const {
   innerValue,
   handlerSelectChange,
-  handlerSelectBlue,
+  handlerSelectBlur,
   handlerSelectDone,
 } = useSelectCommon(props, emit)
 

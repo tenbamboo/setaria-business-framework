@@ -1,14 +1,14 @@
 import { computed } from 'vue'
-// import { UPDATE_MODEL_EVENT } from '@setaria-business-framework/constants'
+import { UPDATE_MODEL_EVENT } from '@setaria-business-framework/constants'
 // import type { SelectValueType } from '../remote-select/src/propsAndEmit'
 
 export const useSeachHelpCommon = (props: any, emit: any) => {
-  // const innerValue = computed({
-  //   get: () => props.modelValue,
-  //   set: (val) => {
-  //     emit(UPDATE_MODEL_EVENT, val as unknown as SelectValueType)
-  //   },
-  // })
+  const innerValue = computed({
+    get: () => props.modelValue,
+    set: (val) => {
+      emit(UPDATE_MODEL_EVENT, val as any)
+    },
+  })
 
   const innerVisible = computed({
     get: () => props.visible,
@@ -21,7 +21,7 @@ export const useSeachHelpCommon = (props: any, emit: any) => {
     emit('change', val)
   }
 
-  const handlerSelectBlue = (evt: FocusEvent) => {
+  const handlerSelectBlur = (evt: FocusEvent) => {
     emit('blur', evt)
   }
 
@@ -33,10 +33,10 @@ export const useSeachHelpCommon = (props: any, emit: any) => {
   }
 
   return {
-    // innerValue,
+    innerValue,
     innerVisible,
     handlerSelectChange,
-    handlerSelectBlue,
+    handlerSelectBlur,
     handlerSelectDone,
   }
 }

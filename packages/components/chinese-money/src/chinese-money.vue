@@ -1,13 +1,17 @@
 <template>
-  <bf-fake-component v-model="innerValue" :label-mode="labelMode">
-    <el-input v-model="innerValue" :disabled="disabled" />
-  </bf-fake-component>
+  <div>
+    <BfFakeComponent v-model="innerValue" :label-mode="labelMode">
+      <el-input v-model="innerValue" :disabled="disabled" />
+    </BfFakeComponent>
+  </div>
 </template>
 
 <script lang="ts" setup>
 import { computed } from 'vue'
-// import { UPDATE_MODEL_EVENT } from '@setaria-business-framework/constants'
 import { convertChineseMoney, isBlank } from '@setaria-business-framework/utils'
+import { BfFakeComponent } from '../../fake-component/index'
+
+// import { UPDATE_MODEL_EVENT } from '@setaria-business-framework/constants'
 import { chineseMoneyEmits, chineseMoneyProps } from './propsAndEmit'
 import type { InputValueType } from './propsAndEmit'
 defineOptions({

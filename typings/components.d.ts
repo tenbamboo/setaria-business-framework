@@ -12,6 +12,7 @@ declare module '@vue/runtime-core' {
     BfRemoteSelect: typeof import('../packages/setaria-business-framework')['BfRemoteSelect']
     BfDictSelect: typeof import('../packages/setaria-business-framework')['BfDictSelect']
     BfBasicSearchHelp: typeof import('../packages/setaria-business-framework')['BfBasicSearchHelp']
+    BfBasicInputSearchHelp: typeof import('../packages/setaria-business-framework')['BfBasicInputSearchHelp']
   }
 }
 

@@ -7,6 +7,7 @@ export * from './select/remote-select'
 export * from './select/dict-select'
 
 export * from './search-help/basic/dialog'
+export * from './search-help/basic/input'
 
 // plugins
 // export * from './infinite-scroll'
