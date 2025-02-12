@@ -49,6 +49,6 @@ const handlerRequest: SeachPageEvents.Request = (pageInfo) => {
   return request.post('/t-rmbs-dict/pageSize', pageInfo)
 }
 const handdlerSubmit = (list) => {
-  selectedList.value = list
+  console.log('选择的数据为：', list)
 }
 </script>

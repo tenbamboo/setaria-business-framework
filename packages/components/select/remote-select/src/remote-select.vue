@@ -281,7 +281,6 @@ const handlerChange = (chagneItem: SelectValueType) => {
     // selectRef.value && selectRef.value.blur()
   }
   const errorCallback = () => {
-    console.log('errorCallback')
     innerValue.value = oldValue
   }
   const callbak = props.beforeChange(chagneItem, innerValue.value)
