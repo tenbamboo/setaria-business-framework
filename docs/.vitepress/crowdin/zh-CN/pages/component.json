@@ -48,6 +48,15 @@
       }
     ]
   },
+  "layout": {
+    "text": "布局组件",
+    "children": [
+      {
+        "link": "/tab-bar-template",
+        "text": "TabBar Template"
+      }
+    ]
+  },
   "businessBase": {
     "text": "业务基础组件",
     "children": [

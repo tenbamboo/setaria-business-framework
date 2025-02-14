@@ -1,4 +1,4 @@
-import { useSchemaStore } from '../store'
+import { useSchemaStore } from '@setaria-business-framework/store'
 import type { SchemaProps } from 'setaria-components'
 import type { FrameworkConfig } from '@setaria/setaria-ts'
 

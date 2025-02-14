@@ -30,7 +30,10 @@ export default define<Theme>({
       {
         schema,
       },
-      {},
+      {
+        // 文档系统无视路由
+        VITE_IGNORE_ROUTER_GUARD: 'true',
+      },
       app
     )
 

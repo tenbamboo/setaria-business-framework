@@ -1,5 +1,4 @@
-import type { AxiosResponse } from 'axios' // import { getCookie, removeCookie } from '../../../utils/'
-
+import type { AxiosResponse } from 'axios'
 export default {
   onFulfilled: (res: AxiosResponse) => {
     return res.data

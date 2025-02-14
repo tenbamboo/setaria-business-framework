@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/ban-types */
 import axios from 'axios'
-import { getUUID } from '../../../utils/'
+import { getUUID } from '@setaria-business-framework/utils'
 import type { CustomAxiosRequestConfig } from '../../types/'
 import type { AxiosResponse } from 'axios'
 import type { ServiceError } from '@setaria/setaria-ts'

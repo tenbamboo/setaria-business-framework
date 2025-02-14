@@ -11,6 +11,7 @@ import { BfDictSelect } from '@setaria-business-framework/components/select/dict
 import { BfBasicSearchHelp } from '@setaria-business-framework/components/search-help/basic/dialog'
 import { BfBasicInputSearchHelp } from '@setaria-business-framework/components/search-help/basic/input'
 
+import { BfTabBarTemplate } from '@setaria-business-framework/components/layout/tab-bar-template'
 import type { Plugin } from 'vue'
 
 export default [
@@ -25,4 +26,6 @@ export default [
 
   BfBasicSearchHelp,
   BfBasicInputSearchHelp,
+
+  BfTabBarTemplate,
 ] as Plugin[]

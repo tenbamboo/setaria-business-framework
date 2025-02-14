@@ -1,6 +1,9 @@
 import { ServiceError } from '@setaria/setaria-ts'
-import { getCookie, removeCookie } from '../../../utils/'
-import { getEnvParams } from '../../../utils/envParams'
+import {
+  getCookie,
+  getEnvParams,
+  removeCookie,
+} from '@setaria-business-framework/utils'
 
 function gotoLoginPage() {
   const envParams = getEnvParams()

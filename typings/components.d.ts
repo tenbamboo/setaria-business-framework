@@ -13,6 +13,7 @@ declare module '@vue/runtime-core' {
     BfDictSelect: typeof import('../packages/setaria-business-framework')['BfDictSelect']
     BfBasicSearchHelp: typeof import('../packages/setaria-business-framework')['BfBasicSearchHelp']
     BfBasicInputSearchHelp: typeof import('../packages/setaria-business-framework')['BfBasicInputSearchHelp']
+    BfTabBarTemplate: typeof import('../packages/setaria-business-framework')['BfTabBarTemplate']
   }
 }
 

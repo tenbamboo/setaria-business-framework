@@ -1,8 +1,10 @@
 import { Setaria } from '@setaria/setaria-ts'
+import { setEnvParams } from '@setaria-business-framework/utils'
 import { setupUI } from './ui/'
 import { setupSchema } from './schema/'
+// import { setupSchema } from './schema/'
 import { injectConfig } from './injection'
-import { setEnvParams } from './utils/envParams'
+import { setupRouter } from './router'
 import type { FrameworkConfig, ViteEnv } from '@setaria/setaria-ts'
 import type { App } from 'vue'
 
@@ -19,6 +21,7 @@ export class Framework extends Setaria {
     super(config, envParmas, outterApp)
     setupUI(this.app, config)
     setupSchema(config)
+    setupRouter()
   }
 }
 export default {
