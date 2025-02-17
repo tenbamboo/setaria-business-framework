@@ -3,23 +3,18 @@ import { store } from '@setaria/setaria-ts'
 // import type { StoreNullable } from '../types/'
 // import type { UserInfo } from '../types/store'
 import { get } from 'lodash-unified'
+
+import type { SchemaState } from './types'
 import type { SchemaProps } from 'setaria-components'
 
-type StoreNullable<T> = T | null
-
-interface SchemaInfo {
-  schemaInfo: {
-    [key: string]: StoreNullable<SchemaProps>
-  }
-}
 export const useSchemaStore = defineStore({
   id: 'app-schema',
-  state: (): SchemaInfo => ({
+  state: (): SchemaState => ({
     schemaInfo: {},
   }),
   getters: {
     getSchemaItem: (state) => {
-      return (apiKey: string, schemaKey: string): SchemaProps => {
+      return (apiKey: string, schemaKey: string): SchemaState => {
         return get(state.schemaInfo, [apiKey, schemaKey])
       }
     },
@@ -28,7 +23,7 @@ export const useSchemaStore = defineStore({
     // },
   },
   actions: {
-    setSchemaItem(schemaKey: string, schemaItem: StoreNullable<SchemaProps>) {
+    setSchemaItem(schemaKey: string, schemaItem: SchemaProps) {
       this.schemaInfo[schemaKey] = schemaItem
     },
   },

@@ -9,6 +9,10 @@ export * from './select/dict-select'
 export * from './search-help/basic/dialog'
 export * from './search-help/basic/input'
 
+export * from './layout/main-layout/'
+export * from './layout/base-layout/'
+export * from './layout/tab-bar-layout/'
+
 // plugins
 // export * from './infinite-scroll'
 // export * from './loading'

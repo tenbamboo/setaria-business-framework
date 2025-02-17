@@ -7,9 +7,9 @@
 ```html
 <script lang="ts" setup>
   import { computed } from 'vue'
-  import { useUserStore } from 'setaria-business-framework'
+  import { useBaseStore } from 'setaria-business-framework'
   // //
-  const userStore = useUserStore()
-  const userinfo = computed(() => userStore.getUserInfo)
+  const baseStore = useBaseStore()
+  const userinfo = computed(() => baseStore.getUserInfo)
 </script>
 ```

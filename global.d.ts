@@ -12,7 +12,9 @@ declare module '@vue/runtime-core' {
     BfBasicSearchHelp: typeof import('setaria-business-framework')['BfBasicSearchHelp']
     BfBasicInputSearchHelp: typeof import('setaria-business-framework')['BfBasicInputSearchHelp']
 
-    BfTabBarTemplate: typeof import('setaria-business-framework')['BfTabBarTemplate']
+    BfMainLayout: typeof import('setaria-business-framework')['BfMainLayout']
+    BfTabBarLayout: typeof import('setaria-business-framework')['BfTabBarLayout']
+    BfBaseLayout: typeof import('setaria-business-framework')['BfBaseLayout']
   }
 }
 

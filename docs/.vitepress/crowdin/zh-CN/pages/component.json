@@ -52,8 +52,8 @@
     "text": "布局组件",
     "children": [
       {
-        "link": "/tab-bar-template",
-        "text": "TabBar Template"
+        "link": "/base-layout",
+        "text": "布局"
       }
     ]
   },
@@ -62,15 +62,15 @@
     "children": [
       {
         "link": "/fake-component",
-        "text": "Fake Component"
+        "text": "假组件"
       },
       {
         "link": "/chinese-money",
-        "text": "Chinese Money"
+        "text": "人民币"
       },
       {
         "link": "/file-dragger",
-        "text": "File Dragger"
+        "text": "文件拖拽器"
       }
     ]
   },
@@ -89,11 +89,11 @@
     "children": [
       {
         "link": "/remote-select",
-        "text": "Remote Select"
+        "text": "远程下拉"
       },
       {
         "link": "/dict-select",
-        "text": "Dict Select"
+        "text": "字典下拉"
       }
     ]
   },

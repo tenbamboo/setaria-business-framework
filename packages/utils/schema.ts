@@ -13,7 +13,9 @@ declare type AnyObj = { [key: string]: any }
  */
 export function getSchema(apiKey: string, schemaKey: string): SchemaProps {
   const schemaStore = useSchemaStore()
-  return cloneDeep(schemaStore.getSchemaItem(apiKey, schemaKey)) as SchemaProps
+  return cloneDeep(
+    schemaStore.getSchemaItem(apiKey, schemaKey)
+  ) as unknown as SchemaProps
 }
 
 /**

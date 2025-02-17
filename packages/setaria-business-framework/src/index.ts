@@ -5,6 +5,7 @@ import { setupSchema } from './schema/'
 // import { setupSchema } from './schema/'
 import { injectConfig } from './injection'
 import { setupRouter } from './router'
+import { setupAuth } from './auth'
 import type { FrameworkConfig, ViteEnv } from '@setaria/setaria-ts'
 import type { App } from 'vue'
 
@@ -21,6 +22,7 @@ export class Framework extends Setaria {
     super(config, envParmas, outterApp)
     setupUI(this.app, config)
     setupSchema(config)
+    setupAuth()
     setupRouter()
   }
 }

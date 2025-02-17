@@ -7,22 +7,10 @@ import {
   REDIRECT_ROUTE_NAME,
 } from '@setaria-business-framework/constants'
 
+import type { TabBarState, TagProps } from './types'
 import type { RouteLocationNormalized } from 'vue-router'
 
 const BAN_LIST = [REDIRECT_ROUTE_NAME]
-
-export interface TagProps {
-  title: string
-  name: string
-  fullPath: string
-  query?: any
-  ignoreCache?: boolean
-}
-
-export interface TabBarState {
-  tagList: TagProps[]
-  cacheTabList: Set<string>
-}
 
 const formatTag = (route: RouteLocationNormalized): TagProps => {
   const { name, meta, fullPath, query } = route

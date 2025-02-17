@@ -1,10 +1,11 @@
 import Mock from 'setaria-mockjs'
 
 import dictApis from './mock-dict'
+import getAuthzInfo from './getAuthzInfo'
 // import systemInfoApis from'./mock-systemInfo'
 // import boardApis from'./mock-dashboard'
 
-const mocks = [...dictApis]
+const mocks = [...dictApis, ...getAuthzInfo]
 Mock.setup({
   timeout: 800, // setter delay time
   responseHeaders: {

@@ -1,11 +1,11 @@
 import { router } from '@setaria/setaria-ts'
-import { useUserStore } from '@setaria-business-framework/store'
+import { useBaseStore } from '@setaria-business-framework/store'
 import type { NavigationGuardWithThis } from 'vue-router'
 
 const code403Guard: NavigationGuardWithThis<undefined> = (to, _, next) => {
-  const userStore = useUserStore()
+  const baseStore = useBaseStore()
 
-  console.log('code403Guard router', userStore)
+  console.log('code403Guard router', baseStore)
   //   const store = getStore()
   // console.log('code403Guard');
   // && !to.path.includes('/redirect')
