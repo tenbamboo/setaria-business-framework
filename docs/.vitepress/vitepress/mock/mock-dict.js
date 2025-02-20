@@ -8,6 +8,7 @@ const apis = [
       const list = []
       for (let index = 0; index < 10; index += 1) {
         list.push({
+          id: index,
           compId: index,
           orderId: index,
           dictId: `test${index}`,

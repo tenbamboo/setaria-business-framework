@@ -29,45 +29,90 @@
 
 ### 路由定义
 
-<!-- 1. 定义相关路由的位置如下，定义的路由信息应遵循以业务模块角度来划分定义 -->
-
 ![image](/images/tip2.png)
 
-2. 定义路由名称时，应和当前物理路径名保持一致，这样后续直接可通过 url 找到对应的物理文件
+1. 定义路由名称时，应和当前物理路径名保持一致，这样后续直接可通过 url 找到对应的物理文件
 
-3. 定义路由时，需关注`webpackChunkName`属性，此属性一般和`name`属性一致即可，比如：
+2. 定义路由时，需关注`webpackChunkName`属性，此属性一般和`name`属性一致即可，比如：
 
 ```javascript
-const BaseTemplate = import('@/components/BaseTemplate.vue')
+import { BfTabBarLayout } from 'setaria-business-framework'
+// import { BfBaseLayout } from 'setaria-business-framework'
 
 export default [
   {
     path: '/demo1',
     name: 'demo1',
-    component: BaseTemplate,
+    component: () => BfTabBarLayout,
     children: [
       {
         path: 'demo1-1',
         name: 'demo1-1',
-        component: import(
-          /* webpackChunkName: "demo1-1" */ '@/views/demo1/demo1-1.vue'
-        ),
+        meta: {
+          title: '演示1',
+        },
+        component: () =>
+          import(/* webpackChunkName: "demo1-1" */ '@/views/demo1/demo1-1.vue'),
       },
       {
         path: 'demo1-2',
         name: 'demo1-2',
-        component: import(
-          /* webpackChunkName: "demo1-2" */ '@/views/demo1/demo1-2.vue'
-        ),
+        meta: {
+          title: '演示2',
+        },
+        component: () =>
+          import(/* webpackChunkName: "demo1-2" */ '@/views/demo1/demo1-2.vue'),
       },
       {
         path: 'demo1-3',
         name: 'demo1-3',
-        component: import(
-          /* webpackChunkName: "demo1-3" */ '@/views/demo1/demo1-3.vue'
-        ),
+        meta: {
+          title: '演示3',
+        },
+        component: () =>
+          import(/* webpackChunkName: "demo1-3" */ '@/views/demo1/demo1-3.vue'),
       },
     ],
   },
 ]
 ```
+
+3. 如要使用`keep-alive`功能，请将页面组件中`script`添加`name`属性，示例如下
+
+```javascript
+/**  路由定义部分*/
+import { BfTabBarLayout } from 'setaria-business-framework'
+
+export default [
+  {
+    path: '/dashboard',
+    component: () => BfTabBarLayout,
+    children: [
+      {
+        path: '',
+        name: 'dashboard', // 这里的内容需要和defineOptions.name的内容一致
+        meta: {
+          title: '首页',
+        },
+        component: () =>
+          import(
+            /* webpackChunkName: "dashboard" */ '@/views/dashboard/index.vue'
+          ),
+      },
+    ],
+  },
+]
+/**  业务代码部分 */
+/**  这里的名称需要和路由的name一致 */
+<script setup name="dashboard">
+</script>
+
+```
+
+### Meta 路由属性
+
+| 名称        | 说明                                                           | 类型    | 默认值 |
+| ----------- | -------------------------------------------------------------- | ------- | ------ |
+| hideInTab   | `tab-bar-layout`组件可用 是否在 tabbar 中隐藏当前页面          | Boolean | false  |
+| ignoreCache | `tab-bar-layout`组件可用 是否在无视 keep-alive 的组件缓存机制  | Boolean | false  |
+| ignoreRule  | 是否无视权限模型，即越过 RBAC 模型前端无权限时也可访问当前页面 | Boolean | false  |

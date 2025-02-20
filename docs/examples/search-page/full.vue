@@ -13,6 +13,8 @@
     :selection-type="'checkbox'"
     :form-save="handlerFormSave"
     :form-rules="formRules"
+    :show-column-setting="true"
+    :column-setting-draggable="true"
   >
     <template #condition.status="scope">
       <el-rate v-model="scope.data.status" />

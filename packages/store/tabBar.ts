@@ -15,7 +15,7 @@ const BAN_LIST = [REDIRECT_ROUTE_NAME]
 const formatTag = (route: RouteLocationNormalized): TagProps => {
   const { name, meta, fullPath, query } = route
   return {
-    title: (meta.title || '') as string,
+    title: (meta.title || '') as string, // TODO 这里需要从接口中item.name取最新的名称数据
     name: String(name),
     fullPath,
     query,

@@ -36,4 +36,11 @@ export const http: HttpConfig[] = [
     requestInterceptor,
     responseInterceptor,
   },
+  // demo模块
+  {
+    instanceName: 'demo',
+    baseURL: '/api/demo',
+    requestInterceptor,
+    responseInterceptor,
+  },
 ]

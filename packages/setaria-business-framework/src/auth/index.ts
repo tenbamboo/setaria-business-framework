@@ -50,4 +50,5 @@ export const setupAuth = async () => {
   const baseStore = useBaseStore()
   baseStore.setUserInfo(userRes.data)
   baseStore.setMenuInfo(userRes.data.functions)
+  return Promise.resolve()
 }

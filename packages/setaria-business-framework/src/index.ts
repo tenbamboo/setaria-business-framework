@@ -2,7 +2,6 @@ import { Setaria } from '@setaria/setaria-ts'
 import { setEnvParams } from '@setaria-business-framework/utils'
 import { setupUI } from './ui/'
 import { setupSchema } from './schema/'
-// import { setupSchema } from './schema/'
 import { injectConfig } from './injection'
 import { setupRouter } from './router'
 import { setupAuth } from './auth'
@@ -22,8 +21,10 @@ export class Framework extends Setaria {
     super(config, envParmas, outterApp)
     setupUI(this.app, config)
     setupSchema(config)
-    setupAuth()
-    setupRouter()
+    setupAuth().then(() => {
+      setupRouter()
+      console.log('business-framework inited')
+    })
   }
 }
 export default {

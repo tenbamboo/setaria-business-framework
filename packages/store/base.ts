@@ -42,6 +42,15 @@ export const useBaseStore = defineStore({
     getUserInfo(): UserInfoProps {
       return this.userInfo
     },
+    getMenuInfo(): Array<MenuProps> {
+      return this.menuInfo
+    },
+    getHasExistUser(): boolean {
+      return !!(
+        this.userInfo.userId
+        // || getCookie('gid')
+      )
+    },
     getTreeMemu(): Array<MenuProps> {
       return getTree(this.menuInfo, 1)
     },

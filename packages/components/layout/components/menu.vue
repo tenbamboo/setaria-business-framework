@@ -88,13 +88,6 @@ const flattenMenuList = computed(() => {
   return baseStore.getTreeMemu
 })
 
-// router.beforeEach(async (to) => {
-//   // emit route change
-//   if (!to.meta.hideInTab) {
-//     setRouteEmitter(to)
-//   }
-// })
-
 const hadnlerCollapseChage = () => {
   layoutStore.setCollapse(!collapse.value)
 }

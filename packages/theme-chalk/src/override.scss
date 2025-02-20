@@ -1,0 +1,4 @@
+// 用于插槽下多个dom被div包裹下，select未被撑开的问题
+.sc-schema-form .el-form-item__content > div {
+  width: 100%;
+}

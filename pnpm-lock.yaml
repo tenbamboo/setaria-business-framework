@@ -207,8 +207,8 @@ importers:
         specifier: ^1.53.0
         version: 1.53.0
       setaria-components:
-        specifier: 0.0.16
-        version: 0.0.16(element-plus@2.7.8)(vue@3.5.13)(vxe-table@4.7.59)(xe-utils@3.5.13)
+        specifier: 0.0.17
+        version: 0.0.17(element-plus@2.7.8)(vue@3.5.13)(vxe-table@4.7.59)(xe-utils@3.5.13)
       ts-morph:
         specifier: ^14.0.0
         version: 14.0.0
@@ -226,7 +226,7 @@ importers:
         version: 0.4.1
       unplugin-vue-macros:
         specifier: ^0.11.2
-        version: 0.11.2(esbuild@0.14.47)(rollup@2.75.7)(vue@3.3.9)
+        version: 0.11.2(rollup@2.75.7)(vite@2.9.15)(vue@3.5.13)
       vitest:
         specifier: 0.12.6
         version: 0.12.6(@vitest/ui@0.16.0)(c8@7.11.3)(jsdom@16.4.0)(sass@1.53.0)
@@ -300,8 +300,8 @@ importers:
         specifier: npm:setaria-business-framework@latest
         version: link:../packages/setaria-business-framework
       setaria-components:
-        specifier: 0.0.16
-        version: 0.0.16(element-plus@2.7.8)(vue@3.5.13)(vxe-table@4.7.59)(xe-utils@3.5.13)
+        specifier: 0.0.17
+        version: 0.0.17(element-plus@2.7.8)(vue@3.5.13)(vxe-table@4.7.59)(xe-utils@3.5.13)
       setaria-mockjs:
         specifier: ^1.0.2
         version: 1.0.2
@@ -601,8 +601,8 @@ importers:
         specifier: ^2.1.7
         version: 2.1.7(typescript@4.7.4)(vue@3.5.13)
       setaria-components:
-        specifier: 0.0.16
-        version: 0.0.16(element-plus@2.7.8)(vue@3.5.13)(vxe-table@4.7.59)(xe-utils@3.5.13)
+        specifier: 0.0.17
+        version: 0.0.17(element-plus@2.7.8)(vue@3.5.13)(vxe-table@4.7.59)(xe-utils@3.5.13)
       vue:
         specifier: ^3.5.13
         version: 3.5.13(typescript@4.7.4)
@@ -695,8 +695,8 @@ importers:
         specifier: ^2.1.7
         version: 2.1.7(typescript@4.7.4)(vue@3.5.13)
       setaria-components:
-        specifier: 0.0.16
-        version: 0.0.16(element-plus@2.7.8)(vue@3.5.13)(vxe-table@4.7.59)(xe-utils@3.5.13)
+        specifier: 0.0.17
+        version: 0.0.17(element-plus@2.7.8)(vue@3.5.13)(vxe-table@4.7.59)(xe-utils@3.5.13)
       vue-i18n:
         specifier: 9.8.0
         version: 9.8.0(vue@3.5.13)
@@ -10703,11 +10703,11 @@ packages:
       split-string: 3.1.0
     dev: false
 
-  /setaria-components@0.0.16(element-plus@2.7.8)(vue@3.5.13)(vxe-table@4.7.59)(xe-utils@3.5.13):
-    resolution: {integrity: sha512-/Tn8+OxnKi2P1ZJIyyFY8EgHxi+7n/LVdnBkrC3ZlK77va+8RnxhIQqseF6iga47NEuyZB0CLKVhvksi0HCfGA==}
+  /setaria-components@0.0.17(element-plus@2.7.8)(vue@3.5.13)(vxe-table@4.7.59)(xe-utils@3.5.13):
+    resolution: {integrity: sha512-Q0gzwfjL9Cght4LhtJ3ZAZqjHWu6i83n6xu/KXM/5xfRx+sIV4zm99AqQvhvYEO47N4e4cS4jKxEeLK6FV7U9A==}
     peerDependencies:
       element-plus: 2.7.8
-      vue: ^3.4.35
+      vue: ^3.5.13
       vxe-table: ^4.7.59
       xe-utils: ^3.5.13
     dependencies:
@@ -11828,6 +11828,7 @@ packages:
       esbuild: 0.14.47
       rollup: 2.75.7
       unplugin: 0.10.2
+    dev: false
 
   /unplugin-combine@0.2.8(rollup@2.75.7)(vite@2.9.15):
     resolution: {integrity: sha512-Z38AC/TEjXbVyZ5HjVqo+lADj0/dcfwWC0Z4y0LNhybJzJQwmcMxm+ZsqHY3faauj4YigmlRMdptR5JEW9RuLg==}
@@ -11989,6 +11990,7 @@ packages:
       - rollup
       - vite
       - webpack
+    dev: false
 
   /unplugin-vue-macros@0.11.2(rollup@2.75.7)(vite@2.9.15)(vue@3.5.13):
     resolution: {integrity: sha512-DvEFbqyio24pOzSyvzDiCaPXnOwJEd9u1Dr2cshMcnSft6OWBgwbm6IumVBbOSydEpClORcZAouxA9CyjUyMbQ==}

@@ -164,11 +164,12 @@ export const useConditionForm = (
             onData-reset={handlerDataReset}
             v-slots={{
               button: getFormButtonSlot,
+              ...getConditionSlots(),
             }}
             // on-expandChange={onExpand}
             // nativeOnSubmit={onSubmit}
           >
-            {getConditionSlots()}
+            {/* {getConditionSlots()} */}
           </ScSearchForm>
         </ElCard>
       )

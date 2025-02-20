@@ -16,18 +16,5 @@
 //   inheritAttrs: false,
 // })
 
-// const router = useRouter()
-
-// const tabBarStore = useTabBarStore()
-
-// const cacheList = computed(() => tabBarStore.getCacheList)
-
-// router.beforeEach(async (to) => {
-//   // emit route change
-//   if (!to.meta.hideInTab) {
-//     setRouteEmitter(to)
-//   }
-// })
-
 defineExpose({})
 </script>

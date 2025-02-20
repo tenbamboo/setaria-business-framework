@@ -13,7 +13,8 @@ $menuTextColor: #303133;
     height: 100%;
     display: flex;
     .base-content-container {
-      padding: 10px 10px 15px;
+      overflow-y: auto;
+      padding: 10px 10px 0 15px;
     }
   }
 }
@@ -128,7 +129,6 @@ $menuTextColor: #303133;
     width: 100%;
     height: 100%;
     // padding: 10px 10px 15px;
-    overflow-y: auto;
     // overflow-x: hidden;
     box-sizing: border-box;
   }

@@ -67,8 +67,11 @@ export default [
 
 - TabBarLayout 包含了`Header`、`Menu`、`TabBar`组件，需要关注的是，`TabBar`组件自带`keep-alive`功能
 - 一般用于 Router 定义中的 component 使用
+- 在使用此功能时需要注意的是业务代码需要在 `script` 上挂`name`属性来定义组件名称
 
 ```javascript
+
+/**  路由定义部分*/
 import { BfTabBarLayout } from 'setaria-business-framework'
 
 export default [
@@ -78,7 +81,7 @@ export default [
     children: [
       {
         path: '',
-        name: 'dashboard',
+        name: 'dashboard', // 这里的内容需要和defineOptions.name的内容一致
         meta: {
           title: '首页',
         },
@@ -90,4 +93,10 @@ export default [
     ],
   },
 ]
+/**  业务代码部分 */
+/**  这里的名称需要和路由的name一致 */
+<script setup name="dashboard">
+</script>
+
+
 ```

@@ -85,15 +85,18 @@ export function getUUID(prefix = '') {
  *     S:毫秒(0-999),
  *     q:季度(1-4)
  */
-export function formatDate(date: [Date, string], format: string) {
+export function formatDate(date: Date | string | number, format?: string) {
   if (isBlank(date) && !(date instanceof Date)) {
     return null
   }
-  if (isBlank(format)) {
-    format = 'yyyy-MM-dd hh:mm:ss'
-  }
+
   let dateStr = ''
-  let dateReal: Date = new Date()
+  let dateReal = new Date()
+  let formatReal = 'yyyy-MM-dd hh:mm:ss'
+
+  if (format) {
+    formatReal = format
+  }
   if (typeof date === 'string') {
     dateStr = date as string
 
@@ -102,6 +105,8 @@ export function formatDate(date: [Date, string], format: string) {
     }
     dateStr = dateStr.replace(/-/g, '/')
     dateReal = new Date(dateStr)
+  } else if (typeof date === 'number') {
+    dateReal = new Date(date)
   } else {
     dateReal = date as unknown as Date
   }
@@ -115,7 +120,7 @@ export function formatDate(date: [Date, string], format: string) {
     q: Math.floor((dateReal.getMonth() + 3) / 3), // 季度
     S: dateReal.getMilliseconds(), // 毫秒
   }
-  format = format.replace(/([yMdhmsqS])+/g, (all, t) => {
+  formatReal = formatReal.replace(/([yMdhmsqS])+/g, (all, t) => {
     if (!['y', 'M', 'd', 'h', 'm', 's', 'q', 'S'].includes(t)) {
       return all
     }
@@ -135,7 +140,7 @@ export function formatDate(date: [Date, string], format: string) {
     return all
   })
 
-  return format
+  return formatReal
 }
 
 /**

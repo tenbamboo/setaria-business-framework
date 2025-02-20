@@ -58,7 +58,7 @@ search-page/condition-rules
 
 ## 自定义搜索区域的按钮内容
 
-:::demo 使用`conditionButton`插槽并配合`conditionButton-layout`属性来开启自定义按钮功能
+:::demo 使用`conditionButton`插槽并配合`condition-button-layout`属性来开启自定义按钮功能
 
 search-page/custom-condition-button
 
@@ -124,9 +124,10 @@ search-page/full
 | table-title            | 表格卡片 Title                   | String                           | 搜索结果 | 否   |
 | condition-title        | 搜索表单卡片 Title               | String                           | 搜索条件 | 否   |
 | default-condition-data | 默认搜索的条件                   | ^[Object]`Record<string, any>`   | —        | 否   |
-| is-initial-searcha     | 是否在页面初始化时只需一次搜索   | Boolean                          | true     | 否   |
+| is-initial-search      | 是否在页面初始化时只需一次搜索   | Boolean                          | true     | 否   |
 | is-reset-after-request | 是否在点击重置按钮后默认请求一次 | Boolean                          | true     | 否   |
 | export-data            | 请求后端导出接口的回调           | ^[Function]`(params) => Promise` | —        | 否   |
+| default-condition-data | 搜索条件中的参数                 | ^[Object]`Record<string, any>`   | —        | 否   |
 
 ### SchemaTable Events
 
@@ -141,7 +142,7 @@ search-page/full
 | cell-dbclick      | 单元格被双击时会触发该事件     | ^[Function]`({ row, rowIndex, $rowIndex, column, columnIndex, $columnIndex, triggerRadio, triggerCheckbox, triggerTreeNode, triggerExpandNode, $event }) => void` |
 | oper-button-click | 操作列按钮被点击时会触发该事件 | ^[Function]`(key, scope) => void`                                                                                                                                 |
 | export-success    | 触发导出且成功之后的回调       | ^[Function]`(res) => void`                                                                                                                                        |
-| export-error      | 发导出且失败之后的回调         | ^[Function]`(error) => void`                                                                                                                                      |
+| export-error      | 触发导出且失败之后的回调       | ^[Function]`(error) => void`                                                                                                                                      |
 
 ### SchemaTable Exposes
 

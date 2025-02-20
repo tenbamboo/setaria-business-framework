@@ -64,7 +64,50 @@ export const useResultTable = (
   const innerOrderItem = ref<string>('')
   const innerOrderType = ref<string>('')
   const isLoading = ref<boolean>(false)
+  const isInited = ref<boolean>(false)
   const { t } = useI18n()
+
+  watch(
+    () => props.tableSchema,
+    () => {
+      if (Array.isArray(props.tableSchema)) {
+        innerTableSchema.value = {
+          ...getSchemaByKeyArray(props.schema, props.tableSchema),
+          ...{ required: props.schema?.required || [] },
+        }
+      } else {
+        innerTableSchema.value = props.tableSchema || props.schema
+      }
+    },
+    {
+      immediate: true,
+      deep: true,
+    }
+  )
+
+  watch(
+    () => {
+      return [props.request, conditionInfo?.searchFormRef?.value]
+    },
+    () => {
+      // 初始化请求代码
+      if (
+        !isInited.value &&
+        props.request &&
+        props.isInitialSearch &&
+        conditionInfo?.searchFormRef?.value
+      ) {
+        // nextTick().then(() => {
+        search()
+        isInited.value = true
+        // })
+      }
+    },
+    {
+      immediate: true,
+      deep: true,
+    }
+  )
 
   const getTableRef = () => {
     return tableRef.value as unknown as TableRef
@@ -126,7 +169,7 @@ export const useResultTable = (
             .catch((e: any) => {
               emit('search-error', e)
               reject(e)
-              throw e
+              // throw e
             })
             .finally(() => {
               isLoading.value = false
@@ -136,7 +179,7 @@ export const useResultTable = (
         }
       }
       // if (this.$refs.searchConditionCardRef) {
-      conditionInfo.searchFormRef.value.validate(
+      conditionInfo?.searchFormRef?.value?.validate(
         (conditionValidate: boolean) => {
           if (conditionValidate) {
             requestInterface()
@@ -198,6 +241,7 @@ export const useResultTable = (
   }
 
   const search = (isReset = false) => {
+    console.log('serach bingogoogo')
     if (isReset) {
       innerPageNum.value = 1
       innerPageSize.value = props?.pageSizes?.[0] || 10
@@ -231,6 +275,102 @@ export const useResultTable = (
     return getTableRef().clearSelection()
   }
 
+  const geTableSlots = () => {
+    const SLOT_PREFIX = 'table.'
+    const tableSlots = {} as {
+      [targetKey: string]: (scope: any) => any
+    }
+    Object.keys(slots).forEach((key: string) => {
+      if (key.includes(SLOT_PREFIX)) {
+        const slot = slots[key] as Function
+        const targetKey = key.replace(SLOT_PREFIX, '')
+        if (isFunction(slot)) {
+          tableSlots[targetKey] = (scope: any) => {
+            return slot(scope)
+          }
+        }
+      }
+      // customSlots[key] = (scope: any) => {
+      //   return slots[key]?.({ status: 'edit', data: scope })
+      // }
+    })
+
+    return tableSlots
+  }
+
+  const handlerExportData = () => {
+    return new Promise((resolve, reject) => {
+      const requestInterface = () => {
+        if (isFunction(props.exportData)) {
+          isLoading.value = true
+          // 执行请求
+          props
+            .exportData(createSearchCondition())
+            .then((res: any) => {
+              emit('export-success', res)
+              resolve(true)
+            })
+            .catch((e: any) => {
+              emit('export-error', e)
+              reject(
+                new ApplicationError('SearchPageError', '导出失败，请重试')
+              )
+              // throw e;
+            })
+            .finally(() => {
+              isLoading.value = false
+            })
+        } else {
+          reject(
+            new ApplicationError('SearchPageError', '未指定exportData参数')
+          )
+          // reject(new ApplicationError(this.$t('ExportData_Parameter_Not_Specified')));
+        }
+      }
+
+      conditionInfo?.searchFormRef?.value?.validate(
+        (conditionValidate: boolean) => {
+          if (conditionValidate) {
+            requestInterface()
+          } else {
+            reject(
+              new ApplicationError(
+                'SearchPageError',
+                t('common.inputRequiredFirst')
+              )
+            )
+          }
+        }
+      )
+    })
+  }
+
+  const getBatchControlSlot = () => {
+    const res: any[] = []
+
+    if (props.exportData) {
+      res.push(
+        <ElLink underline={false} type="primary" onClick={handlerExportData}>
+          {t('common.exportData')}
+        </ElLink>
+      )
+    }
+
+    if (slots.batchControl) {
+      res.push(slots.batchControl())
+    }
+    return res
+  }
+
+  const tableProps = Object.keys(props).reduce((res, key) => {
+    if (key in schemaTableProps) {
+      res[key as keyof typeof props] = props[key as keyof typeof props]
+    }
+    return res
+  }, {} as any)
+
+  setSearchInfoFromStorageData()
+
   return {
     search,
     tableRef,
@@ -238,129 +378,6 @@ export const useResultTable = (
     getSelection,
     clearSelection,
     resultTablemRender: () => {
-      watch(
-        () => props.tableSchema,
-        () => {
-          if (Array.isArray(props.tableSchema)) {
-            innerTableSchema.value = {
-              ...getSchemaByKeyArray(props.schema, props.tableSchema),
-              ...{ required: props.schema?.required || [] },
-            }
-          } else {
-            innerTableSchema.value = props.tableSchema || props.schema
-          }
-        },
-        {
-          immediate: true,
-          deep: true,
-        }
-      )
-
-      const geTableSlots = () => {
-        const SLOT_PREFIX = 'table.'
-        const tableSlots = {} as {
-          [targetKey: string]: (scope: any) => any
-        }
-        Object.keys(slots).forEach((key: string) => {
-          if (key.includes(SLOT_PREFIX)) {
-            const slot = slots[key] as Function
-            const targetKey = key.replace(SLOT_PREFIX, '')
-            if (isFunction(slot)) {
-              tableSlots[targetKey] = (scope: any) => {
-                return slot(scope)
-              }
-            }
-          }
-          // customSlots[key] = (scope: any) => {
-          //   return slots[key]?.({ status: 'edit', data: scope })
-          // }
-        })
-
-        return tableSlots
-      }
-
-      const handlerExportData = () => {
-        return new Promise((resolve, reject) => {
-          const requestInterface = () => {
-            if (isFunction(props.exportData)) {
-              isLoading.value = true
-              // 执行请求
-              props
-                .exportData(createSearchCondition())
-                .then((res: any) => {
-                  emit('export-success', res)
-                  resolve(true)
-                })
-                .catch((e: any) => {
-                  emit('export-error', e)
-                  reject(
-                    new ApplicationError('SearchPageError', '导出失败，请重试')
-                  )
-                  // throw e;
-                })
-                .finally(() => {
-                  isLoading.value = false
-                })
-            } else {
-              reject(
-                new ApplicationError('SearchPageError', '未指定exportData参数')
-              )
-              // reject(new ApplicationError(this.$t('ExportData_Parameter_Not_Specified')));
-            }
-          }
-
-          conditionInfo.searchFormRef.value.validate(
-            (conditionValidate: boolean) => {
-              if (conditionValidate) {
-                requestInterface()
-              } else {
-                reject(
-                  new ApplicationError(
-                    'SearchPageError',
-                    t('common.inputRequiredFirst')
-                  )
-                )
-              }
-            }
-          )
-        })
-      }
-
-      const getBatchControlSlot = () => {
-        const res: any[] = []
-
-        if (props.exportData) {
-          res.push(
-            <ElLink
-              underline={false}
-              type="primary"
-              onClick={handlerExportData}
-            >
-              {t('common.exportData')}
-            </ElLink>
-          )
-        }
-
-        if (slots.batchControl) {
-          res.push(slots.batchControl())
-        }
-        return res
-      }
-
-      const tableProps = Object.keys(props).reduce((res, key) => {
-        if (key in schemaTableProps) {
-          res[key as keyof typeof props] = props[key as keyof typeof props]
-        }
-        return res
-      }, {} as any)
-
-      if (props.isInitialSearch) {
-        nextTick().then(() => {
-          search()
-        })
-      }
-      setSearchInfoFromStorageData()
-
       return (
         <ElCard
           class="bf-search-page_result-table"
@@ -389,6 +406,7 @@ export const useResultTable = (
             onOper-button-click={handlerOperButtonClick}
             v-slots={{
               batchControl: getBatchControlSlot,
+              ...geTableSlots(),
             }}
             // {...{
             //   'onUpdate:pageSize': (val: any) => {
@@ -410,7 +428,7 @@ export const useResultTable = (
             // on-expandChange={onExpand}
             // nativeOnSubmit={onSubmit}
           >
-            {geTableSlots()}
+            {/* {geTableSlots()} */}
           </ScSchemaTable>
         </ElCard>
       )

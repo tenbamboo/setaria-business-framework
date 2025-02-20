@@ -48,7 +48,7 @@ defineOptions({
   inheritAttrs: false,
 })
 // document.documentElement.requestFullscreen()
-const Eaction = {
+const Action = {
   reload: 'reload',
   current: 'current',
   left: 'left',
@@ -98,9 +98,9 @@ const findCurrnetItemDataInfo = () => {
 const handlerOper = async (value: string) => {
   const { curerntTag, index } = findCurrnetItemDataInfo()
   const copyTagList = [...storeTagList.value]
-  if (value === Eaction.current) {
+  if (value === Action.current) {
     tagClose(curerntTag, index)
-  } else if (value === Eaction.left) {
+  } else if (value === Action.left) {
     const currentRouteIdx = findCurrentRouteIndex()
     copyTagList.splice(1, index - 1)
 
@@ -108,7 +108,7 @@ const handlerOper = async (value: string) => {
     if (currentRouteIdx < index) {
       router.push({ name: curerntTag.name })
     }
-  } else if (value === Eaction.right) {
+  } else if (value === Action.right) {
     const currentRouteIdx = findCurrentRouteIndex()
     copyTagList.splice(index + 1)
 
@@ -116,13 +116,13 @@ const handlerOper = async (value: string) => {
     if (currentRouteIdx > index) {
       router.push({ name: curerntTag.name })
     }
-  } else if (value === Eaction.others) {
+  } else if (value === Action.others) {
     const filterList = storeTagList.value.filter((el, idx) => {
       return idx === 0 || idx === index
     })
     tabBarStore.freshTabList(filterList)
     router.push({ name: curerntTag.name })
-  } else if (value === Eaction.reload) {
+  } else if (value === Action.reload) {
     tabBarStore.deleteCache(curerntTag)
     await router.push({
       name: REDIRECT_ROUTE_NAME,

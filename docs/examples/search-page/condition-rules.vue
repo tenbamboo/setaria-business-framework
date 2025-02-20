@@ -35,7 +35,7 @@
 <script lang="ts" setup>
 import { reactive, ref } from 'vue'
 import { ElRate } from 'element-plus'
-import { http } from '@setaria/setaria-ts'
+import { ApplicationError, http } from '@setaria/setaria-ts'
 import type { SchemaProps, SchemaUiPropsByTable } from 'setaria-components'
 import type { SeachPageEvents } from 'setaria-business-framework'
 
@@ -91,7 +91,9 @@ const conditionSchema = reactive({
 
 const handlerRequest: SeachPageEvents.Request = (pageInfo) => {
   if (!pageInfo?.dictName?.includes('Hello')) {
-    return Promise.reject(new Error('字典名称需包含Hello'))
+    return Promise.reject(
+      new ApplicationError('Error1000', '字典名称需包含Hello')
+    )
   }
   return request.post('/t-rmbs-dict/pageSize', pageInfo).then((res) => {
     console.log(res)

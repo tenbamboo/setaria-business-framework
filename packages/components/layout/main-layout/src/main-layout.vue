@@ -13,6 +13,8 @@ import elementEN from 'element-plus/es/locale/lang/en'
 import scZh from 'setaria-components/es/locale/lang/zh-cn'
 import scEn from 'setaria-components/es/locale/lang/en'
 import { merge } from 'lodash-unified'
+import { useBaseStore } from '@setaria-business-framework/store'
+// import { validateRouteNoRole } from '@setaria-business-framework/utils'
 
 defineOptions({
   name: 'BfMainLayout',
@@ -20,14 +22,16 @@ defineOptions({
 })
 
 const { locale } = useI18n()
-const isReady = ref(true)
+const baseStore = useBaseStore()
+
+const localeIsReady = ref(true)
 
 watch(
   () => locale.value,
   () => {
-    isReady.value = false
+    localeIsReady.value = false
     nextTick().then(() => {
-      isReady.value = true
+      localeIsReady.value = true
       // console.log("locale", locale.value);
     })
   }
@@ -38,6 +42,11 @@ const providerLocale = computed(() => {
     return merge(elementZh, scZh)
   }
   return merge(elementEN, scEn)
+})
+
+const isReady = computed(() => {
+  console.log('isReady', localeIsReady.value && baseStore.getHasExistUser)
+  return localeIsReady.value && baseStore.getHasExistUser
 })
 
 defineExpose({})
