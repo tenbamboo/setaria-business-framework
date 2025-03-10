@@ -143,6 +143,11 @@ search-page/full
 | oper-button-click | 操作列按钮被点击时会触发该事件 | ^[Function]`(key, scope) => void`                                                                                                                                 |
 | export-success    | 触发导出且成功之后的回调       | ^[Function]`(res) => void`                                                                                                                                        |
 | export-error      | 触发导出且失败之后的回调       | ^[Function]`(error) => void`                                                                                                                                      |
+| form-open         | 明细组件打开的回调             | ^[Function]`(currentFormData,controlStatus) => void`                                                                                                              |
+| form-opened       | 明细组件打开动画结束时的回调   | ^[Function]`(currentFormData,controlStatus) => void`                                                                                                              |
+| form-close        | 明细组件关闭的回调             | ^[Function]`(currentFormData,controlStatus) => void`                                                                                                              |
+| form-closed       | 明细组件关闭动画结束时的回调   | ^[Function]`(currentFormData,controlStatus) => void`                                                                                                              |
+| form-data-change  | 明细组件表单项数据值变更回调   | ^[Function]`(schemaKey, val, model) => void`                                                                                                                      |
 
 ### SchemaTable Exposes
 

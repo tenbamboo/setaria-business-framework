@@ -6,6 +6,9 @@ declare module '@vue/runtime-core' {
     BfFakeComponent: typeof import('setaria-business-framework')['BfFakeComponent']
     BfFileDragger: typeof import('setaria-business-framework')['BfFileDragger']
     BfChineseMoney: typeof import('setaria-business-framework')['BfChineseMoney']
+    BfImportDropdown: typeof import('setaria-business-framework')['BfImportDropdown']
+    BfShadowUploader: typeof import('setaria-business-framework')['BfShadowUploader']
+
     BfRemoteSelect: typeof import('setaria-business-framework')['BfRemoteSelect']
     BfDictSelect: typeof import('setaria-business-framework')['BfDictSelect']
 

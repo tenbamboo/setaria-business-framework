@@ -48,7 +48,7 @@ export const setupAuth = async () => {
   const userRes = await http.admin.post('/getAuthzInfo')
 
   const baseStore = useBaseStore()
-  baseStore.setUserInfo(userRes.data)
-  baseStore.setMenuInfo(userRes.data.functions)
+  baseStore.setUserInfo(userRes?.data)
+  baseStore.setMenuInfo(userRes?.data?.functions)
   return Promise.resolve()
 }

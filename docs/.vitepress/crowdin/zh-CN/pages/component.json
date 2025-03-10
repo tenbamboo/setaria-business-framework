@@ -69,8 +69,16 @@
         "text": "人民币"
       },
       {
+        "link": "/shadow-uploader",
+        "text": "影子上传器"
+      },
+      {
         "link": "/file-dragger",
         "text": "文件拖拽器"
+      },
+      {
+        "link": "/import-dropdown",
+        "text": "导入器"
       }
     ]
   },

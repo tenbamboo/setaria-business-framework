@@ -233,6 +233,41 @@ export const useResultTable = (
     emit('cell-dbclick', params)
   }
 
+  const handlerFormClose: SchemaTableEvents.FormClose = (
+    currentFormData,
+    controlStatus
+  ) => {
+    emit('form-close', currentFormData, controlStatus)
+  }
+
+  const handlerFormClosed: SchemaTableEvents.FormClosed = (
+    currentFormData,
+    controlStatus
+  ) => {
+    emit('form-closed', currentFormData, controlStatus)
+  }
+
+  const handlerFormOpen: SchemaTableEvents.FormOpen = (
+    currentFormData,
+    controlStatus
+  ) => {
+    emit('form-open', currentFormData, controlStatus)
+  }
+  const handlerFormOpened: SchemaTableEvents.FormOpened = (
+    currentFormData,
+    controlStatus
+  ) => {
+    emit('form-opened', currentFormData, controlStatus)
+  }
+
+  const handlerFormDataChange: SchemaTableEvents.FormDataChange = (
+    schemaKey,
+    val,
+    model
+  ) => {
+    emit('form-data-change', schemaKey, val, model)
+  }
+
   const handlerOperButtonClick: SchemaTableEvents.OperButtonClick = (
     key,
     scope
@@ -241,7 +276,6 @@ export const useResultTable = (
   }
 
   const search = (isReset = false) => {
-    console.log('serach bingogoogo')
     if (isReset) {
       innerPageNum.value = 1
       innerPageSize.value = props?.pageSizes?.[0] || 10
@@ -404,6 +438,11 @@ export const useResultTable = (
             onCell-click={handlerCellClick}
             onCell-dbclick={handlerCellDbClick}
             onOper-button-click={handlerOperButtonClick}
+            onForm-close={handlerFormClose}
+            onForm-closed={handlerFormClosed}
+            onForm-open={handlerFormOpen}
+            onForm-opened={handlerFormOpened}
+            onForm-data-change={handlerFormDataChange}
             v-slots={{
               batchControl: getBatchControlSlot,
               ...geTableSlots(),

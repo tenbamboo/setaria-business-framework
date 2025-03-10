@@ -3,6 +3,8 @@ export * from './search-page'
 export * from './fake-component'
 export * from './file-dragger'
 export * from './chinese-money'
+export * from './import-dropdown'
+export * from './shadow-uploader'
 export * from './select/remote-select'
 export * from './select/dict-select'
 

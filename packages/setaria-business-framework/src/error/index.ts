@@ -13,13 +13,13 @@ export const errorHandler = function (type: number, error: any) {
   }
   // 生产环境不提示客户端错误
   // if (process.env.NODE_ENV === 'production') {
-  //   if (
-  //     (errorCode && errorCode === 'SYSMSG-CLIENT-UNKNOWN-ERROR') ||
-  //     (errorMessage && errorMessage.includes('SYSMSG-CLIENT-UNKNOWN-ERROR')) ||
-  //     type === 0
-  //   ) {
-  //     return
-  //   }
+  if (
+    (errorCode && errorCode === 'SYSMSG-CLIENT-UNKNOWN-ERROR') ||
+    (errorMessage && errorMessage.includes('SYSMSG-CLIENT-UNKNOWN-ERROR')) ||
+    type === 0
+  ) {
+    return
+  }
   // }
 
   ElMessage({
