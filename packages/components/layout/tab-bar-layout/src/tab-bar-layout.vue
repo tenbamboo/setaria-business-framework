@@ -9,8 +9,19 @@
         <el-affix :offset="58">
           <TabBar />
         </el-affix>
-        <div ref="contentRef" class="tab-bar-layout-inner-content">
+        <div ref="contentRef" class="tab-bar-layout-wrapper">
           <router-view v-slot="{ Component, route }">
+            <transition name="fade" mode="out-in" appear>
+              <div :key="route.fullPath" class="tab-bar-layout-inner-content">
+                <component :is="Component" v-if="route.meta.ignoreCache" />
+                <keep-alive v-else :include="cacheList">
+                  <component :is="Component" />
+                </keep-alive>
+              </div>
+            </transition>
+          </router-view>
+
+          <!-- <router-view v-slot="{ Component, route }">
             <transition name="fade" mode="out-in" appear>
               <component
                 :is="Component"
@@ -21,7 +32,7 @@
                 <component :is="Component" :key="route.fullPath" />
               </keep-alive>
             </transition>
-          </router-view>
+          </router-view> -->
         </div>
       </CommonBaseContent>
     </div>

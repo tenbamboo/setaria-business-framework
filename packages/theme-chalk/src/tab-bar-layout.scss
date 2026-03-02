@@ -8,10 +8,13 @@
   height: 100%;
   .flex-wrapper {
     display: flex;
-    .tab-bar-layout-inner-content {
+    .tab-bar-layout-wrapper {
       overflow-y: auto;
       height: calc(100% - 50px);
       padding: 10px 10px 0 15px;
+      .tab-bar-layout-inner-content {
+        height: 100%;
+      }
     }
   }
 }
